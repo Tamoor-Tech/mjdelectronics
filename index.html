@@ -236,41 +236,79 @@
     </div>
   </section>
 
-  <!-- TRUSTED BRANDS SHOWCASE (MOBILE-SWIPEABLE) -->
-  <section class="brands-section">
+  <!-- TRUSTED BRANDS SHOWCASE (RESPONSIVE VIP CAROUSEL / SLIDER) -->
+  <section class="brands-section" id="brandShowcaseSection">
     <div class="container">
       <div class="text-center mb-3">
         <span class="text-uppercase fw-bold text-muted" style="font-size: 0.75rem; letter-spacing: 0.15em;">
           PROUDLY FEATURING INDUSTRY-LEADING TELEVISION BRANDS
         </span>
       </div>
-      <div class="brand-scroll-wrapper">
-        <div class="brand-pill-grid">
-          <a href="shop.html?brand=Samsung" class="brand-badge-item">
-            <span class="brand-dot"></span> Samsung
-          </a>
-          <a href="shop.html?brand=LG" class="brand-badge-item">
-            <span class="brand-dot"></span> LG
-          </a>
-          <a href="shop.html?brand=Sony" class="brand-badge-item">
-            <span class="brand-dot"></span> Sony Bravia
-          </a>
-          <a href="shop.html?brand=Vizio" class="brand-badge-item">
-            <span class="brand-dot"></span> Vizio
-          </a>
-          <a href="shop.html?brand=TCL" class="brand-badge-item">
-            <span class="brand-dot"></span> TCL
-          </a>
-          <a href="shop.html?brand=Hisense" class="brand-badge-item">
-            <span class="brand-dot"></span> Hisense
-          </a>
-          <a href="shop.html?brand=Philips" class="brand-badge-item">
-            <span class="brand-dot"></span> Philips
-          </a>
-          <a href="shop.html?brand=Onn" class="brand-badge-item">
-            <span class="brand-dot"></span> Onn.
-          </a>
+
+      <div class="brand-carousel-wrapper">
+        <!-- Previous (←) Navigation Button -->
+        <button class="brand-carousel-arrow brand-prev-btn" id="brandPrevBtn" title="Previous Brands" aria-label="Previous Brands">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <!-- Carousel Track Container -->
+        <div class="brand-carousel-track-container" id="brandTrackContainer">
+          <div class="brand-carousel-track" id="brandCarouselTrack">
+            <!-- Brand 1: Samsung -->
+            <a href="shop.html?brand=Samsung" class="brand-carousel-item" title="Browse Samsung TVs">
+              <div class="brand-logo-card">
+                <img src="assets/images/brands/samsung.svg" alt="Samsung Television" class="brand-logo-img" loading="lazy" />
+              </div>
+            </a>
+            <!-- Brand 2: LG -->
+            <a href="shop.html?brand=LG" class="brand-carousel-item" title="Browse LG TVs">
+              <div class="brand-logo-card">
+                <img src="assets/images/brands/lg.svg" alt="LG Smart TV" class="brand-logo-img" loading="lazy" />
+              </div>
+            </a>
+            <!-- Brand 3: Sony -->
+            <a href="shop.html?brand=Sony" class="brand-carousel-item" title="Browse Sony TVs">
+              <div class="brand-logo-card">
+                <img src="assets/images/brands/sony.svg" alt="Sony Bravia TV" class="brand-logo-img" loading="lazy" />
+              </div>
+            </a>
+            <!-- Brand 4: Vizio -->
+            <a href="shop.html?brand=Vizio" class="brand-carousel-item" title="Browse Vizio TVs">
+              <div class="brand-logo-card">
+                <img src="assets/images/brands/vizio.svg" alt="Vizio SmartCast TV" class="brand-logo-img" loading="lazy" />
+              </div>
+            </a>
+            <!-- Brand 5: TCL -->
+            <a href="shop.html?brand=TCL" class="brand-carousel-item" title="Browse TCL TVs">
+              <div class="brand-logo-card">
+                <img src="assets/images/brands/tcl.svg" alt="TCL Roku TV" class="brand-logo-img" loading="lazy" />
+              </div>
+            </a>
+            <!-- Brand 6: Hisense -->
+            <a href="shop.html?brand=Hisense" class="brand-carousel-item" title="Browse Hisense TVs">
+              <div class="brand-logo-card">
+                <img src="assets/images/brands/hisense.svg" alt="Hisense Google TV" class="brand-logo-img" loading="lazy" />
+              </div>
+            </a>
+            <!-- Brand 7: Philips -->
+            <a href="shop.html?brand=Philips" class="brand-carousel-item" title="Browse Philips TVs">
+              <div class="brand-logo-card">
+                <img src="assets/images/brands/philips.svg" alt="Philips Smart TV" class="brand-logo-img" loading="lazy" />
+              </div>
+            </a>
+            <!-- Brand 8: Onn -->
+            <a href="shop.html?brand=Onn" class="brand-carousel-item" title="Browse Onn TVs">
+              <div class="brand-logo-card">
+                <img src="assets/images/brands/onn.svg" alt="Onn. Roku TV" class="brand-logo-img" loading="lazy" />
+              </div>
+            </a>
+          </div>
         </div>
+
+        <!-- Next (→) Navigation Button -->
+        <button class="brand-carousel-arrow brand-next-btn" id="brandNextBtn" title="Next Brands" aria-label="Next Brands">
+          <i class="bi bi-chevron-right"></i>
+        </button>
       </div>
     </div>
   </section>

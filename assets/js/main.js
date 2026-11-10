@@ -88,7 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Setup Quick Search Modal handler
   setupGlobalSearch();
 
-  // 6. Mobile Offcanvas Auto-Close when clicking any link
+  // 6. Setup Brand Carousel
+  setupBrandCarousel();
+
+  // 7. Mobile Offcanvas Auto-Close when clicking any link
   const offcanvasEl = document.getElementById('mobileNavOffcanvas');
   if (offcanvasEl && window.bootstrap && bootstrap.Offcanvas) {
     const drawerLinks = offcanvasEl.querySelectorAll('a');
@@ -100,6 +103,100 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Setup Brand Carousel with responsive scrolling & touch gestures
+function setupBrandCarousel() {
+  const container = document.getElementById('brandTrackContainer');
+  const prevBtn = document.getElementById('brandPrevBtn');
+  const nextBtn = document.getElementById('brandNextBtn');
+
+  if (!container || !prevBtn || !nextBtn) return;
+
+  const getScrollDistance = () => {
+    const item = container.querySelector('.brand-carousel-item');
+    if (!item) return 200;
+    const itemWidth = item.offsetWidth;
+    const gap = window.innerWidth < 576 ? 10 : 14;
+    const fullItemWidth = itemWidth + gap;
+    
+    const width = window.innerWidth;
+    if (width < 480) {
+      return fullItemWidth * 2; // Move 2 items at a time on mobile
+    } else if (width < 768) {
+      return fullItemWidth * 3; // Move 3 items on small tablet
+    } else {
+      return fullItemWidth * 4; // Move 4 items on tablet/desktop
+    }
+  };
+
+  const updateButtonsState = () => {
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    if (maxScroll <= 5) {
+      // All items fit on wide screen
+      prevBtn.classList.add('disabled');
+      nextBtn.classList.add('disabled');
+      prevBtn.setAttribute('aria-disabled', 'true');
+      nextBtn.setAttribute('aria-disabled', 'true');
+      return;
+    }
+
+    prevBtn.classList.remove('disabled');
+    nextBtn.classList.remove('disabled');
+    prevBtn.removeAttribute('aria-disabled');
+    nextBtn.removeAttribute('aria-disabled');
+  };
+
+  nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    if (container.scrollLeft >= maxScroll - 8) {
+      container.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: getScrollDistance(), behavior: 'smooth' });
+    }
+  });
+
+  prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (container.scrollLeft <= 8) {
+      container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: -getScrollDistance(), behavior: 'smooth' });
+    }
+  });
+
+  container.addEventListener('scroll', updateButtonsState, { passive: true });
+  window.addEventListener('resize', updateButtonsState, { passive: true });
+
+  // Touch Swipe Handling on Mobile
+  let startX = 0;
+  let isSwiping = false;
+
+  container.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].pageX;
+    isSwiping = true;
+  }, { passive: true });
+
+  container.addEventListener('touchend', (e) => {
+    if (!isSwiping) return;
+    isSwiping = false;
+    const endX = e.changedTouches[0].pageX;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        // Swiped left -> move next
+        container.scrollBy({ left: getScrollDistance(), behavior: 'smooth' });
+      } else {
+        // Swiped right -> move prev
+        container.scrollBy({ left: -getScrollDistance(), behavior: 'smooth' });
+      }
+    }
+  }, { passive: true });
+
+  // Initial trigger
+  setTimeout(updateButtonsState, 150);
+}
 
 // Global Product Inquiry Modal Launcher
 function openInquiryModal(productId) {

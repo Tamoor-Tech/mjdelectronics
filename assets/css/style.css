@@ -659,76 +659,225 @@ input, select, textarea {
   flex-shrink: 0;
 }
 
-/* ---------- BRAND TICKER (MOBILE-SWIPEABLE) ---------- */
+/* ---------- BRAND SHOWCASE (PREMIUM RESPONSIVE CAROUSEL) ---------- */
 .brands-section {
-  padding: 36px 0;
+  padding: 32px 0 36px;
   background: var(--main-white);
   border-bottom: 1px solid var(--border-grey);
+  position: relative;
 }
 
-.brand-scroll-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 4px 0 8px;
-}
-
-.brand-scroll-wrapper::-webkit-scrollbar {
-  display: none;
-}
-
-.brand-pill-grid {
+.brand-carousel-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
-  width: max-content;
-  margin: 0 auto;
+  padding: 0 46px; /* Room for navigation arrows */
 }
 
-@media (max-width: 991px) {
-  .brand-pill-grid {
-    margin: 0;
-    padding: 0 16px;
+@media (max-width: 575.98px) {
+  .brand-carousel-wrapper {
+    padding: 0 36px;
   }
 }
 
-.brand-badge-item {
-  display: inline-flex;
+.brand-carousel-track-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  width: 100%;
+  padding: 6px 2px;
+}
+
+.brand-carousel-track-container::-webkit-scrollbar {
+  display: none;
+}
+
+.brand-carousel-track {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: var(--section-grey);
+  gap: 14px;
+  width: 100%;
+}
+
+/* Base item & Card */
+.brand-carousel-item {
+  display: block;
+  text-decoration: none;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.brand-logo-card {
+  background: var(--main-white);
   border: 1.5px solid var(--border-grey);
-  border-radius: var(--radius-pill);
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--charcoal);
+  border-radius: var(--radius-md);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   transition: all var(--transition-fast);
   cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 
-.brand-badge-item:hover, .brand-badge-item:active {
-  background: var(--main-white);
+.brand-logo-card img.brand-logo-img {
+  max-height: 32px;
+  max-width: 85%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform var(--transition-fast);
+  filter: grayscale(15%);
+}
+
+.brand-carousel-item:hover .brand-logo-card,
+.brand-carousel-item:active .brand-logo-card {
   border-color: var(--primary-orange);
-  color: var(--primary-orange);
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.18);
+  transform: translateY(-3px);
+  background: #FFFFFF;
 }
 
-.brand-badge-item.active {
-  background: var(--deep-black);
-  border-color: var(--deep-black);
-  color: var(--main-white);
+.brand-carousel-item:hover img.brand-logo-img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
-.brand-dot {
-  width: 7px;
-  height: 7px;
+/* RESPONSIVE DISPLAY COUNTS */
+/* Mobile Screen (< 480px): Exactly 2 logos at a time */
+@media (max-width: 479.98px) {
+  .brand-carousel-track {
+    gap: 10px;
+  }
+  .brand-carousel-item {
+    flex: 0 0 calc(50% - 5px);
+    width: calc(50% - 5px);
+  }
+  .brand-logo-card {
+    height: 58px;
+    padding: 8px 10px;
+  }
+  .brand-logo-card img.brand-logo-img {
+    max-height: 26px;
+  }
+}
+
+/* Mobile Screen (480px - 575.98px): 3 logos at a time */
+@media (min-width: 480px) and (max-width: 575.98px) {
+  .brand-carousel-track {
+    gap: 10px;
+  }
+  .brand-carousel-item {
+    flex: 0 0 calc(33.333% - 7px);
+    width: calc(33.333% - 7px);
+  }
+  .brand-logo-card {
+    height: 62px;
+    padding: 8px 12px;
+  }
+  .brand-logo-card img.brand-logo-img {
+    max-height: 28px;
+  }
+}
+
+/* Tablet (576px - 767.98px): 3–4 logos at a time */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .brand-carousel-track {
+    gap: 12px;
+  }
+  .brand-carousel-item {
+    flex: 0 0 calc(25% - 9px);
+    width: calc(25% - 9px);
+  }
+}
+
+/* Tablet (768px - 991.98px): 4–5 logos at a time */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .brand-carousel-track {
+    gap: 14px;
+  }
+  .brand-carousel-item {
+    flex: 0 0 calc(20% - 11.2px);
+    width: calc(20% - 11.2px);
+  }
+}
+
+/* Desktop (>= 992px): All 8 logos in one row */
+@media (min-width: 992px) {
+  .brand-carousel-wrapper {
+    padding: 0 40px;
+  }
+  .brand-carousel-track {
+    gap: 14px;
+    justify-content: space-between;
+  }
+  .brand-carousel-item {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+/* CAROUSEL ARROWS */
+.brand-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
   border-radius: 50%;
+  background: var(--main-white);
+  color: var(--deep-black);
+  border: 1.5px solid var(--border-grey);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.brand-carousel-arrow.brand-prev-btn {
+  left: 0;
+}
+
+.brand-carousel-arrow.brand-next-btn {
+  right: 0;
+}
+
+.brand-carousel-arrow:hover,
+.brand-carousel-arrow:active {
   background: var(--primary-orange);
-  flex-shrink: 0;
+  border-color: var(--primary-orange);
+  color: var(--main-white);
+  box-shadow: 0 6px 16px rgba(255, 107, 0, 0.35);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.brand-carousel-arrow:disabled,
+.brand-carousel-arrow.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* On large desktops when all 8 fit naturally, arrows can tuck gracefully */
+@media (min-width: 1200px) {
+  .brand-carousel-arrow {
+    opacity: 0.8;
+  }
+  .brand-carousel-arrow:hover {
+    opacity: 1;
+  }
 }
 
 /* ---------- CATEGORY CARDS ---------- */
