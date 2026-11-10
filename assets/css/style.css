@@ -1100,9 +1100,16 @@ input, select, textarea {
   padding-top: 14px;
   border-top: 1px solid var(--border-light);
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.product-card-meta-row {
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  width: 100%;
 }
 
 .price-box {
@@ -1122,6 +1129,99 @@ input, select, textarea {
   font-size: 0.88rem;
   font-weight: 700;
   color: var(--primary-orange);
+}
+
+.btn-card-details {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary-orange);
+  background: var(--light-orange);
+  border: 1px solid rgba(255, 107, 0, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-card-details:hover,
+.btn-card-details:focus,
+.btn-card-details:active {
+  background: var(--primary-orange);
+  color: var(--main-white);
+  border-color: var(--primary-orange);
+  transform: translateX(2px);
+}
+
+/* PROMINENT WHATSAPP PRODUCT INQUIRY BUTTON */
+.btn-whatsapp-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+  border-radius: var(--radius-md);
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.28);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-whatsapp-card:hover,
+.btn-whatsapp-card:focus,
+.btn-whatsapp-card:active {
+  background: linear-gradient(135deg, #1EBE5D 0%, #15803D 100%);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.42);
+}
+
+.btn-whatsapp-card i {
+  font-size: 1.15rem;
+}
+
+/* LARGE WHATSAPP ACTION BUTTON (PRODUCT DETAIL & CONTACT) */
+.btn-whatsapp-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: var(--radius-md);
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.32);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-whatsapp-lg:hover,
+.btn-whatsapp-lg:focus,
+.btn-whatsapp-lg:active {
+  background: linear-gradient(135deg, #1EBE5D 0%, #15803D 100%);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.48);
+}
+
+.btn-whatsapp-lg i {
+  font-size: 1.25rem;
 }
 
 .product-card-actions {
@@ -1348,16 +1448,16 @@ input, select, textarea {
   word-break: break-word;
 }
 
-/* ---------- FOOTER (DEEP BLACK) ---------- */
+/* ---------- FOOTER (DEEP BLACK - HIGH CONTRAST & PREMIUM) ---------- */
 .footer-mjd {
   background: var(--deep-black);
-  color: #A0A0A0;
+  color: #D1D5DB;
   padding: clamp(50px, 8vw, 80px) 0 0;
   border-top: 1px solid #222222;
 }
 
 .footer-brand-title {
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   font-weight: 900;
   color: var(--main-white);
   letter-spacing: -0.03em;
@@ -1378,17 +1478,17 @@ input, select, textarea {
 }
 
 .footer-desc {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   line-height: 1.65;
-  color: #A0A0A0;
+  color: #D1D5DB;
   margin-bottom: 20px;
 }
 
 .footer-widget-title {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 800;
   color: var(--main-white);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   letter-spacing: -0.01em;
   position: relative;
   padding-bottom: 8px;
@@ -1399,7 +1499,7 @@ input, select, textarea {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 26px;
+  width: 28px;
   height: 2px;
   background: var(--primary-orange);
 }
@@ -1411,104 +1511,124 @@ input, select, textarea {
 }
 
 .footer-links li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .footer-links a {
-  color: #CCCCCC;
-  font-size: 0.9rem;
+  color: #E5E7EB;
+  font-size: 0.92rem;
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  text-decoration: none;
 }
 
 .footer-links a:hover {
   color: var(--primary-orange);
-  transform: translateX(3px);
+  transform: translateX(4px);
+}
+
+/* HIGH-CONTRAST, READABLE CONTACT SECTION */
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .footer-contact-item {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  margin-bottom: 14px;
-  font-size: 0.9rem;
-  color: #CCCCCC;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.footer-contact-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 107, 0, 0.4);
+  transform: translateX(3px);
 }
 
 .footer-contact-item i {
   color: var(--primary-orange);
-  font-size: 1.1rem;
-  margin-top: 3px;
+  font-size: 1.15rem;
+  margin-top: 2px;
   flex-shrink: 0;
+  transition: transform var(--transition-fast);
 }
 
-.footer-contact-item a {
-  color: #CCCCCC;
+.footer-contact-item:hover i {
+  transform: scale(1.15);
+}
+
+.footer-contact-item .icon-whatsapp {
+  color: #25D366 !important;
+}
+
+.footer-contact-item .footer-contact-label,
+.footer-contact-item span.text-muted,
+.footer-contact-item .small.text-muted {
+  display: block;
+  font-size: 0.72rem !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9CA3AF !important; /* Clear high contrast against #111 */
+  margin-bottom: 2px;
+}
+
+.footer-contact-item a,
+.footer-contact-item .footer-contact-val {
+  color: #FFFFFF !important;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  display: inline-block;
+  word-break: break-word;
 }
 
 .footer-contact-item a:hover {
-  color: var(--primary-orange);
+  color: var(--primary-orange) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-contact-item a.link-whatsapp:hover,
+.footer-contact-item a[href*="wa.me"]:hover {
+  color: #25D366 !important;
+}
+
+.footer-contact-item .footer-contact-text,
+.footer-contact-item span:not(.text-muted) {
+  color: #FFFFFF;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  font-weight: 500;
 }
 
 .footer-bottom {
   margin-top: clamp(36px, 6vw, 60px);
   padding: 24px 0;
-  border-top: 1px solid #222222;
-  font-size: 0.8125rem;
-  color: #777777;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: #9CA3AF;
 }
 
 .footer-bottom a {
-  color: #888888;
+  color: #D1D5DB;
   margin-left: 14px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
 }
 
 .footer-bottom a:hover {
   color: var(--primary-orange);
-}
-
-/* ---------- BACK TO TOP BUTTON ---------- */
-.back-to-top {
-  position: fixed;
-  bottom: calc(76px + var(--safe-bottom));
-  right: 20px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--primary-orange);
-  color: var(--main-white);
-  border: none;
-  box-shadow: 0 6px 18px rgba(255, 107, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  cursor: pointer;
-  z-index: 1020;
-  opacity: 0;
-  visibility: hidden;
-  transition: all var(--transition-fast);
-}
-
-@media (min-width: 992px) {
-  .back-to-top {
-    bottom: 30px;
-    right: 30px;
-    width: 48px;
-    height: 48px;
-  }
-}
-
-.back-to-top.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.back-to-top:hover, .back-to-top:active {
-  background: var(--orange-hover);
-  transform: translateY(-3px);
+  text-decoration: underline;
 }
 
 /* ---------- FORM CONTROLS (TOUCH-FRIENDLY) ---------- */

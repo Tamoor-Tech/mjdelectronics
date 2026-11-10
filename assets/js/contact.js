@@ -17,6 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
       if (messageField) {
         messageField.value = `Hello Melvin,\n\nI am inquiring about the current availability, pricing, and pickup details for the ${product.name} (${product.size}, ${product.brand}).\n\nPlease let me know if it is currently available in Lithia Springs.`;
       }
+      if (formFeedback) {
+        const waProductUrl = typeof getWhatsAppProductUrl === 'function' 
+          ? getWhatsAppProductUrl(product) 
+          : `https://wa.me/17708951392?text=${encodeURIComponent('Hello MJDELECTRONICS!\n\nI am interested in purchasing: ' + product.name)}`;
+        formFeedback.innerHTML = `
+          <div class="p-3 mb-3 bg-light rounded-3 border d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3" style="border-left: 4px solid #25D366 !important;">
+            <div>
+              <div class="fw-bold text-dark small"><i class="bi bi-whatsapp text-success me-1"></i> Inquiring about ${product.name}?</div>
+              <div class="text-muted" style="font-size: 0.8rem;">Chat immediately on WhatsApp with this television pre-filled!</div>
+            </div>
+            <a href="${waProductUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-card py-2 px-3 text-nowrap" style="width: auto; min-height: 38px;">
+              <i class="bi bi-whatsapp me-1"></i> WhatsApp Melvin
+            </a>
+          </div>
+        `;
+      }
     }
   }
 
@@ -64,9 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="small text-secondary mb-3">
             Since this is a client-side static interface without a private server API key, you can send your inquiry directly to Melvin right now via your default email client:
           </p>
-          <a href="${mailtoUrl}" class="btn btn-sm btn-mjd-primary">
-            <i class="bi bi-envelope-paper-fill me-2"></i>Launch Email to melvin@mjdelectronics.net
-          </a>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="${mailtoUrl}" class="btn btn-sm btn-mjd-primary">
+              <i class="bi bi-envelope-paper-fill me-1"></i>Launch Email Client
+            </a>
+            <a href="https://wa.me/17708951392?text=${encodeURIComponent('Hello MJDELECTRONICS!\n\nFrom: ' + name + ' (' + email + ')\n\n' + message)}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-whatsapp-card py-1 px-3" style="width: auto; min-height: 34px;">
+              <i class="bi bi-whatsapp me-1"></i>Send on WhatsApp
+            </a>
+          </div>
         </div>
       `, 'info', false);
 

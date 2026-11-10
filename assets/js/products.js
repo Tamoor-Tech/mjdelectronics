@@ -340,9 +340,93 @@ const MJD_PRODUCTS = [
   }
 ];
 
+// WhatsApp Business Official Contact Config
+const MJD_WHATSAPP_NUMBER = "17708951392";
+
+// Generate Dynamic Pre-filled WhatsApp Product Inquiry URL
+function getWhatsAppProductUrl(product, customUrl) {
+  if (!product) return getWhatsAppGeneralUrl();
+
+  // Determine Product Page URL
+  let productUrl = customUrl;
+  if (!productUrl) {
+    if (typeof window !== 'undefined' && window.location) {
+      if (window.location.pathname.endsWith('product.html') && window.location.search.includes(product.id)) {
+        productUrl = window.location.href;
+      } else {
+        productUrl = `https://mjdelectronics.net/product.html?id=${encodeURIComponent(product.id)}`;
+      }
+    } else {
+      productUrl = `https://mjdelectronics.net/product.html?id=${encodeURIComponent(product.id)}`;
+    }
+  }
+
+  // Build inquiry message according to required template
+  const lines = [
+    "Hello MJDELECTRONICS!",
+    "",
+    "I am interested in purchasing the following product:",
+    "",
+    `Product Name: ${product.name}`,
+    `Brand: ${product.brand}`
+  ];
+
+  // Optional model (omit if not available)
+  const model = product.model || (product.specs && product.specs.model);
+  if (model && String(model).trim() !== '') {
+    lines.push(`Model: ${model}`);
+  }
+
+  // Displayed Price (omit if not available)
+  const price = product.priceText || product.price;
+  if (price && String(price).trim() !== '') {
+    lines.push(`Price: ${price}`);
+  }
+
+  // Product Link
+  if (productUrl) {
+    lines.push(`Product Link: ${productUrl}`);
+  }
+
+  lines.push(
+    "",
+    "I would like to know more about its availability, condition, latest price, and purchasing options.",
+    "",
+    "Please share further details.",
+    "",
+    "Thank you!"
+  );
+
+  const fullMessage = lines.join("\n");
+  return `https://wa.me/${MJD_WHATSAPP_NUMBER}?text=${encodeURIComponent(fullMessage)}`;
+}
+
+// Generate Pre-filled General WhatsApp Inquiry URL
+function getWhatsAppGeneralUrl() {
+  const generalMessage = "Hello MJDELECTRONICS! I visited your website and would like to know more about your available electronics and current deals.";
+  return `https://wa.me/${MJD_WHATSAPP_NUMBER}?text=${encodeURIComponent(generalMessage)}`;
+}
+
+// Global action to open WhatsApp Product Inquiry
+function openWhatsAppProductInquiry(productId, customUrl) {
+  let product = null;
+  if (typeof MJD_PRODUCTS !== 'undefined' && Array.isArray(MJD_PRODUCTS)) {
+    product = MJD_PRODUCTS.find(p => p.id === productId);
+  }
+  const url = getWhatsAppProductUrl(product, customUrl);
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+// Global action to open WhatsApp General Inquiry
+function openWhatsAppGeneralInquiry() {
+  const url = getWhatsAppGeneralUrl();
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
 // Helper to generate VIP Product Card HTML
 function createProductCardHtml(product) {
   const fallbackSrc = getTvSvgPlaceholder(product.brand, product.size);
+  const waUrl = getWhatsAppProductUrl(product);
   return `
     <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
       <div class="vip-product-card" data-brand="${product.brand}" data-category="${product.category}">
@@ -369,18 +453,24 @@ function createProductCardHtml(product) {
           </div>
           
           <div class="product-card-footer">
-            <div class="price-box">
-              <span class="price-label">Pricing</span>
-              <span class="price-inquire">${product.priceText}</span>
-            </div>
-            <div class="product-card-actions">
-              <a href="product.html?id=${product.id}" class="btn-card-action" title="View Product Details" aria-label="View Details for ${product.name}">
-                <i class="bi bi-arrow-right"></i>
+            <div class="product-card-meta-row">
+              <div class="price-box">
+                <span class="price-label">Pricing</span>
+                <span class="price-inquire">${product.priceText}</span>
+              </div>
+              <a href="product.html?id=${product.id}" class="btn-card-details" title="View Full Specs &amp; Details" aria-label="View Details for ${product.name}">
+                View Details <i class="bi bi-arrow-right"></i>
               </a>
-              <button class="btn-card-action" onclick="openInquiryModal('${product.id}')" title="Inquire for Price" aria-label="Inquire for Price">
-                <i class="bi bi-chat-dots"></i>
-              </button>
             </div>
+            
+            <a href="${waUrl}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-whatsapp-card" 
+               title="Inquire on WhatsApp about ${product.name}" 
+               aria-label="Inquire on WhatsApp about ${product.name}">
+              <i class="bi bi-whatsapp"></i> Inquire on WhatsApp
+            </a>
           </div>
         </div>
       </div>

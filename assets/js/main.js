@@ -39,25 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => el.classList.add('is-visible'));
   }
 
-  // 3. Back To Top Floating Action Button
-  const backToTopBtn = document.getElementById('backToTopBtn');
-  if (backToTopBtn) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 350) {
-        backToTopBtn.classList.add('show');
-      } else {
-        backToTopBtn.classList.remove('show');
-      }
-    }, { passive: true });
-
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
-
   // 4. Highlight Active Navigation Link (Desktop & Mobile Drawer & Bottom Dock)
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   
@@ -216,14 +197,28 @@ function openInquiryModal(productId) {
 
   if (product) {
     if (subjectInput) subjectInput.value = `Price & Availability Inquiry: ${product.name}`;
+    
+    const waUrl = typeof getWhatsAppProductUrl === 'function' 
+      ? getWhatsAppProductUrl(product) 
+      : `https://wa.me/17708951392?text=${encodeURIComponent('Hello MJDELECTRONICS!\n\nI am interested in purchasing the following product:\n\nProduct Name: ' + product.name + '\nBrand: ' + product.brand + '\n\nPlease share further details.\n\nThank you!')}`;
+
     if (previewDiv) {
       previewDiv.innerHTML = `
         <div class="d-flex align-items-center gap-3 p-2 bg-light rounded-3 mb-3 border">
           <img src="${product.image}" alt="${product.name}" style="width: 60px; height: 50px; object-fit: contain;" />
-          <div>
+          <div class="flex-grow-1">
             <div class="fw-bold small text-dark">${product.name}</div>
             <div class="text-muted" style="font-size: 0.75rem;">${product.brand} &bull; ${product.size} &bull; ${product.condition}</div>
           </div>
+        </div>
+        <div class="mb-3">
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-card" title="Inquire on WhatsApp about ${product.name}">
+            <i class="bi bi-whatsapp"></i> Inquire on WhatsApp
+          </a>
+        </div>
+        <div class="text-center text-muted small mb-3 position-relative">
+          <span class="bg-white px-2 position-relative" style="z-index: 1;">or email Melvin via form below</span>
+          <hr class="position-absolute w-100 top-50 start-0 m-0" style="z-index: 0;">
         </div>
       `;
     }
@@ -236,6 +231,20 @@ function openInquiryModal(productId) {
     const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
     modal.show();
   }
+}
+
+// Fallback helper to ensure general WhatsApp inquiries always work across all pages
+if (typeof window.getWhatsAppGeneralUrl !== 'function') {
+  window.getWhatsAppGeneralUrl = function() {
+    const generalMessage = "Hello MJDELECTRONICS! I visited your website and would like to know more about your available electronics and current deals.";
+    return `https://wa.me/17708951392?text=${encodeURIComponent(generalMessage)}`;
+  };
+}
+
+if (typeof window.openWhatsAppGeneralInquiry !== 'function') {
+  window.openWhatsAppGeneralInquiry = function() {
+    window.open(window.getWhatsAppGeneralUrl(), '_blank', 'noopener,noreferrer');
+  };
 }
 
 // Global Quick Search Setup
