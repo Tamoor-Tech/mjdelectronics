@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | MJDELECTRONICS</title>
+  <meta name="description" content="View specifications, screen size, resolution, and availability inquiry for this quality television at MJDELECTRONICS.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <style>
+    .product-gallery-main {
+      background: #F9FAFB;
+      border: 1px solid var(--border-grey);
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+      position: relative;
+    }
+    .product-gallery-main img {
+      max-height: 340px;
+      width: auto;
+      object-fit: contain;
+    }
+    .thumb-strip {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .thumb-btn {
+      width: 70px;
+      height: 70px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--border-grey);
+      background: #F9FAFB;
+      padding: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+    }
+    .thumb-btn.active, .thumb-btn:hover {
+      border-color: var(--primary-orange);
+      box-shadow: 0 0 0 2px var(--light-orange);
+    }
+    .thumb-btn img {
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .spec-table th {
+      width: 35%;
+      font-weight: 700;
+      color: var(--charcoal);
+      background: var(--section-grey);
+      font-size: 0.9rem;
+      border-color: var(--border-grey);
+    }
+    .spec-table td {
+      font-size: 0.9rem;
+      color: var(--secondary-text);
+      border-color: var(--border-grey);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NOTICE BAR -->
+  <div class="top-notice-bar">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+      <div class="d-none d-md-block">
+        <i class="bi bi-geo-alt-fill text-warning me-1"></i> Lithia Springs, GA 30122
+        <span class="bullet-dot"></span>
+        <i class="bi bi-shield-check text-warning me-1"></i> Pre-Tested Electronics
+      </div>
+      <div class="w-100 w-md-auto text-center text-md-end">
+        <span class="me-2">Direct Questions?</span>
+        <a href="tel:+17708951392" class="me-3"><i class="bi bi-telephone-fill me-1"></i>+1 (770) 895-1392</a>
+        <a href="mailto:melvin@mjdelectronics.net" class="d-none d-sm-inline"><i class="bi bi-envelope-fill me-1"></i>melvin@mjdelectronics.net</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-mjd">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon-box">
+          <i class="bi bi-tv"></i>
+        </div>
+        <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+      </a>
+
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
+          <i class="bi bi-search"></i>
+        </button>
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2 text-dark"></i>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="shop.html">Shop Catalog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" title="Quick Search" aria-label="Search electronics">
+            <i class="bi bi-search"></i>
+          </button>
+          <a href="shop.html" class="btn-mjd-primary btn-sm-mjd">
+            <i class="bi bi-arrow-left"></i> Back to Catalog
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-nav">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="shop.html">Shop Catalog</a></li>
+          <li class="breadcrumb-item active" id="breadcrumbProductTitle" aria-current="page">Product Details</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAILS MAIN CONTENT -->
+  <section class="section-padding bg-white-section" id="productDetailSection">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Gallery Column -->
+        <div class="col-lg-6">
+          <div class="product-gallery-main">
+            <img id="mainProductImage" src="" alt="Product View" />
+          </div>
+          <div class="thumb-strip" id="thumbnailStrip">
+            <!-- Thumbnails inserted via JS -->
+          </div>
+
+          <!-- Feature checklist -->
+          <div class="p-4 bg-light rounded-4 border mt-4">
+            <h6 class="fw-bold text-dark mb-3"><i class="bi bi-shield-check text-warning me-2"></i>MJDELECTRONICS Quality Checklist</h6>
+            <div class="row g-2 small text-secondary">
+              <div class="col-6"><i class="bi bi-check2 text-success me-1"></i>Display &amp; Backlight Tested</div>
+              <div class="col-6"><i class="bi bi-check2 text-success me-1"></i>All HDMI/USB Ports Verified</div>
+              <div class="col-6"><i class="bi bi-check2 text-success me-1"></i>Built-in Audio &amp; Speakers Checked</div>
+              <div class="col-6"><i class="bi bi-check2 text-success me-1"></i>Ready for Local Pickup in GA</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Column -->
+        <div class="col-lg-6">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge bg-dark px-3 py-2" id="detailBrandBadge">Brand</span>
+            <span class="badge bg-light text-warning border px-3 py-2 fw-bold" id="detailConditionBadge">Inspected</span>
+            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 fw-bold" id="detailStockBadge">
+              <i class="bi bi-check-circle-fill me-1"></i>Available for Pickup
+            </span>
+          </div>
+
+          <h1 class="h2 fw-bold text-dark mb-3" id="detailTitle">Loading Product Title...</h1>
+          
+          <div class="p-3 bg-light rounded-3 border mb-4 d-flex align-items-center justify-content-between">
+            <div>
+              <span class="text-muted small text-uppercase fw-bold d-block">Pricing Status</span>
+              <span class="h4 fw-bold text-primary-orange mb-0" id="detailPrice">Contact for Current Price</span>
+            </div>
+            <div class="text-end">
+              <span class="badge bg-warning text-dark"><i class="bi bi-tag-fill me-1"></i>Deals Available</span>
+            </div>
+          </div>
+
+          <p class="text-secondary leading-relaxed mb-4" id="detailDescription">
+            Loading verified product details...
+          </p>
+
+          <!-- Specifications Table -->
+          <h5 class="fw-bold text-dark mb-3"><i class="bi bi-sliders text-warning me-2"></i>Verified Specifications</h5>
+          <div class="table-responsive mb-4">
+            <table class="table table-bordered spec-table mb-0">
+              <tbody>
+                <tr>
+                  <th>Brand Manufacturer</th>
+                  <td id="specBrand">-</td>
+                </tr>
+                <tr>
+                  <th>Screen Diagonal Size</th>
+                  <td id="specSize">-</td>
+                </tr>
+                <tr>
+                  <th>Native Resolution</th>
+                  <td id="specResolution">-</td>
+                </tr>
+                <tr>
+                  <th>Display Panel Tech</th>
+                  <td id="specDisplay">-</td>
+                </tr>
+                <tr>
+                  <th>Refresh / Motion Rate</th>
+                  <td id="specRefresh">-</td>
+                </tr>
+                <tr>
+                  <th>Smart Streaming OS</th>
+                  <td id="specSmart">-</td>
+                </tr>
+                <tr>
+                  <th>HDR Support</th>
+                  <td id="specHdr">-</td>
+                </tr>
+                <tr>
+                  <th>Input / Output Ports</th>
+                  <td id="specPorts">-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="d-flex flex-wrap gap-3 pt-2">
+            <button id="inquireProductBtn" class="btn btn-mjd-primary btn-lg flex-grow-1 justify-content-center">
+              <i class="bi bi-chat-dots-fill me-2"></i> Inquire for Price &amp; Availability
+            </button>
+            <a href="tel:+17708951392" class="btn btn-mjd-outline btn-lg">
+              <i class="bi bi-telephone-fill me-2"></i> Call Melvin
+            </a>
+          </div>
+
+          <!-- Pickup notes -->
+          <div class="mt-4 pt-3 border-top small text-muted">
+            <i class="bi bi-info-circle me-1"></i>
+            Pickup location: <strong>Lithia Springs, GA 30122</strong>. Flexible pickup times arranged upon direct inquiry.
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Products -->
+      <div class="mt-5 pt-5 border-top">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <span class="section-tag"><i class="bi bi-grid"></i> More Selections</span>
+            <h3 class="fw-bold text-dark mb-0">Related Television Deals</h3>
+          </div>
+          <a href="shop.html" class="btn-mjd-outline-orange btn-sm">
+            Explore All <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+        <div class="row" id="relatedProductsRow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-mjd">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-lg-4">
+          <div class="footer-brand-title">MJD<span>ELECTRONICS</span></div>
+          <div class="footer-tagline">Real Deals. Real Brands. Real Value.</div>
+          <p class="footer-desc">
+            MJDELECTRONICS is an electronics retail business focused on providing customers with quality televisions and electronics from recognized brands at competitive prices.
+          </p>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4 class="footer-widget-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+            <li><a href="shop.html"><i class="bi bi-chevron-right"></i> Shop Catalog</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+            <li><a href="faq.html"><i class="bi bi-chevron-right"></i> FAQ</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <h4 class="footer-widget-title">Featured Brands</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?brand=Samsung"><i class="bi bi-chevron-right"></i> Samsung Smart TVs</a></li>
+            <li><a href="shop.html?brand=LG"><i class="bi bi-chevron-right"></i> LG webOS Displays</a></li>
+            <li><a href="shop.html?brand=Sony"><i class="bi bi-chevron-right"></i> Sony Bravia 4K</a></li>
+            <li><a href="shop.html?brand=Vizio"><i class="bi bi-chevron-right"></i> Vizio SmartCast</a></li>
+            <li><a href="shop.html?brand=TCL"><i class="bi bi-chevron-right"></i> TCL Roku Televisions</a></li>
+            <li><a href="shop.html?brand=Hisense"><i class="bi bi-chevron-right"></i> Hisense Google TVs</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3">
+          <h4 class="footer-widget-title">Direct Contact</h4>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <div>
+              <span class="d-block text-muted small">Inquiry Email</span>
+              <a href="mailto:melvin@mjdelectronics.net">melvin@mjdelectronics.net</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <div>
+              <span class="d-block text-muted small">Phone Number</span>
+              <a href="tel:+17708951392">+1 (770) 895-1392</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <div>
+              <span class="d-block text-muted small">Mailing Address</span>
+              <span>PO BOX 1805<br>Lithia Springs, GA 30122</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div>
+          &copy; <span id="currentYear"></span> MJDELECTRONICS. All rights reserved.
+        </div>
+        <div class="mt-2 mt-md-0">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="shipping-policy.html">Pickup &amp; Delivery Terms</a>
+          <a href="return-policy.html">Inspection &amp; Return Terms</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content search-modal-box">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="fw-bold text-dark mb-0" id="searchModalLabel">
+            <i class="bi bi-search text-warning me-2"></i>Search Electronics Catalog
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="search-input-group mb-3">
+          <input type="text" id="globalSearchInput" placeholder="Search by brand, screen size, or model..." autocomplete="off">
+          <button class="search-submit-btn" aria-label="Search"><i class="bi bi-search"></i></button>
+        </div>
+        <div id="globalSearchResults"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INQUIRY MODAL -->
+  <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-mjd">
+        <div class="modal-header modal-header-mjd">
+          <h5 class="modal-title fw-bold text-dark" id="inquiryModalLabel">
+            <i class="bi bi-tag-fill text-warning me-2"></i>Price &amp; Availability Inquiry
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-body-mjd">
+          <div id="modalProductPreview"></div>
+          <form id="mjdModalInquiryForm">
+            <div class="mb-3">
+              <label class="form-label-mjd">Your Name *</label>
+              <input type="text" id="modalInquiryName" class="form-control-mjd" placeholder="e.g. John Smith" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-mjd">Your Email Address *</label>
+              <input type="email" id="modalInquiryEmail" class="form-control-mjd" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-mjd">Subject</label>
+              <input type="text" id="modalInquirySubject" class="form-control-mjd" readonly>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-mjd">Your Message / Inquiry</label>
+              <textarea id="modalInquiryMessage" class="form-control-mjd" rows="3" required></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn-mjd-primary justify-content-center">
+                <i class="bi bi-envelope-paper-fill"></i> Send Inquiry to Melvin
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="backToTopBtn" class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/contact.js"></script>
+
+  <!-- Dynamic Product Loading Script -->
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof MJD_PRODUCTS === 'undefined') return;
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id') || MJD_PRODUCTS[0].id;
+      const product = MJD_PRODUCTS.find(p => p.id === productId) || MJD_PRODUCTS[0];
+
+      // Page Title & Meta
+      document.title = `${product.name} | MJDELECTRONICS`;
+      const bc = document.getElementById('breadcrumbProductTitle');
+      if (bc) bc.innerText = product.name;
+
+      // Populate Elements
+      const mainImg = document.getElementById('mainProductImage');
+      mainImg.src = product.image;
+      mainImg.alt = product.name;
+      mainImg.onerror = () => { mainImg.src = getTvSvgPlaceholder(product.brand, product.size); };
+
+      document.getElementById('detailBrandBadge').innerText = product.brand;
+      document.getElementById('detailConditionBadge').innerText = product.condition;
+      document.getElementById('detailTitle').innerText = product.name;
+      document.getElementById('detailPrice').innerText = product.priceText;
+      document.getElementById('detailDescription').innerText = product.description;
+
+      // Specifications
+      document.getElementById('specBrand').innerText = product.brand;
+      document.getElementById('specSize').innerText = product.size;
+      document.getElementById('specResolution').innerText = product.resolution;
+      document.getElementById('specDisplay').innerText = product.specs.display;
+      document.getElementById('specRefresh').innerText = product.specs.refreshRate;
+      document.getElementById('specSmart').innerText = product.specs.smartPlatform;
+      document.getElementById('specHdr').innerText = product.specs.hdr;
+      document.getElementById('specPorts').innerText = product.specs.ports;
+
+      // Gallery Thumbnails
+      const thumbStrip = document.getElementById('thumbnailStrip');
+      if (thumbStrip && product.gallery && product.gallery.length > 0) {
+        thumbStrip.innerHTML = product.gallery.map((imgUrl, idx) => `
+          <button class="thumb-btn ${idx === 0 ? 'active' : ''}" onclick="switchMainImage('${imgUrl}', this)">
+            <img src="${imgUrl}" alt="Thumbnail ${idx + 1}" onerror="this.src='${getTvSvgPlaceholder(product.brand, product.size)}'" />
+          </button>
+        `).join('');
+      }
+
+      // Inquiry Button
+      const inquireBtn = document.getElementById('inquireProductBtn');
+      if (inquireBtn) {
+        inquireBtn.addEventListener('click', () => {
+          openInquiryModal(product.id);
+        });
+      }
+
+      // Related Products
+      const relatedRow = document.getElementById('relatedProductsRow');
+      if (relatedRow) {
+        const related = MJD_PRODUCTS
+          .filter(p => p.id !== product.id && (p.brand === product.brand || p.category === product.category))
+          .slice(0, 4);
+        
+        // If fewer than 4 matches, fill with other items
+        const fillItems = related.length < 4 
+          ? [...related, ...MJD_PRODUCTS.filter(p => p.id !== product.id && !related.includes(p)).slice(0, 4 - related.length)]
+          : related;
+
+        relatedRow.innerHTML = fillItems.map(p => createProductCardHtml(p)).join('');
+      }
+    });
+
+    function switchMainImage(url, btn) {
+      const mainImg = document.getElementById('mainProductImage');
+      if (mainImg) mainImg.src = url;
+      document.querySelectorAll('.thumb-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
+

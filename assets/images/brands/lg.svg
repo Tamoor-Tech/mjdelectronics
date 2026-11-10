@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" width="160" height="50">
+  <rect width="160" height="50" rx="8" fill="#F5F5F5"/>
+  <circle cx="48" cy="25" r="14" fill="#A50034"/>
+  <text x="48" y="29" font-family="'Inter', sans-serif" font-weight="900" font-size="13" fill="#FFFFFF" text-anchor="middle">LG</text>
+  <text x="100" y="56%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="800" font-size="22" letter-spacing="2" fill="#111111">LG</text>
+</svg>
