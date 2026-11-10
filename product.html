@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Product Details | MJDELECTRONICS</title>
   <meta name="description" content="View specifications, screen size, resolution, and availability inquiry for this quality television at MJDELECTRONICS.">
 
@@ -25,26 +25,32 @@
       background: #F9FAFB;
       border: 1px solid var(--border-grey);
       border-radius: var(--radius-xl);
-      padding: 30px;
+      padding: clamp(16px, 4vw, 30px);
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 380px;
+      min-height: clamp(240px, 40vw, 380px);
       position: relative;
     }
     .product-gallery-main img {
-      max-height: 340px;
+      max-height: clamp(200px, 35vw, 340px);
+      max-width: 95%;
       width: auto;
+      height: auto;
       object-fit: contain;
     }
     .thumb-strip {
       display: flex;
-      gap: 12px;
-      margin-top: 16px;
+      gap: 10px;
+      margin-top: 14px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 4px;
     }
     .thumb-btn {
-      width: 70px;
-      height: 70px;
+      width: 68px;
+      height: 68px;
+      min-width: 68px;
       border-radius: var(--radius-md);
       border: 2px solid var(--border-grey);
       background: #F9FAFB;
@@ -64,17 +70,19 @@
       object-fit: contain;
     }
     .spec-table th {
-      width: 35%;
+      width: 38%;
       font-weight: 700;
       color: var(--charcoal);
       background: var(--section-grey);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       border-color: var(--border-grey);
+      padding: 10px 12px;
     }
     .spec-table td {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--secondary-text);
       border-color: var(--border-grey);
+      padding: 10px 12px;
     }
   </style>
 </head>
@@ -89,7 +97,7 @@
         <i class="bi bi-shield-check text-warning me-1"></i> Pre-Tested Electronics
       </div>
       <div class="w-100 w-md-auto text-center text-md-end">
-        <span class="me-2">Direct Questions?</span>
+        <span class="me-2 d-none d-sm-inline">Direct Questions?</span>
         <a href="tel:+17708951392" class="me-3"><i class="bi bi-telephone-fill me-1"></i>+1 (770) 895-1392</a>
         <a href="mailto:melvin@mjdelectronics.net" class="d-none d-sm-inline"><i class="bi bi-envelope-fill me-1"></i>melvin@mjdelectronics.net</a>
       </div>
@@ -106,35 +114,37 @@
         <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
       </a>
 
+      <!-- Mobile Top Action Buttons -->
       <div class="d-flex align-items-center gap-2 d-lg-none">
         <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
           <i class="bi bi-search"></i>
         </button>
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bi bi-list fs-2 text-dark"></i>
+        <button class="navbar-toggler-mjd" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas" aria-label="Open Navigation Menu">
+          <i class="bi bi-list fs-3"></i>
         </button>
       </div>
 
-      <div class="collapse navbar-collapse" id="navbarMain">
+      <!-- Desktop Navbar -->
+      <div class="collapse navbar-collapse d-none d-lg-block" id="navbarMain">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="shop.html">Shop Catalog</a>
+            <a class="nav-link active" href="shop.html"><i class="bi bi-grid me-1"></i>Shop Catalog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
+            <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="faq.html">FAQ</a>
+            <a class="nav-link" href="faq.html"><i class="bi bi-question-circle me-1"></i>FAQ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.html"><i class="bi bi-envelope me-1"></i>Contact</a>
           </li>
         </ul>
 
-        <div class="d-none d-lg-flex align-items-center gap-3">
+        <div class="d-flex align-items-center gap-3">
           <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" title="Quick Search" aria-label="Search electronics">
             <i class="bi bi-search"></i>
           </button>
@@ -146,6 +156,54 @@
     </div>
   </nav>
 
+  <!-- MOBILE OFFCANVAS DRAWER -->
+  <div class="offcanvas offcanvas-end offcanvas-mjd" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center gap-2">
+        <div class="brand-icon-box">
+          <i class="bi bi-tv"></i>
+        </div>
+        <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="small text-muted text-uppercase fw-bold mb-3" style="letter-spacing: 0.1em;">Navigation</div>
+      <nav class="d-flex flex-column mb-4">
+        <a href="index.html" class="mobile-nav-link">
+          <span><i class="bi bi-house-door nav-icon"></i> Home</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="shop.html" class="mobile-nav-link active">
+          <span><i class="bi bi-grid nav-icon"></i> Shop Catalog</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="about.html" class="mobile-nav-link">
+          <span><i class="bi bi-info-circle nav-icon"></i> About Us</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="faq.html" class="mobile-nav-link">
+          <span><i class="bi bi-question-circle nav-icon"></i> FAQ</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="contact.html" class="mobile-nav-link">
+          <span><i class="bi bi-envelope nav-icon"></i> Contact Us</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+      </nav>
+
+      <div class="mobile-drawer-contact">
+        <div class="small text-muted fw-bold mb-1">Direct Seller Line</div>
+        <a href="tel:+17708951392" class="d-flex align-items-center gap-2 fw-bold text-dark text-decoration-none mb-2">
+          <i class="bi bi-telephone-fill text-warning"></i> +1 (770) 895-1392
+        </a>
+        <a href="mailto:melvin@mjdelectronics.net" class="d-flex align-items-center gap-2 text-secondary text-decoration-none small">
+          <i class="bi bi-envelope-fill text-warning"></i> melvin@mjdelectronics.net
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- BREADCRUMB -->
   <div class="breadcrumb-nav">
     <div class="container">
@@ -153,7 +211,7 @@
         <ol class="breadcrumb mb-0">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item"><a href="shop.html">Shop Catalog</a></li>
-          <li class="breadcrumb-item active" id="breadcrumbProductTitle" aria-current="page">Product Details</li>
+          <li class="breadcrumb-item active text-truncate" id="breadcrumbProductTitle" aria-current="page" style="max-width: 200px;">Product Details</li>
         </ol>
       </nav>
     </div>
@@ -162,31 +220,29 @@
   <!-- PRODUCT DETAILS MAIN CONTENT -->
   <section class="section-padding bg-white-section" id="productDetailSection">
     <div class="container">
-      <div class="row g-5">
+      <div class="row g-4 g-lg-5">
         <!-- Gallery Column -->
         <div class="col-lg-6">
           <div class="product-gallery-main">
             <img id="mainProductImage" src="" alt="Product View" />
           </div>
-          <div class="thumb-strip" id="thumbnailStrip">
-            <!-- Thumbnails inserted via JS -->
-          </div>
+          <div class="thumb-strip" id="thumbnailStrip"></div>
 
           <!-- Feature checklist -->
-          <div class="p-4 bg-light rounded-4 border mt-4">
+          <div class="p-3 p-md-4 bg-light rounded-4 border mt-4">
             <h6 class="fw-bold text-dark mb-3"><i class="bi bi-shield-check text-warning me-2"></i>MJDELECTRONICS Quality Checklist</h6>
             <div class="row g-2 small text-secondary">
-              <div class="col-6"><i class="bi bi-check2 text-success me-1"></i>Display &amp; Backlight Tested</div>
-              <div class="col-6"><i class="bi bi-check2 text-success me-1"></i>All HDMI/USB Ports Verified</div>
-              <div class="col-6"><i class="bi bi-check2 text-success me-1"></i>Built-in Audio &amp; Speakers Checked</div>
-              <div class="col-6"><i class="bi bi-check2 text-success me-1"></i>Ready for Local Pickup in GA</div>
+              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Display &amp; Backlight Tested</div>
+              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>All HDMI/USB Ports Verified</div>
+              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Built-in Audio &amp; Speakers Checked</div>
+              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Ready for Local Pickup in GA</div>
             </div>
           </div>
         </div>
 
         <!-- Info Column -->
         <div class="col-lg-6">
-          <div class="d-flex align-items-center gap-2 mb-2">
+          <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
             <span class="badge bg-dark px-3 py-2" id="detailBrandBadge">Brand</span>
             <span class="badge bg-light text-warning border px-3 py-2 fw-bold" id="detailConditionBadge">Inspected</span>
             <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 fw-bold" id="detailStockBadge">
@@ -194,7 +250,7 @@
             </span>
           </div>
 
-          <h1 class="h2 fw-bold text-dark mb-3" id="detailTitle">Loading Product Title...</h1>
+          <h1 class="h3 fw-bold text-dark mb-3" id="detailTitle">Loading Product Title...</h1>
           
           <div class="p-3 bg-light rounded-3 border mb-4 d-flex align-items-center justify-content-between">
             <div>
@@ -251,12 +307,12 @@
             </table>
           </div>
 
-          <!-- Action Buttons -->
-          <div class="d-flex flex-wrap gap-3 pt-2">
+          <!-- Action Buttons (Responsive on Mobile) -->
+          <div class="d-flex flex-column flex-sm-row gap-3 pt-2">
             <button id="inquireProductBtn" class="btn btn-mjd-primary btn-lg flex-grow-1 justify-content-center">
               <i class="bi bi-chat-dots-fill me-2"></i> Inquire for Price &amp; Availability
             </button>
-            <a href="tel:+17708951392" class="btn btn-mjd-outline btn-lg">
+            <a href="tel:+17708951392" class="btn btn-mjd-outline btn-lg justify-content-center">
               <i class="bi bi-telephone-fill me-2"></i> Call Melvin
             </a>
           </div>
@@ -270,17 +326,17 @@
       </div>
 
       <!-- Related Products -->
-      <div class="mt-5 pt-5 border-top">
+      <div class="mt-5 pt-4 border-top">
         <div class="d-flex justify-content-between align-items-center mb-4">
           <div>
             <span class="section-tag"><i class="bi bi-grid"></i> More Selections</span>
-            <h3 class="fw-bold text-dark mb-0">Related Television Deals</h3>
+            <h3 class="h4 fw-bold text-dark mb-0">Related Television Deals</h3>
           </div>
           <a href="shop.html" class="btn-mjd-outline-orange btn-sm">
             Explore All <i class="bi bi-arrow-right ms-1"></i>
           </a>
         </div>
-        <div class="row" id="relatedProductsRow"></div>
+        <div class="row g-3 g-md-4" id="relatedProductsRow"></div>
       </div>
     </div>
   </section>
@@ -288,7 +344,7 @@
   <!-- FOOTER -->
   <footer class="footer-mjd">
     <div class="container">
-      <div class="row g-5">
+      <div class="row g-4 g-lg-5">
         <div class="col-12 col-lg-4">
           <div class="footer-brand-title">MJD<span>ELECTRONICS</span></div>
           <div class="footer-tagline">Real Deals. Real Brands. Real Value.</div>
@@ -350,7 +406,7 @@
         <div>
           &copy; <span id="currentYear"></span> MJDELECTRONICS. All rights reserved.
         </div>
-        <div class="mt-2 mt-md-0">
+        <div class="mt-2 mt-md-0 text-center">
           <a href="privacy-policy.html">Privacy Policy</a>
           <a href="shipping-policy.html">Pickup &amp; Delivery Terms</a>
           <a href="return-policy.html">Inspection &amp; Return Terms</a>
@@ -359,6 +415,29 @@
       </div>
     </div>
   </footer>
+
+  <!-- MOBILE BOTTOM QUICK-ACTION DOCK -->
+  <div class="mobile-bottom-dock">
+    <a href="index.html" class="dock-item">
+      <i class="bi bi-house-door-fill"></i>
+      <span>Home</span>
+    </a>
+    <a href="shop.html" class="dock-item active">
+      <i class="bi bi-grid-fill"></i>
+      <span>Shop</span>
+    </a>
+    <a href="tel:+17708951392" class="dock-call-btn" title="Call Melvin" aria-label="Call +17708951392">
+      <i class="bi bi-telephone-fill"></i>
+    </a>
+    <a href="#" class="dock-item" data-bs-toggle="modal" data-bs-target="#searchModal">
+      <i class="bi bi-search"></i>
+      <span>Search</span>
+    </a>
+    <a href="contact.html" class="dock-item">
+      <i class="bi bi-chat-dots-fill"></i>
+      <span>Contact</span>
+    </a>
+  </div>
 
   <!-- SEARCH MODAL -->
   <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
@@ -492,7 +571,6 @@
           .filter(p => p.id !== product.id && (p.brand === product.brand || p.category === product.category))
           .slice(0, 4);
         
-        // If fewer than 4 matches, fill with other items
         const fillItems = related.length < 4 
           ? [...related, ...MJD_PRODUCTS.filter(p => p.id !== product.id && !related.includes(p)).slice(0, 4 - related.length)]
           : related;
@@ -510,4 +588,3 @@
   </script>
 </body>
 </html>
-

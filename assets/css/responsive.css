@@ -1,42 +1,94 @@
 /* ===================================================================
-   MJDELECTRONICS - RESPONSIVE STYLESHEET
-   Mobile, Tablet, Laptop, and Desktop Optimizations
+   MJDELECTRONICS - MOBILE-FIRST RESPONSIVE STYLESHEET
+   Flawless layout scaling across Mobile, Tablet, Laptop, and Ultra-Wide
    =================================================================== */
 
-/* ---------- EXTRA LARGE SCREENS (>= 1200px) ---------- */
-@media (min-width: 1200px) {
-  .hero-title {
-    font-size: 3.85rem;
+/* ---------- MOBILE BASE / DEFAULT OPTIMIZATIONS (< 576px) ---------- */
+@media (max-width: 575.98px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .top-notice-bar {
+    font-size: 0.72rem;
+    padding: 6px 0;
+  }
+  
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+  
+  .hero-features-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-floating-card {
+    display: none !important; /* Hide floating badges on very small phones to prevent any image overlap */
+  }
+
+  .product-image-container {
+    height: 180px;
+    padding: 12px;
+  }
+
+  .product-card-body {
+    padding: 14px;
+  }
+
+  .product-card-title {
+    font-size: 0.95rem;
+    height: 2.6em;
+  }
+
+  .spec-pill {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+  }
+
+  .btn-mjd-primary, .btn-mjd-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .promo-cta-box {
+    padding: 28px 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  /* Catalog Mobile Filter Drawer styling */
+  .shop-filter-card {
+    border-radius: var(--radius-md) !important;
+  }
+
+  .filter-brand-btn {
+    font-size: 0.82rem;
+    padding: 6px 12px;
   }
 }
 
-/* ---------- LARGE DESKTOPS / LAPTOPS (992px to 1199px) ---------- */
-@media (max-width: 1199.98px) {
-  .hero-title {
-    font-size: 3rem;
+/* ---------- PHONES TO SMALL TABLETS (576px to 767px) ---------- */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .product-image-container {
+    height: 200px;
   }
-  .hero-image-wrapper img {
-    height: 420px;
+
+  .hero-floating-card {
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
-  .section-padding {
-    padding: 70px 0;
+  
+  .floating-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
   }
 }
 
 /* ---------- TABLETS (768px to 991px) ---------- */
-@media (max-width: 991.98px) {
-  .hero-wrapper {
-    padding: 40px 0 60px;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .hero-image-container {
-    margin-top: 40px;
-  }
-  
+@media (min-width: 768px) and (max-width: 991.98px) {
   .hero-image-wrapper img {
     height: 380px;
   }
@@ -51,143 +103,39 @@
     right: 10px;
   }
   
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .section-padding {
-    padding: 60px 0;
-  }
-  
-  .promo-cta-box {
-    padding: 44px 30px;
-  }
-  
-  .promo-cta-title {
-    font-size: 2rem;
-  }
-
-  /* Mobile Navbar */
-  .navbar-collapse {
-    background: var(--main-white);
-    padding: 20px;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    margin-top: 14px;
-    border: 1px solid var(--border-grey);
-  }
-  
-  .nav-link {
-    padding: 10px 16px !important;
-    border-radius: var(--radius-md);
-  }
-}
-
-/* ---------- MOBILE PHONES (< 768px) ---------- */
-@media (max-width: 767.98px) {
-  .top-notice-bar {
-    font-size: 0.75rem;
-    text-align: center;
-  }
-  
-  .hero-title {
-    font-size: 2.15rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  
-  .hero-image-wrapper img {
-    height: 280px;
-  }
-  
-  .hero-floating-card {
-    padding: 10px 14px;
-  }
-  
-  .floating-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
-  
-  .hero-floating-card strong {
-    font-size: 0.85rem;
-  }
-  
-  .hero-floating-card small {
-    font-size: 0.7rem;
-  }
-  
-  .section-title {
-    font-size: 1.75rem;
-  }
-  
-  .section-padding {
-    padding: 48px 0;
-  }
-  
   .product-image-container {
-    height: 200px;
-  }
-  
-  .product-image-container img {
-    max-height: 160px;
-  }
-  
-  .promo-cta-box {
-    padding: 36px 20px;
-    border-radius: var(--radius-lg);
-  }
-  
-  .promo-cta-title {
-    font-size: 1.65rem;
-  }
-  
-  .promo-cta-desc {
-    font-size: 0.95rem;
-  }
-  
-  .footer-mjd {
-    padding-top: 50px;
-  }
-  
-  .footer-widget-title {
-    margin-top: 24px;
-    margin-bottom: 14px;
-  }
-  
-  .footer-bottom {
-    margin-top: 40px;
-    text-align: center;
-  }
-  
-  .footer-bottom a {
-    display: inline-block;
-    margin: 6px 10px;
-  }
-  
-  .btn-mjd-primary, .btn-mjd-outline {
-    width: 100%;
-    justify-content: center;
+    height: 210px;
   }
 }
 
-/* ---------- SMALL SCREENS (< 480px) ---------- */
-@media (max-width: 480px) {
+/* ---------- DESKTOPS & LAPTOPS (>= 992px) ---------- */
+@media (min-width: 992px) {
+  .navbar-nav .nav-link {
+    font-size: 0.925rem;
+    padding: 8px 16px !important;
+  }
+
+  .hero-wrapper {
+    padding: 60px 0 80px;
+  }
+
+  .hero-image-wrapper img {
+    height: 480px;
+  }
+
+  .product-image-container {
+    height: 230px;
+  }
+}
+
+/* ---------- EXTRA LARGE SCREENS (>= 1200px) ---------- */
+@media (min-width: 1200px) {
+  .navbar-nav .nav-link {
+    font-size: 0.96rem;
+    padding: 9px 20px !important;
+  }
+  
   .hero-title {
-    font-size: 1.85rem;
-  }
-  
-  .brand-badge-item {
-    padding: 8px 16px;
-    font-size: 0.85rem;
-  }
-  
-  .hero-features-list {
-    flex-direction: column;
-    gap: 12px;
+    font-size: 3.85rem;
   }
 }
-

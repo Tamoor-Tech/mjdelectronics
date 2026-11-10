@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Inspection &amp; Return Terms | MJDELECTRONICS</title>
   <meta name="description" content="Customer inspection guidelines, pre-testing procedures, and return terms for MJDELECTRONICS.">
 
@@ -45,7 +45,14 @@
         <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
       </a>
 
-      <div class="collapse navbar-collapse" id="navbarMain">
+      <!-- Mobile Action Buttons -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button class="navbar-toggler-mjd" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas" aria-label="Open Navigation Menu">
+          <i class="bi bi-list fs-3"></i>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse d-none d-lg-block" id="navbarMain">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="shop.html">Shop Catalog</a></li>
@@ -57,6 +64,32 @@
       </div>
     </div>
   </nav>
+
+  <!-- MOBILE OFFCANVAS DRAWER -->
+  <div class="offcanvas offcanvas-end offcanvas-mjd" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center gap-2">
+        <div class="brand-icon-box"><i class="bi bi-tv"></i></div>
+        <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="d-flex flex-column mb-4">
+        <a href="index.html" class="mobile-nav-link"><span><i class="bi bi-house-door nav-icon"></i> Home</span><i class="bi bi-chevron-right chevron-icon"></i></a>
+        <a href="shop.html" class="mobile-nav-link"><span><i class="bi bi-grid nav-icon"></i> Shop Catalog</span><i class="bi bi-chevron-right chevron-icon"></i></a>
+        <a href="about.html" class="mobile-nav-link"><span><i class="bi bi-info-circle nav-icon"></i> About Us</span><i class="bi bi-chevron-right chevron-icon"></i></a>
+        <a href="faq.html" class="mobile-nav-link"><span><i class="bi bi-question-circle nav-icon"></i> FAQ</span><i class="bi bi-chevron-right chevron-icon"></i></a>
+        <a href="contact.html" class="mobile-nav-link"><span><i class="bi bi-envelope nav-icon"></i> Contact Us</span><i class="bi bi-chevron-right chevron-icon"></i></a>
+      </nav>
+      <div class="mobile-drawer-contact">
+        <div class="small text-muted fw-bold mb-1">Direct Contact</div>
+        <a href="tel:+17708951392" class="d-flex align-items-center gap-2 fw-bold text-dark text-decoration-none mb-1">
+          <i class="bi bi-telephone-fill text-warning"></i> +1 (770) 895-1392
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- BREADCRUMB -->
   <div class="breadcrumb-nav">
@@ -73,7 +106,7 @@
   <!-- CONTENT -->
   <section class="section-padding bg-white-section">
     <div class="container" style="max-width: 860px;">
-      <h1 class="display-6 fw-bold text-dark mb-3">Inspection &amp; Return Terms</h1>
+      <h1 class="h2 fw-bold text-dark mb-3">Inspection &amp; Return Terms</h1>
       <p class="text-muted small mb-4">Last Updated: November 2026</p>
 
       <div class="alert alert-info py-3 px-4 rounded-3 mb-4">
@@ -82,7 +115,7 @@
       </div>
 
       <div class="prose text-secondary leading-relaxed">
-        <h4 class="fw-bold text-dark mt-4 mb-2">1. In-Person Pre-Purchase Inspection</h4>
+        <h4 class="h5 fw-bold text-dark mt-4 mb-2">1. In-Person Pre-Purchase Inspection</h4>
         <p>
           At MJDELECTRONICS, we ensure that televisions are thoroughly pre-tested. When arranging local pickup in Lithia Springs, GA, customers are encouraged to inspect and verify:
         </p>
@@ -92,7 +125,7 @@
           <li>Included accessories such as remote control, power cable, and stands (where applicable).</li>
         </ul>
 
-        <h4 class="fw-bold text-dark mt-4 mb-2">2. Return &amp; Exchange Terms</h4>
+        <h4 class="h5 fw-bold text-dark mt-4 mb-2">2. Return &amp; Exchange Terms</h4>
         <p>
           Because items are inspected and approved directly by the customer during scheduled in-person pickup, sales are typically considered final upon handover, unless specifically agreed otherwise in writing between the buyer and Melvin at the time of purchase.
         </p>
@@ -100,15 +133,12 @@
           <em>(Any business-specific warranty or extended return policies remain subject to official confirmation and direct seller arrangement.)</em>
         </p>
 
-        <h4 class="fw-bold text-dark mt-4 mb-2">3. Marketplace Transactions</h4>
+        <h4 class="h5 fw-bold text-dark mt-4 mb-2">3. Marketplace Transactions</h4>
         <p>
           Purchases completed through third-party platforms (such as OfferUp or Mercari) are subject to the specific buyer protection and dispute resolution policies enforced by that respective platform.
         </p>
 
-        <h4 class="fw-bold text-dark mt-4 mb-2">4. Questions &amp; Support</h4>
-        <p>
-          If you have any questions before purchasing, or need assistance after acquiring an item, please reach out directly:
-        </p>
+        <h4 class="h5 fw-bold text-dark mt-4 mb-2">4. Questions &amp; Support</h4>
         <div class="p-3 bg-light rounded-3 border">
           <strong>MJDELECTRONICS</strong><br>
           Attn: Melvin<br>
@@ -127,6 +157,15 @@
     </div>
   </footer>
 
+  <!-- MOBILE BOTTOM DOCK -->
+  <div class="mobile-bottom-dock">
+    <a href="index.html" class="dock-item"><i class="bi bi-house-door-fill"></i><span>Home</span></a>
+    <a href="shop.html" class="dock-item"><i class="bi bi-grid-fill"></i><span>Shop</span></a>
+    <a href="tel:+17708951392" class="dock-call-btn" title="Call Melvin"><i class="bi bi-telephone-fill"></i></a>
+    <a href="faq.html" class="dock-item"><i class="bi bi-question-circle-fill"></i><span>FAQ</span></a>
+    <a href="contact.html" class="dock-item"><i class="bi bi-chat-dots-fill"></i><span>Contact</span></a>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
@@ -134,4 +173,3 @@
   </script>
 </body>
 </html>
-

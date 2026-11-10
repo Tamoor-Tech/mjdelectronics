@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Shop Electronics Catalog | MJDELECTRONICS</title>
   <meta name="description" content="Browse quality televisions from Samsung, LG, Sony, Vizio, TCL, Hisense, Philips, and Onn. Filter by brand, size, and category with local pickup in Lithia Springs, GA.">
   
@@ -38,7 +38,7 @@
         <i class="bi bi-shield-check text-warning me-1"></i> Verified Electronics
       </div>
       <div class="w-100 w-md-auto text-center text-md-end">
-        <span class="me-2">Questions or Deals?</span>
+        <span class="me-2 d-none d-sm-inline">Questions or Deals?</span>
         <a href="tel:+17708951392" class="me-3"><i class="bi bi-telephone-fill me-1"></i>+1 (770) 895-1392</a>
         <a href="mailto:melvin@mjdelectronics.net" class="d-none d-sm-inline"><i class="bi bi-envelope-fill me-1"></i>melvin@mjdelectronics.net</a>
       </div>
@@ -55,35 +55,37 @@
         <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
       </a>
 
+      <!-- Mobile Top Action Buttons -->
       <div class="d-flex align-items-center gap-2 d-lg-none">
         <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
           <i class="bi bi-search"></i>
         </button>
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bi bi-list fs-2 text-dark"></i>
+        <button class="navbar-toggler-mjd" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas" aria-label="Open Navigation Menu">
+          <i class="bi bi-list fs-3"></i>
         </button>
       </div>
 
-      <div class="collapse navbar-collapse" id="navbarMain">
+      <!-- Desktop Navbar -->
+      <div class="collapse navbar-collapse d-none d-lg-block" id="navbarMain">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="shop.html">Shop Catalog</a>
+            <a class="nav-link active" href="shop.html"><i class="bi bi-grid me-1"></i>Shop Catalog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
+            <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="faq.html">FAQ</a>
+            <a class="nav-link" href="faq.html"><i class="bi bi-question-circle me-1"></i>FAQ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.html"><i class="bi bi-envelope me-1"></i>Contact</a>
           </li>
         </ul>
 
-        <div class="d-none d-lg-flex align-items-center gap-3">
+        <div class="d-flex align-items-center gap-3">
           <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" title="Quick Search" aria-label="Search electronics">
             <i class="bi bi-search"></i>
           </button>
@@ -94,6 +96,54 @@
       </div>
     </div>
   </nav>
+
+  <!-- MOBILE OFFCANVAS DRAWER -->
+  <div class="offcanvas offcanvas-end offcanvas-mjd" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center gap-2">
+        <div class="brand-icon-box">
+          <i class="bi bi-tv"></i>
+        </div>
+        <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="small text-muted text-uppercase fw-bold mb-3" style="letter-spacing: 0.1em;">Navigation</div>
+      <nav class="d-flex flex-column mb-4">
+        <a href="index.html" class="mobile-nav-link">
+          <span><i class="bi bi-house-door nav-icon"></i> Home</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="shop.html" class="mobile-nav-link active">
+          <span><i class="bi bi-grid nav-icon"></i> Shop Catalog</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="about.html" class="mobile-nav-link">
+          <span><i class="bi bi-info-circle nav-icon"></i> About Us</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="faq.html" class="mobile-nav-link">
+          <span><i class="bi bi-question-circle nav-icon"></i> FAQ</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="contact.html" class="mobile-nav-link">
+          <span><i class="bi bi-envelope nav-icon"></i> Contact Us</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+      </nav>
+
+      <div class="mobile-drawer-contact">
+        <div class="small text-muted fw-bold mb-1">Direct Seller Line</div>
+        <a href="tel:+17708951392" class="d-flex align-items-center gap-2 fw-bold text-dark text-decoration-none mb-2">
+          <i class="bi bi-telephone-fill text-warning"></i> +1 (770) 895-1392
+        </a>
+        <a href="mailto:melvin@mjdelectronics.net" class="d-flex align-items-center gap-2 text-secondary text-decoration-none small">
+          <i class="bi bi-envelope-fill text-warning"></i> melvin@mjdelectronics.net
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- BREADCRUMB -->
   <div class="breadcrumb-nav">
@@ -108,17 +158,17 @@
   </div>
 
   <!-- PAGE HEADER -->
-  <div class="bg-light-section py-5 border-bottom">
+  <div class="bg-light-section py-4 py-md-5 border-bottom">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-8">
           <span class="section-tag"><i class="bi bi-tv"></i> Television Catalog</span>
-          <h1 class="display-5 fw-bold text-dark mb-2">Explore Quality Electronics</h1>
-          <p class="lead text-secondary mb-0">
+          <h1 class="h2 fw-bold text-dark mb-2">Explore Quality Electronics</h1>
+          <p class="text-secondary mb-0">
             Real brands, verified displays, and competitive pricing. Contact us directly to arrange pickup in Lithia Springs, GA.
           </p>
         </div>
-        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0 d-none d-sm-block">
           <div class="p-3 bg-white rounded-3 border d-inline-block text-start shadow-sm">
             <div class="small text-muted fw-bold">LOCAL PICKUP AVAILABLE</div>
             <div class="fw-bold text-dark"><i class="bi bi-geo-alt-fill text-warning me-1"></i>Lithia Springs, GA 30122</div>
@@ -131,70 +181,84 @@
   <!-- MAIN CATALOG CONTENT -->
   <section class="section-padding bg-white-section">
     <div class="container">
-      <!-- Top Filters Bar -->
-      <div class="card border mb-4 shadow-sm rounded-4">
-        <div class="card-body p-4">
-          <div class="row g-3 align-items-center">
-            <!-- Search Bar -->
-            <div class="col-12 col-md-5">
-              <div class="input-group">
-                <span class="input-group-text bg-light border-end-0"><i class="bi bi-search text-muted"></i></span>
-                <input type="text" id="shopSearchInput" class="form-control border-start-0 ps-0" placeholder="Search by model, brand, or size..." autocomplete="off">
+      <!-- Filter Toggle on Mobile -->
+      <div class="d-md-none mb-3">
+        <button class="btn btn-mjd-outline w-100 justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#shopFilterCollapse" aria-expanded="false" aria-controls="shopFilterCollapse">
+          <span><i class="bi bi-funnel-fill text-warning me-2"></i>Filter &amp; Search Displays</span>
+          <i class="bi bi-chevron-down"></i>
+        </button>
+      </div>
+
+      <!-- Filters Box (Collapsible on mobile, permanent on desktop) -->
+      <div class="collapse d-md-block" id="shopFilterCollapse">
+        <div class="card border mb-4 shadow-sm rounded-4 shop-filter-card">
+          <div class="card-body p-3 p-md-4">
+            <div class="row g-3 align-items-center">
+              <!-- Search Bar -->
+              <div class="col-12 col-md-5">
+                <div class="input-group">
+                  <span class="input-group-text bg-light border-end-0"><i class="bi bi-search text-muted"></i></span>
+                  <input type="text" id="shopSearchInput" class="form-control border-start-0 ps-0" placeholder="Search by model, brand, or size..." autocomplete="off">
+                </div>
+              </div>
+
+              <!-- Size Filter -->
+              <div class="col-6 col-md-3">
+                <select id="sizeFilterSelect" class="form-select" aria-label="Filter by Screen Size">
+                  <option value="all">All Screen Sizes</option>
+                  <option value="under-50">Under 50" (Compact)</option>
+                  <option value="50-59">50" - 58" (Mid-Size)</option>
+                  <option value="60-69">60" - 65" (Large Format)</option>
+                  <option value="70-plus">70"+ (Cinema Scale)</option>
+                </select>
+              </div>
+
+              <!-- Sort By -->
+              <div class="col-6 col-md-3">
+                <select id="sortSelect" class="form-select" aria-label="Sort Electronics">
+                  <option value="featured">Sort: Featured First</option>
+                  <option value="size-desc">Sort: Largest Screen First</option>
+                  <option value="brand">Sort: Brand (A-Z)</option>
+                  <option value="name-asc">Sort: Model (A-Z)</option>
+                  <option value="name-desc">Sort: Model (Z-A)</option>
+                </select>
+              </div>
+
+              <!-- Clear Button -->
+              <div class="col-12 col-md-1 text-md-end">
+                <button id="clearFiltersBtn" class="btn btn-outline-secondary w-100" title="Reset Filters">
+                  <i class="bi bi-arrow-counterclockwise"></i>
+                </button>
               </div>
             </div>
 
-            <!-- Size Filter -->
-            <div class="col-6 col-md-3">
-              <select id="sizeFilterSelect" class="form-select" aria-label="Filter by Screen Size">
-                <option value="all">All Screen Sizes</option>
-                <option value="under-50">Under 50" (Compact)</option>
-                <option value="50-59">50" - 58" (Mid-Size)</option>
-                <option value="60-69">60" - 65" (Large Format)</option>
-                <option value="70-plus">70"+ (Cinema Scale)</option>
-              </select>
+            <!-- Brand Buttons (Swipeable on touch screens) -->
+            <div class="mt-3 pt-3 border-top">
+              <div class="small fw-bold text-dark mb-2"><i class="bi bi-funnel-fill text-warning me-1"></i>Filter Brand:</div>
+              <div class="brand-scroll-wrapper">
+                <div class="d-flex align-items-center gap-2 width-max-content">
+                  <button class="btn btn-sm btn-outline-dark filter-brand-btn active" data-brand="all">All Brands</button>
+                  <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="Samsung">Samsung</button>
+                  <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="LG">LG</button>
+                  <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="Sony">Sony</button>
+                  <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="Vizio">Vizio</button>
+                  <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="TCL">TCL</button>
+                  <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="Hisense">Hisense</button>
+                  <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="Philips">Philips</button>
+                  <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="Onn">Onn.</button>
+                </div>
+              </div>
             </div>
 
-            <!-- Sort By -->
-            <div class="col-6 col-md-3">
-              <select id="sortSelect" class="form-select" aria-label="Sort Electronics">
-                <option value="featured">Sort: Featured First</option>
-                <option value="size-desc">Sort: Largest Screen First</option>
-                <option value="brand">Sort: Brand (A-Z)</option>
-                <option value="name-asc">Sort: Model (A-Z)</option>
-                <option value="name-desc">Sort: Model (Z-A)</option>
-              </select>
-            </div>
-
-            <!-- Clear Button -->
-            <div class="col-12 col-md-1 text-md-end">
-              <button id="clearFiltersBtn" class="btn btn-outline-secondary w-100" title="Reset Filters">
-                <i class="bi bi-arrow-counterclockwise"></i>
-              </button>
-            </div>
+            <!-- Active Filter Tags Display -->
+            <div id="activeFilterTags" class="mt-2"></div>
           </div>
-
-          <!-- Brand Buttons Quick Select -->
-          <div class="mt-4 pt-3 border-top d-flex flex-wrap align-items-center gap-2">
-            <span class="fw-bold text-dark small me-2"><i class="bi bi-funnel-fill text-warning me-1"></i>Filter Brand:</span>
-            <button class="btn btn-sm btn-outline-dark filter-brand-btn active" data-brand="all">All Brands</button>
-            <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="Samsung">Samsung</button>
-            <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="LG">LG</button>
-            <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="Sony">Sony</button>
-            <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="Vizio">Vizio</button>
-            <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="TCL">TCL</button>
-            <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="Hisense">Hisense</button>
-            <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="Philips">Philips</button>
-            <button class="btn btn-sm btn-outline-dark filter-brand-btn" data-brand="Onn">Onn.</button>
-          </div>
-
-          <!-- Active Filter Tags Display -->
-          <div id="activeFilterTags" class="mt-3"></div>
         </div>
       </div>
 
       <!-- Results Count Header -->
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <div id="productCountDisplay" class="fw-bold text-dark">
+      <div class="d-flex justify-content-between align-items-center mb-3 mb-md-4">
+        <div id="productCountDisplay" class="fw-bold text-dark small">
           Loading electronics inventory...
         </div>
         <div class="small text-muted d-none d-sm-block">
@@ -203,27 +267,8 @@
       </div>
 
       <!-- Product Cards Grid -->
-      <div class="row" id="shopProductGrid">
+      <div class="row g-3 g-md-4" id="shopProductGrid">
         <!-- Rendered by assets/js/filters.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- MARKETPLACE PROMO BANNER -->
-  <section class="section-padding-sm bg-light-section border-top">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <h3 class="fw-bold text-dark mb-2">Prefer to Shop on Marketplaces?</h3>
-          <p class="text-secondary mb-0">
-            Check out our verified active profiles on OfferUp, Facebook Marketplace, Mercari, 5Miles, and Nextdoor.
-          </p>
-        </div>
-        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-          <a href="contact.html" class="btn btn-mjd-outline">
-            <i class="bi bi-chat-dots me-2"></i>Inquire on Availability
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -231,7 +276,7 @@
   <!-- FOOTER -->
   <footer class="footer-mjd">
     <div class="container">
-      <div class="row g-5">
+      <div class="row g-4 g-lg-5">
         <div class="col-12 col-lg-4">
           <div class="footer-brand-title">MJD<span>ELECTRONICS</span></div>
           <div class="footer-tagline">Real Deals. Real Brands. Real Value.</div>
@@ -293,7 +338,7 @@
         <div>
           &copy; <span id="currentYear"></span> MJDELECTRONICS. All rights reserved.
         </div>
-        <div class="mt-2 mt-md-0">
+        <div class="mt-2 mt-md-0 text-center">
           <a href="privacy-policy.html">Privacy Policy</a>
           <a href="shipping-policy.html">Pickup &amp; Delivery Terms</a>
           <a href="return-policy.html">Inspection &amp; Return Terms</a>
@@ -302,6 +347,29 @@
       </div>
     </div>
   </footer>
+
+  <!-- MOBILE BOTTOM QUICK-ACTION DOCK -->
+  <div class="mobile-bottom-dock">
+    <a href="index.html" class="dock-item">
+      <i class="bi bi-house-door-fill"></i>
+      <span>Home</span>
+    </a>
+    <a href="shop.html" class="dock-item active">
+      <i class="bi bi-grid-fill"></i>
+      <span>Shop</span>
+    </a>
+    <a href="tel:+17708951392" class="dock-call-btn" title="Call Melvin" aria-label="Call +17708951392">
+      <i class="bi bi-telephone-fill"></i>
+    </a>
+    <a href="#" class="dock-item" data-bs-toggle="modal" data-bs-target="#searchModal">
+      <i class="bi bi-search"></i>
+      <span>Search</span>
+    </a>
+    <a href="contact.html" class="dock-item">
+      <i class="bi bi-chat-dots-fill"></i>
+      <span>Contact</span>
+    </a>
+  </div>
 
   <!-- SEARCH MODAL -->
   <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
@@ -317,11 +385,7 @@
           <input type="text" id="globalSearchInput" placeholder="Search by brand, screen size, or model..." autocomplete="off">
           <button class="search-submit-btn" aria-label="Search"><i class="bi bi-search"></i></button>
         </div>
-        <div id="globalSearchResults">
-          <div class="text-muted text-center py-4 small">
-            Start typing above to see matching televisions instantly...
-          </div>
-        </div>
+        <div id="globalSearchResults"></div>
       </div>
     </div>
   </div>
@@ -366,7 +430,6 @@
     </div>
   </div>
 
-  <!-- Back to top -->
   <button id="backToTopBtn" class="back-to-top" aria-label="Back to top">
     <i class="bi bi-arrow-up"></i>
   </button>
@@ -382,4 +445,3 @@
   </script>
 </body>
 </html>
-

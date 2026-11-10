@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Contact Us | MJDELECTRONICS</title>
   <meta name="description" content="Contact MJDELECTRONICS for current television pricing, inventory availability, and Lithia Springs, GA pickup details. Call +1 (770) 895-1392 or email melvin@mjdelectronics.net.">
 
@@ -32,7 +32,7 @@
         <i class="bi bi-shield-check text-warning me-1"></i> Customer-First Service
       </div>
       <div class="w-100 w-md-auto text-center text-md-end">
-        <span class="me-2">Call Directly:</span>
+        <span class="me-2 d-none d-sm-inline">Call Directly:</span>
         <a href="tel:+17708951392" class="me-3"><i class="bi bi-telephone-fill me-1"></i>+1 (770) 895-1392</a>
         <a href="mailto:melvin@mjdelectronics.net" class="d-none d-sm-inline"><i class="bi bi-envelope-fill me-1"></i>melvin@mjdelectronics.net</a>
       </div>
@@ -49,35 +49,37 @@
         <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
       </a>
 
+      <!-- Mobile Action Buttons -->
       <div class="d-flex align-items-center gap-2 d-lg-none">
         <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
           <i class="bi bi-search"></i>
         </button>
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bi bi-list fs-2 text-dark"></i>
+        <button class="navbar-toggler-mjd" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas" aria-label="Open Navigation Menu">
+          <i class="bi bi-list fs-3"></i>
         </button>
       </div>
 
-      <div class="collapse navbar-collapse" id="navbarMain">
+      <!-- Desktop Navbar -->
+      <div class="collapse navbar-collapse d-none d-lg-block" id="navbarMain">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="shop.html">Shop Catalog</a>
+            <a class="nav-link" href="shop.html"><i class="bi bi-grid me-1"></i>Shop Catalog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
+            <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="faq.html">FAQ</a>
+            <a class="nav-link" href="faq.html"><i class="bi bi-question-circle me-1"></i>FAQ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="contact.html">Contact</a>
+            <a class="nav-link active" href="contact.html"><i class="bi bi-envelope me-1"></i>Contact</a>
           </li>
         </ul>
 
-        <div class="d-none d-lg-flex align-items-center gap-3">
+        <div class="d-flex align-items-center gap-3">
           <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" title="Quick Search" aria-label="Search electronics">
             <i class="bi bi-search"></i>
           </button>
@@ -88,6 +90,54 @@
       </div>
     </div>
   </nav>
+
+  <!-- MOBILE OFFCANVAS DRAWER -->
+  <div class="offcanvas offcanvas-end offcanvas-mjd" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center gap-2">
+        <div class="brand-icon-box">
+          <i class="bi bi-tv"></i>
+        </div>
+        <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="small text-muted text-uppercase fw-bold mb-3" style="letter-spacing: 0.1em;">Navigation</div>
+      <nav class="d-flex flex-column mb-4">
+        <a href="index.html" class="mobile-nav-link">
+          <span><i class="bi bi-house-door nav-icon"></i> Home</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="shop.html" class="mobile-nav-link">
+          <span><i class="bi bi-grid nav-icon"></i> Shop Catalog</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="about.html" class="mobile-nav-link">
+          <span><i class="bi bi-info-circle nav-icon"></i> About Us</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="faq.html" class="mobile-nav-link">
+          <span><i class="bi bi-question-circle nav-icon"></i> FAQ</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="contact.html" class="mobile-nav-link active">
+          <span><i class="bi bi-envelope nav-icon"></i> Contact Us</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+      </nav>
+
+      <div class="mobile-drawer-contact">
+        <div class="small text-muted fw-bold mb-1">Direct Seller Line</div>
+        <a href="tel:+17708951392" class="d-flex align-items-center gap-2 fw-bold text-dark text-decoration-none mb-2">
+          <i class="bi bi-telephone-fill text-warning"></i> +1 (770) 895-1392
+        </a>
+        <a href="mailto:melvin@mjdelectronics.net" class="d-flex align-items-center gap-2 text-secondary text-decoration-none small">
+          <i class="bi bi-envelope-fill text-warning"></i> melvin@mjdelectronics.net
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- BREADCRUMB -->
   <div class="breadcrumb-nav">
@@ -105,8 +155,8 @@
   <section class="section-padding-sm bg-light-section border-bottom">
     <div class="container text-center">
       <span class="section-tag"><i class="bi bi-chat-dots-fill"></i> Get In Touch</span>
-      <h1 class="display-5 fw-bold text-dark mb-3">Contact MJDELECTRONICS</h1>
-      <p class="lead text-secondary max-w-md mx-auto mb-0" style="max-width: 650px;">
+      <h1 class="h2 fw-bold text-dark mb-2">Contact MJDELECTRONICS</h1>
+      <p class="text-secondary max-w-md mx-auto mb-0" style="max-width: 650px;">
         Have a question regarding available screen sizes, wish to confirm negotiable deal pricing, or arrange a convenient pickup time? Reach out directly to Melvin.
       </p>
     </div>
@@ -115,14 +165,14 @@
   <!-- MAIN CONTACT CONTENT -->
   <section class="section-padding bg-white-section">
     <div class="container">
-      <div class="row g-5">
+      <div class="row g-4 g-lg-5">
         <!-- Contact Information Cards Column -->
         <div class="col-lg-5">
-          <h3 class="fw-bold text-dark mb-4">Direct Contact Details</h3>
+          <h3 class="h4 fw-bold text-dark mb-3 mb-md-4">Direct Contact Details</h3>
 
           <div class="d-flex flex-column gap-3 mb-4">
             <!-- Telephone -->
-            <div class="p-4 bg-light rounded-4 border">
+            <div class="p-3 p-md-4 bg-light rounded-4 border">
               <div class="d-flex align-items-center gap-3 mb-2">
                 <div class="contact-card-icon">
                   <i class="bi bi-telephone-outbound-fill"></i>
@@ -142,14 +192,14 @@
             </div>
 
             <!-- Email -->
-            <div class="p-4 bg-light rounded-4 border">
+            <div class="p-3 p-md-4 bg-light rounded-4 border">
               <div class="d-flex align-items-center gap-3 mb-2">
                 <div class="contact-card-icon">
                   <i class="bi bi-envelope-fill"></i>
                 </div>
                 <div>
                   <span class="small text-muted text-uppercase fw-bold">Official Email</span>
-                  <div class="h5 fw-bold mb-0">
+                  <div class="h5 fw-bold mb-0 text-break">
                     <a href="mailto:melvin@mjdelectronics.net" class="text-dark text-decoration-none">
                       melvin@mjdelectronics.net
                     </a>
@@ -162,7 +212,7 @@
             </div>
 
             <!-- Address -->
-            <div class="p-4 bg-light rounded-4 border">
+            <div class="p-3 p-md-4 bg-light rounded-4 border">
               <div class="d-flex align-items-center gap-3 mb-2">
                 <div class="contact-card-icon">
                   <i class="bi bi-geo-alt-fill"></i>
@@ -182,7 +232,7 @@
           </div>
 
           <!-- FAQ Helper Box -->
-          <div class="p-4 bg-light-orange rounded-4 border border-warning">
+          <div class="p-3 p-md-4 bg-light-orange rounded-4 border border-warning">
             <h6 class="fw-bold text-dark mb-2"><i class="bi bi-question-circle-fill text-warning me-2"></i>Frequently Asked Questions</h6>
             <p class="small text-secondary mb-3">
               Looking for quick details on payment arrangements, item testing, or pickup availability?
@@ -195,9 +245,9 @@
 
         <!-- Contact Form Column -->
         <div class="col-lg-7">
-          <div class="p-4 p-md-5 bg-white rounded-4 border shadow-sm">
-            <h3 class="fw-bold text-dark mb-2">Send an Inquiry</h3>
-            <p class="text-secondary mb-4">
+          <div class="p-3 p-md-5 bg-white rounded-4 border shadow-sm">
+            <h3 class="h4 fw-bold text-dark mb-2">Send an Inquiry</h3>
+            <p class="text-secondary small mb-4">
               Fill out the details below. Our contact handler will validate your inquiry and facilitate instant communication with Melvin.
             </p>
 
@@ -222,7 +272,7 @@
 
                 <div class="col-12">
                   <label for="contactMessage" class="form-label-mjd">Message &amp; Inquiry Details *</label>
-                  <textarea id="contactMessage" class="form-control-mjd" rows="5" placeholder="Let us know which brand, size, or price question you have, or when you are hoping to arrange local pickup in Lithia Springs..." required></textarea>
+                  <textarea id="contactMessage" class="form-control-mjd" rows="4" placeholder="Let us know which brand, size, or price question you have, or when you are hoping to arrange local pickup in Lithia Springs..." required></textarea>
                 </div>
 
                 <div class="col-12">
@@ -250,7 +300,7 @@
   <!-- FOOTER -->
   <footer class="footer-mjd">
     <div class="container">
-      <div class="row g-5">
+      <div class="row g-4 g-lg-5">
         <div class="col-12 col-lg-4">
           <div class="footer-brand-title">MJD<span>ELECTRONICS</span></div>
           <div class="footer-tagline">Real Deals. Real Brands. Real Value.</div>
@@ -312,7 +362,7 @@
         <div>
           &copy; <span id="currentYear"></span> MJDELECTRONICS. All rights reserved.
         </div>
-        <div class="mt-2 mt-md-0">
+        <div class="mt-2 mt-md-0 text-center">
           <a href="privacy-policy.html">Privacy Policy</a>
           <a href="shipping-policy.html">Pickup &amp; Delivery Terms</a>
           <a href="return-policy.html">Inspection &amp; Return Terms</a>
@@ -321,6 +371,29 @@
       </div>
     </div>
   </footer>
+
+  <!-- MOBILE BOTTOM QUICK-ACTION DOCK -->
+  <div class="mobile-bottom-dock">
+    <a href="index.html" class="dock-item">
+      <i class="bi bi-house-door-fill"></i>
+      <span>Home</span>
+    </a>
+    <a href="shop.html" class="dock-item">
+      <i class="bi bi-grid-fill"></i>
+      <span>Shop</span>
+    </a>
+    <a href="tel:+17708951392" class="dock-call-btn" title="Call Melvin" aria-label="Call +17708951392">
+      <i class="bi bi-telephone-fill"></i>
+    </a>
+    <a href="#" class="dock-item" data-bs-toggle="modal" data-bs-target="#searchModal">
+      <i class="bi bi-search"></i>
+      <span>Search</span>
+    </a>
+    <a href="contact.html" class="dock-item active">
+      <i class="bi bi-chat-dots-fill"></i>
+      <span>Contact</span>
+    </a>
+  </div>
 
   <!-- SEARCH MODAL -->
   <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
@@ -355,4 +428,3 @@
   </script>
 </body>
 </html>
-

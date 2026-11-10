@@ -1,14 +1,14 @@
 /**
- * MJDELECTRONICS - Main Global Scripts
+ * MJDELECTRONICS - Main Global Scripts (Mobile-First Enhanced)
  * Brand: MJDELECTRONICS | "Real Deals. Real Brands. Real Value."
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Sticky Navbar Effect
+  // 1. Sticky Navbar Transition
   const navbar = document.querySelector('.navbar-mjd');
   if (navbar) {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
+      if (window.scrollY > 30) {
         navbar.classList.add('is-scrolled');
       } else {
         navbar.classList.remove('is-scrolled');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
   }
 
-  // 2. Scroll Reveal Animations with IntersectionObserver
+  // 2. Hardware-Accelerated Scroll Reveal Animations
   const revealElements = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealElements.length > 0) {
     const observer = new IntersectionObserver((entries, obs) => {
@@ -30,21 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, {
       root: null,
-      rootMargin: '0px 0px -40px 0px',
-      threshold: 0.1
+      rootMargin: '0px 0px -30px 0px',
+      threshold: 0.08
     });
 
     revealElements.forEach(el => observer.observe(el));
   } else {
-    // Fallback if IntersectionObserver unsupported
     revealElements.forEach(el => el.classList.add('is-visible'));
   }
 
-  // 3. Back To Top Button
+  // 3. Back To Top Floating Action Button
   const backToTopBtn = document.getElementById('backToTopBtn');
   if (backToTopBtn) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 350) {
         backToTopBtn.classList.add('show');
       } else {
         backToTopBtn.classList.remove('show');
@@ -59,8 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Highlight Active Navigation Link
+  // 4. Highlight Active Navigation Link (Desktop & Mobile Drawer & Bottom Dock)
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  
+  // Desktop Nav Links
   document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
@@ -68,19 +69,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 5. Setup Quick Search Modal handler if present
+  // Mobile Drawer Links
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
+
+  // Mobile Bottom Dock Links
+  document.querySelectorAll('.mobile-bottom-dock .dock-item').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
+
+  // 5. Setup Quick Search Modal handler
   setupGlobalSearch();
 
-  // 6. Mobile Menu Auto-Close on click
-  const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
-  const navbarCollapse = document.querySelector('.navbar-collapse');
-  if (navbarCollapse && window.bootstrap) {
-    navLinks.forEach(link => {
+  // 6. Mobile Offcanvas Auto-Close when clicking any link
+  const offcanvasEl = document.getElementById('mobileNavOffcanvas');
+  if (offcanvasEl && window.bootstrap && bootstrap.Offcanvas) {
+    const drawerLinks = offcanvasEl.querySelectorAll('a');
+    drawerLinks.forEach(link => {
       link.addEventListener('click', () => {
-        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-        if (bsCollapse && window.innerWidth < 992) {
-          bsCollapse.hide();
-        }
+        const instance = bootstrap.Offcanvas.getInstance(offcanvasEl);
+        if (instance) instance.hide();
       });
     });
   }
@@ -90,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function openInquiryModal(productId) {
   const modalEl = document.getElementById('inquiryModal');
   if (!modalEl) {
-    // If not on a page with modal, redirect to contact with param
     window.location.href = `contact.html?inquiry=${encodeURIComponent(productId)}`;
     return;
   }
@@ -179,4 +193,3 @@ function setupGlobalSearch() {
     `;
   });
 }
-
