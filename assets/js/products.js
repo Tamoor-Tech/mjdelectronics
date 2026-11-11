@@ -149,7 +149,7 @@ const MJD_PRODUCTS = [
       display: "Smart Digital Power Display Screen",
       compatibility: "Laptops, Tablets, Phones & Handheld Consoles"
     },
-    image: "https://images.unsplash.com/photo-1609592424367-62fecbba9d73?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=800&q=80",
     description: "High-capacity Anker USB-C portable power bank equipped with active temperature monitoring and ultra-fast charging capabilities for mobile devices."
   },
   {
@@ -168,7 +168,7 @@ const MJD_PRODUCTS = [
       formFactor: "Ultra-Slim Rubberized Grip Shell",
       protection: "QuickChip Temperature & Surge Regulation"
     },
-    image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=800&q=80",
     description: "Ultra-slim, high-speed pocket-friendly power bank designed for daily commute, travel, and reliable mobile backup power."
   },
   {
@@ -187,7 +187,7 @@ const MJD_PRODUCTS = [
       size: "70% Smaller than standard wall plugs",
       safety: "ActiveShield 2.0 Dynamic Temp Sensor"
     },
-    image: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?auto=format&fit=crop&w=800&q=80",
     description: "Compact Anker GaN fast wall charger paired with durable braided cables engineered for ultra-fast, cool device charging."
   },
 
@@ -208,7 +208,7 @@ const MJD_PRODUCTS = [
       gestures: "Double Tap Gesture Control",
       health: "ECG, Blood Oxygen, Sleep Tracking & Crash Detection"
     },
-    image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=800&q=80",
     description: "Powerful everyday smartwatch with breakthrough health metrics, double-tap gesture control, and brighter Always-On display."
   },
   {
@@ -227,7 +227,7 @@ const MJD_PRODUCTS = [
       health: "Advanced Sleep Coaching, BIA Sensor & ECG",
       battery: "Up to 40 Hours Fast Charge"
     },
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=800&q=80",
     description: "Timeless stainless steel smartwatch with rotating bezel, personalized health insights, and comprehensive fitness tracking."
   },
 
@@ -248,7 +248,7 @@ const MJD_PRODUCTS = [
       camera: "48MP Main with 5x Telephoto Optical Zoom",
       body: "Aerospace-Grade Titanium with USB-C Connector"
     },
-    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=800&q=80",
     description: "Flagship Apple titanium smartphone featuring the breakthrough A17 Pro chip, versatile pro camera system, and USB-C speed."
   },
   {
@@ -267,7 +267,7 @@ const MJD_PRODUCTS = [
       stylus: "Built-in S Pen Stylus",
       camera: "200MP Quad Telephoto with Galaxy AI Search"
     },
-    image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1610945264803-c22b62831454?auto=format&fit=crop&w=800&q=80",
     description: "Industry-defining Samsung Android flagship with built-in S Pen, Titanium frame, Galaxy AI live translate and pro camera zoom."
   },
 
@@ -328,7 +328,7 @@ const MJD_PRODUCTS = [
       durability: "IPX4 Sweat and Water Resistant",
       case: "Lightning / USB-C Compatible Charging Case"
     },
-    image: "https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1588423771073-b8903febb85d?auto=format&fit=crop&w=800&q=80",
     description: "Classic Apple AirPods engineered with spatial audio, extended talk time, and intuitive tap and force controls."
   },
   {
@@ -408,7 +408,7 @@ const MJD_PRODUCTS = [
       weather: "Weather-Resistant Build for Outdoor Rain & Sun",
       smart: "Custom Motion Detection & Two-Way Audio Talk"
     },
-    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
     description: "Wireless battery-powered smart home security camera system that helps monitor your home day or night in 1080p HD."
   },
   {
@@ -427,7 +427,7 @@ const MJD_PRODUCTS = [
       audio: "Two-Way Audio Talk via Integrated Speaker/Mic",
       storage: "MicroSD Card Slot & Optional Cloud Recording"
     },
-    image: "https://images.unsplash.com/photo-1589739900266-43b2843f4c12?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1585060544812-6b45742d762f?auto=format&fit=crop&w=800&q=80",
     description: "Easy plug-and-play indoor smart camera with night vision, motion sensor alerts, and crystal-clear smartphone monitoring."
   },
 
@@ -448,7 +448,7 @@ const MJD_PRODUCTS = [
       battery: "Standard Replaceable CR2032 Battery (1+ Year Life)",
       durability: "IP67 Water and Dust Resistant Rating"
     },
-    image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1612198527572-c0a71fe37012?auto=format&fit=crop&w=800&q=80",
     description: "Keep track of keys, wallet, luggage, and backpacks effortlessly in the Apple Find My app with precision finding."
   },
   {
@@ -526,7 +526,7 @@ const MJD_PRODUCTS = [
       battery: "Up to 10 Weeks Battery on Single USB-C Charge",
       waterproof: "IPX8 Waterproof Protection for Pool & Bath"
     },
-    image: "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1592503254549-d83d24a4dfab?auto=format&fit=crop&w=800&q=80",
     description: "Purpose-built digital e-reader with 300 ppi glare-free display that reads like real paper even in direct sunlight."
   },
 
@@ -566,7 +566,7 @@ const MJD_PRODUCTS = [
       remote: "Alexa Voice Remote with TV Power & Volume Controls",
       audio: "Dolby Atmos Immersive Audio Pass-Through"
     },
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1601944177325-f8867652837f?auto=format&fit=crop&w=800&q=80",
     description: "Elevate entertainment with 4K streaming, AI-powered content search, Dolby Vision support, and Alexa voice navigation."
   },
   {
@@ -585,7 +585,7 @@ const MJD_PRODUCTS = [
       remote: "Voice Remote with TV Controls & Headphone Listening",
       channels: "Access to Thousands of Free and Premium Channels"
     },
-    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
     description: "Portable 4K streaming stick that plugs directly behind your TV for clutter-free access to all popular streaming platforms."
   },
   {
@@ -664,7 +664,7 @@ const MJD_PRODUCTS = [
       rotation: "360-Degree Phone Holder for Vertical & Horizontal",
       weight: "Ultra-Lightweight Foldable Pocket Size"
     },
-    image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1484807352052-23338990c6c6?auto=format&fit=crop&w=800&q=80",
     description: "TikTok viral extendable selfie stick that converts into a stable tabletop tripod with wireless Bluetooth remote control."
   },
   {
@@ -684,7 +684,7 @@ const MJD_PRODUCTS = [
       universal: "Works with all smartphone cases via lanyard hole",
       length: "Comfortable Wrist Drop Loop"
     },
-    image: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=800&q=80",
     description: "Trending colorful wristlet charms that secure your smartphone against drops while adding personality to your device."
   },
   {
@@ -704,7 +704,7 @@ const MJD_PRODUCTS = [
       mount: "2-in-1 Adjustable Clamp for Phones & Mini Tablets",
       stability: "Anti-Slip Foot Grips for Uneven Surfaces"
     },
-    image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=800&q=80",
     description: "Bendable tripod legs wrap around poles, railings, or stand firmly on desktops for filming TikTok videos and vlogs."
   },
   {
@@ -744,7 +744,7 @@ const MJD_PRODUCTS = [
       clarity: "99.99% HD Transparency with 3D Touch Sensitivity",
       alignment: "Includes Auto-Align Installation Frame"
     },
-    image: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1601933485593-28d7a35a3b9d?auto=format&fit=crop&w=800&q=80",
     description: "Ultra-tough 9H tempered glass screen protection engineered to defend your smartphone display from daily drops and keys."
   },
   {
@@ -764,7 +764,7 @@ const MJD_PRODUCTS = [
       controls: "In-line Remote for Volume, Calls & Track Skip",
       cable: "Tangle-Free TPE Reinforced Flexible Cord"
     },
-    image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=800&q=80",
     description: "Reliable, comfortable in-ear headphones delivering crisp acoustics, clear call voice pickup, and zero-latency audio."
   },
   {
@@ -784,7 +784,7 @@ const MJD_PRODUCTS = [
       thickness: "Only 0.45\" Slim Pocket-Sized Profile",
       led: "Multi-Segment Battery Level Indicator"
     },
-    image: "https://images.unsplash.com/photo-1509741102003-ca64bfe5f069?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=800&q=80",
     description: "Viral magnetic snap-on wireless power bank that latches seamlessly to the back of your phone for cord-free battery boost."
   },
   {
@@ -804,7 +804,7 @@ const MJD_PRODUCTS = [
       cutout: "Reserved Charging Cable Pass-Through Port",
       padding: "Anti-Scratch Silicone Cushions on Hooks & Base"
     },
-    image: "https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1583394293214-fb2d9e08c0ef?auto=format&fit=crop&w=800&q=80",
     description: "Solid aluminum folding phone and tablet stand ideal for FaceTime calls, watching TikToks, and desktop productivity."
   },
   {
@@ -824,7 +824,7 @@ const MJD_PRODUCTS = [
       ring: "Embedded N52 Strong Magnetic Attraction Ring",
       bezels: "1.2mm Raised Screen Edge & 0.8mm Camera Lip"
     },
-    image: "https://images.unsplash.com/photo-1541877944-ac82a091518a?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=800&q=80",
     description: "Matte shockproof protective case combining sleek translucent styling with full magnetic wireless charger compatibility."
   },
   {
@@ -844,7 +844,7 @@ const MJD_PRODUCTS = [
       power: "USB Powered (Plugs into PC, Wall Adapter or Power Bank)",
       remote: "Wireless Remote Controller for Color, Brightness & Modes"
     },
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80",
     description: "Complete TikTok and content creator lighting kit with RGB color-changing ring light, phone holder, and extendable tripod."
   },
 
@@ -884,7 +884,7 @@ const MJD_PRODUCTS = [
       smart: "LG webOS Smart Streaming Hub",
       hdr: "Active HDR, HDR10 Pro, HLG"
     },
-    image: "https://images.unsplash.com/photo-1461151304267-38535e780c79?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1558888401-3cc1de77652d?auto=format&fit=crop&w=800&q=80",
     description: "Cinematic picture clarity featuring quad-core processing, AI Sound optimization, and the smooth webOS platform."
   }
 ];
