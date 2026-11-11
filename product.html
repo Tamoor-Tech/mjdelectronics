@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Product Details | MJDELECTRONICS</title>
-  <meta name="description" content="View specifications, screen size, resolution, and availability inquiry for this quality television at MJDELECTRONICS.">
+  <meta name="description" content="View specifications, condition, and WhatsApp availability inquiry for authentic brand electronics at MJDELECTRONICS.">
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,15 +29,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: clamp(240px, 40vw, 380px);
+      min-height: clamp(260px, 40vw, 420px);
       position: relative;
     }
     .product-gallery-main img {
-      max-height: clamp(200px, 35vw, 340px);
+      max-height: clamp(220px, 35vw, 360px);
       max-width: 95%;
       width: auto;
       height: auto;
       object-fit: contain;
+      transition: transform var(--transition-smooth);
     }
     .thumb-strip {
       display: flex;
@@ -48,9 +49,9 @@
       padding-bottom: 4px;
     }
     .thumb-btn {
-      width: 68px;
-      height: 68px;
-      min-width: 68px;
+      width: 72px;
+      height: 72px;
+      min-width: 72px;
       border-radius: var(--radius-md);
       border: 2px solid var(--border-grey);
       background: #F9FAFB;
@@ -62,44 +63,47 @@
       transition: all var(--transition-fast);
     }
     .thumb-btn.active, .thumb-btn:hover {
-      border-color: var(--primary-orange);
-      box-shadow: 0 0 0 2px var(--light-orange);
+      border-color: var(--primary-red);
+      box-shadow: 0 0 0 2px var(--light-red);
     }
     .thumb-btn img {
       max-height: 100%;
+      max-width: 100%;
       object-fit: contain;
     }
     .spec-table th {
-      width: 38%;
+      width: 40%;
       font-weight: 700;
       color: var(--charcoal);
       background: var(--section-grey);
       font-size: 0.88rem;
       border-color: var(--border-grey);
-      padding: 10px 12px;
+      padding: 10px 14px;
     }
     .spec-table td {
       font-size: 0.88rem;
       color: var(--secondary-text);
       border-color: var(--border-grey);
-      padding: 10px 12px;
+      padding: 10px 14px;
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP NOTICE BAR -->
+  <!-- TOP NOTICE BAR (AMERICAN RETAIL RED) -->
   <div class="top-notice-bar">
     <div class="container d-flex flex-wrap align-items-center justify-content-between">
       <div class="d-none d-md-block">
-        <i class="bi bi-geo-alt-fill text-warning me-1"></i> Lithia Springs, GA 30122
+        <i class="bi bi-geo-alt-fill me-1"></i> Lithia Springs, GA 30122
         <span class="bullet-dot"></span>
-        <i class="bi bi-shield-check text-warning me-1"></i> Pre-Tested Electronics
+        <i class="bi bi-shield-check me-1"></i> Pre-Tested Electronics
+        <span class="bullet-dot"></span>
+        <i class="bi bi-tag-fill me-1"></i> Direct Retail Value
       </div>
       <div class="w-100 w-md-auto text-center text-md-end">
-        <span class="me-2 d-none d-sm-inline">Direct Questions?</span>
+        <span class="me-2 d-none d-sm-inline">Direct Inquiries:</span>
         <a href="tel:+17708951392" class="me-3"><i class="bi bi-telephone-fill me-1"></i>+1 (770) 895-1392</a>
-        <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20available%20electronics%20and%20current%20deals." class="me-3 text-success fw-bold text-decoration-none" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
+        <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20available%20electronics%20and%20current%20deals." class="me-3 text-white fw-bold" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
         <a href="mailto:melvin@mjdelectronics.net" class="d-none d-sm-inline"><i class="bi bi-envelope-fill me-1"></i>melvin@mjdelectronics.net</a>
       </div>
     </div>
@@ -108,11 +112,14 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-mjd">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
         <div class="brand-icon-box">
-          <i class="bi bi-tv"></i>
+          <i class="bi bi-lightning-charge-fill"></i>
         </div>
-        <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+        <div>
+          <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+          <div class="brand-tagline-sub d-none d-sm-block">Real Deals. Real Brands. Real Value.</div>
+        </div>
       </a>
 
       <!-- Mobile Top Action Buttons -->
@@ -120,6 +127,9 @@
         <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
           <i class="bi bi-search"></i>
         </button>
+        <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20would%20like%20to%20inquire%20about%20your%20available%20products." class="nav-action-btn text-success" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Inquiry">
+          <i class="bi bi-whatsapp"></i>
+        </a>
         <button class="navbar-toggler-mjd" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas" aria-label="Open Navigation Menu">
           <i class="bi bi-list fs-3"></i>
         </button>
@@ -132,7 +142,10 @@
             <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="shop.html"><i class="bi bi-grid me-1"></i>Shop Catalog</a>
+            <a class="nav-link active" href="shop.html"><i class="bi bi-grid me-1"></i>Shop All Electronics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shop.html?trending=true"><i class="bi bi-fire text-danger me-1"></i>Trending Tech</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>About Us</a>
@@ -162,9 +175,12 @@
     <div class="offcanvas-header">
       <div class="d-flex align-items-center gap-2">
         <div class="brand-icon-box">
-          <i class="bi bi-tv"></i>
+          <i class="bi bi-lightning-charge-fill"></i>
         </div>
-        <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+        <div>
+          <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+          <div class="small text-muted">Real Deals. Real Brands. Real Value.</div>
+        </div>
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
@@ -176,7 +192,11 @@
           <i class="bi bi-chevron-right chevron-icon"></i>
         </a>
         <a href="shop.html" class="mobile-nav-link active">
-          <span><i class="bi bi-grid nav-icon"></i> Shop Catalog</span>
+          <span><i class="bi bi-grid nav-icon"></i> Shop All Electronics</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="shop.html?trending=true" class="mobile-nav-link text-danger fw-bold">
+          <span><i class="bi bi-fire nav-icon text-danger"></i> Trending Tech &amp; TikTok Viral</span>
           <i class="bi bi-chevron-right chevron-icon"></i>
         </a>
         <a href="about.html" class="mobile-nav-link">
@@ -194,12 +214,15 @@
       </nav>
 
       <div class="mobile-drawer-contact">
-        <div class="small text-muted fw-bold mb-1">Direct Seller Line</div>
+        <div class="small text-muted fw-bold mb-2">Direct Melvin Line</div>
+        <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20would%20like%20to%20inquire%20about%20your%20available%20electronics." class="btn btn-success w-100 mb-2 fw-bold text-white justify-content-center" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-whatsapp me-2"></i> Inquire on WhatsApp
+        </a>
         <a href="tel:+17708951392" class="d-flex align-items-center gap-2 fw-bold text-dark text-decoration-none mb-2">
-          <i class="bi bi-telephone-fill text-warning"></i> +1 (770) 895-1392
+          <i class="bi bi-telephone-fill text-danger"></i> +1 (770) 895-1392
         </a>
         <a href="mailto:melvin@mjdelectronics.net" class="d-flex align-items-center gap-2 text-secondary text-decoration-none small">
-          <i class="bi bi-envelope-fill text-warning"></i> melvin@mjdelectronics.net
+          <i class="bi bi-envelope-fill text-danger"></i> melvin@mjdelectronics.net
         </a>
       </div>
     </div>
@@ -212,7 +235,7 @@
         <ol class="breadcrumb mb-0">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item"><a href="shop.html">Shop Catalog</a></li>
-          <li class="breadcrumb-item active text-truncate" id="breadcrumbProductTitle" aria-current="page" style="max-width: 200px;">Product Details</li>
+          <li class="breadcrumb-item active text-truncate" id="breadcrumbProductTitle" aria-current="page" style="max-width: 260px;">Product Details</li>
         </ol>
       </nav>
     </div>
@@ -231,12 +254,12 @@
 
           <!-- Feature checklist -->
           <div class="p-3 p-md-4 bg-light rounded-4 border mt-4">
-            <h6 class="fw-bold text-dark mb-3"><i class="bi bi-shield-check text-warning me-2"></i>MJDELECTRONICS Quality Checklist</h6>
+            <h6 class="fw-bold text-dark mb-3"><i class="bi bi-shield-check text-danger me-2"></i>MJDELECTRONICS Quality Checklist</h6>
             <div class="row g-2 small text-secondary">
-              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Display &amp; Backlight Tested</div>
-              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>All HDMI/USB Ports Verified</div>
-              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Built-in Audio &amp; Speakers Checked</div>
-              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Ready for Local Pickup in GA</div>
+              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Pre-Tested Hardware &amp; Backlight</div>
+              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>All Ports &amp; Wireless Connectivity Verified</div>
+              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Authentic Brand &amp; Clean Serial</div>
+              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Ready for Local Pickup in Lithia Springs, GA</div>
             </div>
           </div>
         </div>
@@ -245,7 +268,7 @@
         <div class="col-lg-6">
           <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
             <span class="badge bg-dark px-3 py-2" id="detailBrandBadge">Brand</span>
-            <span class="badge bg-light text-warning border px-3 py-2 fw-bold" id="detailConditionBadge">Inspected</span>
+            <span class="badge bg-light text-danger border px-3 py-2 fw-bold" id="detailConditionBadge">Inspected</span>
             <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 fw-bold" id="detailStockBadge">
               <i class="bi bi-check-circle-fill me-1"></i>Available for Pickup
             </span>
@@ -256,10 +279,10 @@
           <div class="p-3 bg-light rounded-3 border mb-4 d-flex align-items-center justify-content-between">
             <div>
               <span class="text-muted small text-uppercase fw-bold d-block">Pricing Status</span>
-              <span class="h4 fw-bold text-primary-orange mb-0" id="detailPrice">Contact for Current Price</span>
+              <span class="h4 fw-bold text-danger mb-0" id="detailPrice">Contact for Current Price</span>
             </div>
             <div class="text-end">
-              <span class="badge bg-warning text-dark"><i class="bi bi-tag-fill me-1"></i>Deals Available</span>
+              <span class="badge bg-danger text-white"><i class="bi bi-tag-fill me-1"></i>Deals Available</span>
             </div>
           </div>
 
@@ -267,43 +290,12 @@
             Loading verified product details...
           </p>
 
-          <!-- Specifications Table -->
-          <h5 class="fw-bold text-dark mb-3"><i class="bi bi-sliders text-warning me-2"></i>Verified Specifications</h5>
+          <!-- Specifications Table (Dynamically Populated) -->
+          <h5 class="fw-bold text-dark mb-3"><i class="bi bi-sliders text-danger me-2"></i>Verified Specifications</h5>
           <div class="table-responsive mb-4">
             <table class="table table-bordered spec-table mb-0">
-              <tbody>
-                <tr>
-                  <th>Brand Manufacturer</th>
-                  <td id="specBrand">-</td>
-                </tr>
-                <tr>
-                  <th>Screen Diagonal Size</th>
-                  <td id="specSize">-</td>
-                </tr>
-                <tr>
-                  <th>Native Resolution</th>
-                  <td id="specResolution">-</td>
-                </tr>
-                <tr>
-                  <th>Display Panel Tech</th>
-                  <td id="specDisplay">-</td>
-                </tr>
-                <tr>
-                  <th>Refresh / Motion Rate</th>
-                  <td id="specRefresh">-</td>
-                </tr>
-                <tr>
-                  <th>Smart Streaming OS</th>
-                  <td id="specSmart">-</td>
-                </tr>
-                <tr>
-                  <th>HDR Support</th>
-                  <td id="specHdr">-</td>
-                </tr>
-                <tr>
-                  <th>Input / Output Ports</th>
-                  <td id="specPorts">-</td>
-                </tr>
+              <tbody id="dynamicSpecBody">
+                <!-- Dynamically generated rows based on product data -->
               </tbody>
             </table>
           </div>
@@ -325,8 +317,8 @@
 
           <!-- Pickup notes -->
           <div class="mt-4 pt-3 border-top small text-muted">
-            <i class="bi bi-info-circle me-1"></i>
-            Pickup location: <strong>Lithia Springs, GA 30122</strong>. Flexible pickup times arranged upon direct inquiry.
+            <i class="bi bi-geo-alt-fill text-danger me-1"></i>
+            Pickup location: <strong>PO BOX 1805, Lithia Springs, GA 30122</strong>. Inquire on WhatsApp to confirm timing.
           </div>
         </div>
       </div>
@@ -335,8 +327,8 @@
       <div class="mt-5 pt-4 border-top">
         <div class="d-flex justify-content-between align-items-center mb-4">
           <div>
-            <span class="section-tag"><i class="bi bi-grid"></i> More Selections</span>
-            <h3 class="h4 fw-bold text-dark mb-0">Related Television Deals</h3>
+            <span class="section-tag"><i class="bi bi-grid-3x3-gap-fill text-danger me-1"></i> More Selections</span>
+            <h3 class="h4 fw-bold text-dark mb-0">Related Electronics Deals</h3>
           </div>
           <a href="shop.html" class="btn-mjd-outline-orange btn-sm">
             Explore All <i class="bi bi-arrow-right ms-1"></i>
@@ -355,30 +347,39 @@
           <div class="footer-brand-title">MJD<span>ELECTRONICS</span></div>
           <div class="footer-tagline">Real Deals. Real Brands. Real Value.</div>
           <p class="footer-desc">
-            MJDELECTRONICS is an electronics retail business focused on providing customers with quality televisions and electronics from recognized brands at competitive prices.
+            MJDELECTRONICS is an electronics retail business focused on providing customers with quality televisions and electronics from recognized brands at competitive prices in Lithia Springs, GA.
           </p>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-2">
-          <h4 class="footer-widget-title">Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
-            <li><a href="shop.html"><i class="bi bi-chevron-right"></i> Shop Catalog</a></li>
-            <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
-            <li><a href="faq.html"><i class="bi bi-chevron-right"></i> FAQ</a></li>
-            <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
-          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge bg-dark border border-secondary text-light p-2"><i class="bi bi-patch-check text-danger me-1"></i>Pre-Tested Tech</span>
+            <span class="badge bg-dark border border-secondary text-light p-2"><i class="bi bi-geo-alt text-danger me-1"></i>Lithia Springs, GA</span>
+          </div>
         </div>
 
         <div class="col-6 col-md-4 col-lg-3">
+          <h4 class="footer-widget-title">Shopping Categories</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=Cables%2C%20Chargers%20%26%20Power%20Adapters"><i class="bi bi-chevron-right"></i> Cables &amp; Chargers</a></li>
+            <li><a href="shop.html?category=Smartwatches"><i class="bi bi-chevron-right"></i> Smartwatches</a></li>
+            <li><a href="shop.html?category=Smartphones%20%26%20Flagship%20Handsets"><i class="bi bi-chevron-right"></i> Smartphones</a></li>
+            <li><a href="shop.html?category=Laptops%20%26%20MacBooks"><i class="bi bi-chevron-right"></i> Laptops &amp; MacBooks</a></li>
+            <li><a href="shop.html?category=Wireless%20Headphones%20%26%20Earbuds"><i class="bi bi-chevron-right"></i> Headphones &amp; Audio</a></li>
+            <li><a href="shop.html?category=Video%20Gaming%20Consoles%20%26%20Retro%20Systems"><i class="bi bi-chevron-right"></i> Gaming Consoles</a></li>
+            <li><a href="shop.html?category=Tablets%20%26%20iPads"><i class="bi bi-chevron-right"></i> Tablets &amp; iPads</a></li>
+            <li><a href="shop.html?category=Home%20Audio%20%26%20Soundbars"><i class="bi bi-chevron-right"></i> Smart TVs &amp; Soundbars</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
           <h4 class="footer-widget-title">Featured Brands</h4>
           <ul class="footer-links">
-            <li><a href="shop.html?brand=Samsung"><i class="bi bi-chevron-right"></i> Samsung Smart TVs</a></li>
-            <li><a href="shop.html?brand=LG"><i class="bi bi-chevron-right"></i> LG webOS Displays</a></li>
-            <li><a href="shop.html?brand=Sony"><i class="bi bi-chevron-right"></i> Sony Bravia 4K</a></li>
-            <li><a href="shop.html?brand=Vizio"><i class="bi bi-chevron-right"></i> Vizio SmartCast</a></li>
-            <li><a href="shop.html?brand=TCL"><i class="bi bi-chevron-right"></i> TCL Roku Televisions</a></li>
-            <li><a href="shop.html?brand=Hisense"><i class="bi bi-chevron-right"></i> Hisense Google TVs</a></li>
+            <li><a href="shop.html?brand=Apple"><i class="bi bi-chevron-right"></i> Apple</a></li>
+            <li><a href="shop.html?brand=Samsung"><i class="bi bi-chevron-right"></i> Samsung</a></li>
+            <li><a href="shop.html?brand=Sony"><i class="bi bi-chevron-right"></i> Sony</a></li>
+            <li><a href="shop.html?brand=Amazon"><i class="bi bi-chevron-right"></i> Amazon</a></li>
+            <li><a href="shop.html?brand=Roku"><i class="bi bi-chevron-right"></i> Roku</a></li>
+            <li><a href="shop.html?brand=Anker"><i class="bi bi-chevron-right"></i> Anker</a></li>
+            <li><a href="shop.html?brand=Onn"><i class="bi bi-chevron-right"></i> Onn.</a></li>
+            <li><a href="shop.html?brand=Logitech"><i class="bi bi-chevron-right"></i> Logitech</a></li>
           </ul>
         </div>
 
@@ -386,7 +387,7 @@
           <h4 class="footer-widget-title">Direct Contact</h4>
           <div class="footer-contact-list">
             <div class="footer-contact-item">
-              <i class="bi bi-telephone-fill"></i>
+              <i class="bi bi-telephone-fill text-danger"></i>
               <div>
                 <span class="footer-contact-label">Call Melvin Directly</span>
                 <a href="tel:+17708951392" class="footer-contact-val">+1 (770) 895-1392</a>
@@ -400,14 +401,14 @@
               </div>
             </div>
             <div class="footer-contact-item">
-              <i class="bi bi-envelope-fill"></i>
+              <i class="bi bi-envelope-fill text-danger"></i>
               <div>
                 <span class="footer-contact-label">Inquiry Email</span>
                 <a href="mailto:melvin@mjdelectronics.net" class="footer-contact-val">melvin@mjdelectronics.net</a>
               </div>
             </div>
             <div class="footer-contact-item">
-              <i class="bi bi-geo-alt-fill"></i>
+              <i class="bi bi-geo-alt-fill text-danger"></i>
               <div>
                 <span class="footer-contact-label">Mailing &amp; Pickup Area</span>
                 <span class="footer-contact-text">PO BOX 1805<br>Lithia Springs, GA 30122<br>United States</span>
@@ -419,7 +420,7 @@
 
       <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
         <div>
-          &copy; <span id="currentYear"></span> MJDELECTRONICS. All rights reserved.
+          &copy; <span id="currentYear"></span> MJDELECTRONICS. All rights reserved. &bull; Real Deals. Real Brands. Real Value.
         </div>
         <div class="mt-2 mt-md-0 text-center">
           <a href="privacy-policy.html">Privacy Policy</a>
@@ -441,8 +442,8 @@
       <i class="bi bi-grid-fill"></i>
       <span>Shop</span>
     </a>
-    <a href="tel:+17708951392" class="dock-call-btn" title="Call Melvin" aria-label="Call +17708951392">
-      <i class="bi bi-telephone-fill"></i>
+    <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20would%20like%20to%20inquire%20about%20your%20available%20electronics." class="dock-call-btn text-white" style="background: #25D366;" title="WhatsApp Melvin" aria-label="WhatsApp Melvin" target="_blank" rel="noopener noreferrer">
+      <i class="bi bi-whatsapp"></i>
     </a>
     <a href="#" class="dock-item" data-bs-toggle="modal" data-bs-target="#searchModal">
       <i class="bi bi-search"></i>
@@ -460,15 +461,19 @@
       <div class="modal-content search-modal-box">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h5 class="fw-bold text-dark mb-0" id="searchModalLabel">
-            <i class="bi bi-search text-warning me-2"></i>Search Electronics Catalog
+            <i class="bi bi-search text-danger me-2"></i>Search Electronics Catalog
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="search-input-group mb-3">
-          <input type="text" id="globalSearchInput" placeholder="Search by brand, screen size, or model..." autocomplete="off">
+          <input type="text" id="globalSearchInput" placeholder="Search AirPods, Anker, laptops, TVs, smartwatches, model..." autocomplete="off">
           <button class="search-submit-btn" aria-label="Search"><i class="bi bi-search"></i></button>
         </div>
-        <div id="globalSearchResults"></div>
+        <div id="globalSearchResults">
+          <div class="text-muted text-center py-4 small">
+            Start typing above to see matching electronics, audio, or accessories instantly...
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -479,7 +484,7 @@
       <div class="modal-content modal-content-mjd">
         <div class="modal-header modal-header-mjd">
           <h5 class="modal-title fw-bold text-dark" id="inquiryModalLabel">
-            <i class="bi bi-tag-fill text-warning me-2"></i>Price &amp; Availability Inquiry
+            <i class="bi bi-tag-fill text-danger me-2"></i>Price &amp; Availability Inquiry
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -539,35 +544,53 @@
       const mainImg = document.getElementById('mainProductImage');
       mainImg.src = product.image;
       mainImg.alt = product.name;
-      mainImg.onerror = () => { mainImg.src = getTvSvgPlaceholder(product.brand, product.size); };
+      mainImg.onerror = () => { mainImg.src = getTvSvgPlaceholder(product.brand, product.name); };
 
       document.getElementById('detailBrandBadge').innerText = product.brand;
-      document.getElementById('detailConditionBadge').innerText = product.condition;
+      document.getElementById('detailConditionBadge').innerText = product.condition || 'Pre-Tested';
       document.getElementById('detailTitle').innerText = product.name;
-      document.getElementById('detailPrice').innerText = product.priceText;
+      document.getElementById('detailPrice').innerText = product.priceText || 'Contact for Price';
       document.getElementById('detailDescription').innerText = product.description;
 
-      // Specifications
-      document.getElementById('specBrand').innerText = product.brand;
-      document.getElementById('specSize').innerText = product.size;
-      document.getElementById('specResolution').innerText = product.resolution;
-      document.getElementById('specDisplay').innerText = product.specs.display;
-      document.getElementById('specRefresh').innerText = product.specs.refreshRate;
-      document.getElementById('specSmart').innerText = product.specs.smartPlatform;
-      document.getElementById('specHdr').innerText = product.specs.hdr;
-      document.getElementById('specPorts').innerText = product.specs.ports;
+      // Specifications Table (Render dynamically based on product attributes & specs)
+      const specBody = document.getElementById('dynamicSpecBody');
+      if (specBody) {
+        let rows = `
+          <tr><th>Brand Manufacturer</th><td>${product.brand}</td></tr>
+          <tr><th>Shopping Department</th><td>${product.category}</td></tr>
+          <tr><th>Model / Identifier</th><td>${product.model || product.name}</td></tr>
+          <tr><th>Device Condition</th><td>${product.condition || 'Quality Inspected'}</td></tr>
+        `;
+
+        if (product.size) {
+          rows += `<tr><th>Screen / Display Size</th><td>${product.size}</td></tr>`;
+        }
+
+        if (product.specs && typeof product.specs === 'object') {
+          for (const [key, val] of Object.entries(product.specs)) {
+            // Convert camelCase key to Title Case
+            const formattedKey = key
+              .replace(/([A-Z])/g, ' $1')
+              .replace(/^./, str => str.toUpperCase())
+              .trim();
+            rows += `<tr><th>${formattedKey}</th><td>${val}</td></tr>`;
+          }
+        }
+        specBody.innerHTML = rows;
+      }
 
       // Gallery Thumbnails
       const thumbStrip = document.getElementById('thumbnailStrip');
-      if (thumbStrip && product.gallery && product.gallery.length > 0) {
-        thumbStrip.innerHTML = product.gallery.map((imgUrl, idx) => `
-          <button class="thumb-btn ${idx === 0 ? 'active' : ''}" onclick="switchMainImage('${imgUrl}', this)">
-            <img src="${imgUrl}" alt="Thumbnail ${idx + 1}" onerror="this.src='${getTvSvgPlaceholder(product.brand, product.size)}'" />
+      const gallery = (product.gallery && product.gallery.length > 0) ? product.gallery : [product.image];
+      if (thumbStrip) {
+        thumbStrip.innerHTML = gallery.map((imgUrl, idx) => `
+          <button class="thumb-btn ${idx === 0 ? 'active' : ''}" onclick="switchMainImage('${imgUrl}', this)" aria-label="Thumbnail ${idx + 1}">
+            <img src="${imgUrl}" alt="Thumbnail ${idx + 1}" onerror="this.src='${getTvSvgPlaceholder(product.brand, product.name)}'" />
           </button>
         `).join('');
       }
 
-      // WhatsApp Product Inquiry Setup
+      // WhatsApp Product Inquiry Setup adhering strictly to the template
       const waBtn = document.getElementById('whatsappProductBtn');
       if (waBtn) {
         waBtn.href = getWhatsAppProductUrl(product, window.location.href);

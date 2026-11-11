@@ -37,8 +37,8 @@
       box-shadow: none;
     }
     .accordion-mjd .accordion-button:not(.collapsed) {
-      color: var(--primary-orange);
-      background: var(--light-orange-subtle);
+      color: var(--primary-red);
+      background: var(--light-red-subtle);
       border-bottom: 1px solid var(--border-grey);
     }
     .accordion-mjd .accordion-body {
@@ -51,18 +51,20 @@
 </head>
 <body>
 
-  <!-- TOP NOTICE BAR -->
+  <!-- TOP NOTICE BAR (AMERICAN RETAIL RED) -->
   <div class="top-notice-bar">
     <div class="container d-flex flex-wrap align-items-center justify-content-between">
       <div class="d-none d-md-block">
-        <i class="bi bi-geo-alt-fill text-warning me-1"></i> Lithia Springs, GA 30122
+        <i class="bi bi-geo-alt-fill me-1"></i> Lithia Springs, GA 30122
         <span class="bullet-dot"></span>
-        <i class="bi bi-shield-check text-warning me-1"></i> Honest Pricing
+        <i class="bi bi-shield-check me-1"></i> Pre-Tested Electronics
+        <span class="bullet-dot"></span>
+        <i class="bi bi-award me-1"></i> 16 Recognized Brands
       </div>
       <div class="w-100 w-md-auto text-center text-md-end">
         <span class="me-2 d-none d-sm-inline">Quick Assistance:</span>
         <a href="tel:+17708951392" class="me-3"><i class="bi bi-telephone-fill me-1"></i>+1 (770) 895-1392</a>
-        <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20available%20electronics%20and%20current%20deals." class="me-3 text-success fw-bold text-decoration-none" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
+        <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20have%20a%20question%20about%20your%20products." class="me-3 text-white fw-bold" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
         <a href="mailto:melvin@mjdelectronics.net" class="d-none d-sm-inline"><i class="bi bi-envelope-fill me-1"></i>melvin@mjdelectronics.net</a>
       </div>
     </div>
@@ -71,11 +73,14 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-mjd">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
         <div class="brand-icon-box">
-          <i class="bi bi-tv"></i>
+          <i class="bi bi-lightning-charge-fill"></i>
         </div>
-        <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+        <div>
+          <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+          <div class="brand-tagline-sub d-none d-sm-block">Real Deals. Real Brands. Real Value.</div>
+        </div>
       </a>
 
       <!-- Mobile Action Buttons -->
@@ -83,6 +88,9 @@
         <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
           <i class="bi bi-search"></i>
         </button>
+        <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!" class="nav-action-btn text-success" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Inquiry">
+          <i class="bi bi-whatsapp"></i>
+        </a>
         <button class="navbar-toggler-mjd" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas" aria-label="Open Navigation Menu">
           <i class="bi bi-list fs-3"></i>
         </button>
@@ -95,7 +103,10 @@
             <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="shop.html"><i class="bi bi-grid me-1"></i>Shop Catalog</a>
+            <a class="nav-link" href="shop.html"><i class="bi bi-grid me-1"></i>Shop All Electronics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shop.html?trending=true"><i class="bi bi-fire text-danger me-1"></i>Trending Tech</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>About Us</a>
@@ -112,8 +123,11 @@
           <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" title="Quick Search" aria-label="Search electronics">
             <i class="bi bi-search"></i>
           </button>
-          <a href="contact.html" class="btn-mjd-primary btn-sm-mjd">
-            <i class="bi bi-chat-text-fill"></i> Ask a Question
+          <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-pill" title="Inquire on WhatsApp">
+            <i class="bi bi-whatsapp"></i> Inquire Now
+          </a>
+          <a href="shop.html" class="btn-mjd-primary btn-sm-mjd">
+            <i class="bi bi-bag-check-fill"></i> View Catalog
           </a>
         </div>
       </div>
@@ -125,9 +139,12 @@
     <div class="offcanvas-header">
       <div class="d-flex align-items-center gap-2">
         <div class="brand-icon-box">
-          <i class="bi bi-tv"></i>
+          <i class="bi bi-lightning-charge-fill"></i>
         </div>
-        <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+        <div>
+          <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+          <div class="small text-muted">Real Deals. Real Brands. Real Value.</div>
+        </div>
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
@@ -139,7 +156,11 @@
           <i class="bi bi-chevron-right chevron-icon"></i>
         </a>
         <a href="shop.html" class="mobile-nav-link">
-          <span><i class="bi bi-grid nav-icon"></i> Shop Catalog</span>
+          <span><i class="bi bi-grid nav-icon"></i> Shop All Electronics</span>
+          <i class="bi bi-chevron-right chevron-icon"></i>
+        </a>
+        <a href="shop.html?trending=true" class="mobile-nav-link text-danger fw-bold">
+          <span><i class="bi bi-fire nav-icon text-danger"></i> Trending Tech &amp; TikTok Viral</span>
           <i class="bi bi-chevron-right chevron-icon"></i>
         </a>
         <a href="about.html" class="mobile-nav-link">
@@ -157,12 +178,15 @@
       </nav>
 
       <div class="mobile-drawer-contact">
-        <div class="small text-muted fw-bold mb-1">Direct Seller Line</div>
+        <div class="small text-muted fw-bold mb-2">Direct Melvin Line</div>
+        <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!" class="btn btn-success w-100 mb-2 fw-bold text-white justify-content-center" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-whatsapp me-2"></i> Inquire on WhatsApp
+        </a>
         <a href="tel:+17708951392" class="d-flex align-items-center gap-2 fw-bold text-dark text-decoration-none mb-2">
-          <i class="bi bi-telephone-fill text-warning"></i> +1 (770) 895-1392
+          <i class="bi bi-telephone-fill text-danger"></i> +1 (770) 895-1392
         </a>
         <a href="mailto:melvin@mjdelectronics.net" class="d-flex align-items-center gap-2 text-secondary text-decoration-none small">
-          <i class="bi bi-envelope-fill text-warning"></i> melvin@mjdelectronics.net
+          <i class="bi bi-envelope-fill text-danger"></i> melvin@mjdelectronics.net
         </a>
       </div>
     </div>
@@ -183,132 +207,134 @@
   <!-- FAQ HEADER -->
   <section class="section-padding-sm bg-light-section border-bottom">
     <div class="container text-center">
-      <span class="section-tag"><i class="bi bi-question-circle-fill"></i> Help &amp; Information</span>
+      <span class="section-tag"><i class="bi bi-question-circle-fill text-danger me-1"></i> Help &amp; Answers</span>
       <h1 class="h2 fw-bold text-dark mb-2">Frequently Asked Questions</h1>
       <p class="text-secondary max-w-md mx-auto mb-0" style="max-width: 650px;">
-        Clear, factual answers regarding television availability, pricing inquiries, Lithia Springs pickup, and payment arrangements.
+        Everything you need to know about our products, testing procedures, pricing inquiries, marketplace purchases, and local pickup in Lithia Springs, GA.
       </p>
     </div>
   </section>
 
-  <!-- FAQ ACCORDION -->
+  <!-- FAQ MAIN ACCORDION -->
   <section class="section-padding bg-white-section">
-    <div class="container" style="max-width: 860px;">
-      <div class="accordion accordion-mjd" id="faqAccordion">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="accordion accordion-mjd" id="faqPageAccordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqH1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqC1" aria-expanded="true" aria-controls="faqC1">
+                  1. How do I inquire about product availability or purchase?
+                </button>
+              </h2>
+              <div id="faqC1" class="accordion-collapse collapse show" aria-labelledby="faqH1" data-bs-parent="#faqPageAccordion">
+                <div class="accordion-body">
+                  You can inquire directly with Melvin by clicking <strong>&ldquo;Inquire on WhatsApp&rdquo;</strong> on any product card or details page. It instantly sends a message with the product name, brand, model, and page link so Melvin can confirm real-time inventory and pricing. You can also call <strong>+1 (770) 895-1392</strong> or email <strong>melvin@mjdelectronics.net</strong>.
+                </div>
+              </div>
+            </div>
 
-        <!-- Item 1 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <i class="bi bi-tv text-warning me-2 me-md-3"></i> How do I confirm current product availability?
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Because our electronics inventory consists of specific, high-demand television models and deals, stock moves quickly. We encourage buyers to contact Melvin directly by calling or texting <strong>+1 (770) 895-1392</strong>, or emailing <strong>melvin@mjdelectronics.net</strong> to verify current availability for immediate pickup.
+            <!-- FAQ 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqH2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC2" aria-expanded="false" aria-controls="faqC2">
+                  2. Where is pickup located and what are the arrangements?
+                </button>
+              </h2>
+              <div id="faqC2" class="accordion-collapse collapse" aria-labelledby="faqH2" data-bs-parent="#faqPageAccordion">
+                <div class="accordion-body">
+                  Local pickup is arranged in <strong>Lithia Springs, GA 30122</strong> (Mailing Address: PO BOX 1805, Lithia Springs, GA 30122). When you reach out via WhatsApp or phone, Melvin will coordinate a convenient date and time window that works for you. This allows you to inspect your items in person prior to completing the transaction.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqH3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC3" aria-expanded="false" aria-controls="faqC3">
+                  3. Are all electronics pre-tested before being offered?
+                </button>
+              </h2>
+              <div id="faqC3" class="accordion-collapse collapse" aria-labelledby="faqH3" data-bs-parent="#faqPageAccordion">
+                <div class="accordion-body">
+                  Yes, thoroughly. Every television is tested for panel uniformity, backlight health, speaker clarity, Wi-Fi streaming connection, and HDMI/USB port functionality. Mobile gear, smartwatches, AirPods, and power banks undergo charging, battery life, and connectivity checks.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqH4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC4" aria-expanded="false" aria-controls="faqC4">
+                  4. What brands of electronics and televisions do you offer?
+                </button>
+              </h2>
+              <div id="faqC4" class="accordion-collapse collapse" aria-labelledby="faqH4" data-bs-parent="#faqPageAccordion">
+                <div class="accordion-body">
+                  We specialize in 16 industry-recognized brands: <strong>Apple, Samsung, Sony, LG, Amazon, Roku, Anker, Logitech, Onn., Blink, Bose, JBL, TCL, Hisense, Vizio, and Philips</strong>.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqH5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC5" aria-expanded="false" aria-controls="faqC5">
+                  5. Can I get a package deal if I purchase multiple electronics?
+                </button>
+              </h2>
+              <div id="faqC5" class="accordion-collapse collapse" aria-labelledby="faqH5" data-bs-parent="#faqPageAccordion">
+                <div class="accordion-body">
+                  Absolutely. We take pride in flexible purchasing arrangements and competitive everyday deals. If you are buying a television along with a soundbar, or multiple cables, power banks, and accessories, Melvin is always open to negotiable package pricing.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqH6">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC6" aria-expanded="false" aria-controls="faqC6">
+                  6. Can I buy through your marketplace profiles like OfferUp or Facebook?
+                </button>
+              </h2>
+              <div id="faqC6" class="accordion-collapse collapse" aria-labelledby="faqH6" data-bs-parent="#faqPageAccordion">
+                <div class="accordion-body">
+                  Yes. MJDELECTRONICS maintains active seller profiles across <strong>OfferUp, Facebook Marketplace, Mercari, 5Miles, and Nextdoor</strong>. You can browse our active marketplace listings or contact us directly on WhatsApp for the same verified quality and local pickup arrangements.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqH7">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC7" aria-expanded="false" aria-controls="faqC7">
+                  7. What payment methods and arrangements are supported?
+                </button>
+              </h2>
+              <div id="faqC7" class="accordion-collapse collapse" aria-labelledby="faqH7" data-bs-parent="#faqPageAccordion">
+                <div class="accordion-body">
+                  Because we coordinate local in-person pickup in Lithia Springs, GA, payment arrangements are confirmed directly with Melvin upon inquiry. We provide straightforward, transparent arrangements with zero hidden transaction surcharges.
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Item 2 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              <i class="bi bi-tags text-warning me-2 me-md-3"></i> How does pricing work and are deals negotiable?
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              We price our televisions competitively against prevailing market rates to provide genuine savings. For customers interested in multiple units or ready for prompt same-day pickup, package deals and flexible arrangements can be discussed directly with Melvin upon inquiry.
+          <!-- Need More Help Banner -->
+          <div class="p-4 bg-light rounded-4 border text-center mt-5">
+            <h4 class="fw-bold text-dark mb-2">Have a question not listed here?</h4>
+            <p class="text-secondary small mb-3">
+              Melvin is happy to answer questions about specific device model numbers, compatibility, and availability.
+            </p>
+            <div class="d-flex justify-content-center gap-2 flex-wrap">
+              <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20have%20a%20question." class="btn btn-whatsapp-pill" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+              </a>
+              <a href="tel:+17708951392" class="btn btn-mjd-outline">
+                <i class="bi bi-telephone"></i> Call Melvin Directly
+              </a>
             </div>
           </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              <i class="bi bi-geo-alt text-warning me-2 me-md-3"></i> Where and how does local pickup work?
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Local pickups are coordinated in <strong>Lithia Springs, GA 30122</strong>. Once you confirm the model you want to purchase, we schedule a mutually convenient time for pickup. We recommend bringing an appropriately sized vehicle with adequate padding/blankets, especially for screens 55 inches and larger.
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              <i class="bi bi-truck text-warning me-2 me-md-3"></i> Is local delivery available?
-            </button>
-          </h2>
-          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              While our primary method is local scheduled pickup in Lithia Springs, local delivery arrangements may be possible for nearby Georgia residents depending on schedule and distance. Please ask about local delivery feasibility when inquiring about your television.
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFive">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-              <i class="bi bi-credit-card text-warning me-2 me-md-3"></i> What payment methods are accepted?
-            </button>
-          </h2>
-          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              We support flexible purchasing arrangements. Payment options typically accepted upon in-person pickup include cash, verified electronic peer transfers, and platform-mediated checkout when purchasing through our verified listings on OfferUp, Mercari, or Facebook Marketplace. Inquire directly for specific payment preferences.
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingSix">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-              <i class="bi bi-shop-window text-warning me-2 me-md-3"></i> Can I buy through marketplace apps like OfferUp or Mercari?
-            </button>
-          </h2>
-          <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Yes! MJDELECTRONICS maintains active seller profiles on <strong>OfferUp, Facebook Marketplace, Mercari, 5Miles, and Nextdoor</strong>. You are welcome to browse and transact through those platforms if you prefer their built-in messaging and buyer protections.
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 7 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingSeven">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-              <i class="bi bi-shield-check text-warning me-2 me-md-3"></i> Can I test and inspect the TV before taking it home?
-            </button>
-          </h2>
-          <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Absolutely. We believe in total transparency. Every customer is encouraged to inspect the display panel, power-on behavior, and included accessories during scheduled pickup so you leave 100% confident in your purchase.
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Still have questions CTA -->
-      <div class="p-4 p-md-5 bg-light rounded-4 border text-center mt-4 mt-md-5">
-        <h4 class="h5 fw-bold text-dark mb-2">Have a Question Not Listed Here?</h4>
-        <p class="text-secondary small mb-4" style="max-width: 500px; margin: 0 auto;">
-          Melvin is happy to provide direct answers regarding any model in our catalog or arrange an upcoming pickup.
-        </p>
-        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-          <a href="tel:+17708951392" class="btn btn-mjd-primary justify-content-center">
-            <i class="bi bi-telephone-fill me-2"></i> Call +1 (770) 895-1392
-          </a>
-          <a href="contact.html" class="btn btn-mjd-outline justify-content-center">
-            <i class="bi bi-envelope-fill me-2"></i> Submit Inquiry
-          </a>
         </div>
       </div>
     </div>
@@ -322,30 +348,39 @@
           <div class="footer-brand-title">MJD<span>ELECTRONICS</span></div>
           <div class="footer-tagline">Real Deals. Real Brands. Real Value.</div>
           <p class="footer-desc">
-            MJDELECTRONICS is an electronics retail business focused on providing customers with quality televisions and electronics from recognized brands at competitive prices.
+            MJDELECTRONICS is an electronics retail business focused on providing customers with quality televisions and electronics from recognized brands at competitive prices in Lithia Springs, GA.
           </p>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-2">
-          <h4 class="footer-widget-title">Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
-            <li><a href="shop.html"><i class="bi bi-chevron-right"></i> Shop Catalog</a></li>
-            <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
-            <li><a href="faq.html"><i class="bi bi-chevron-right"></i> FAQ</a></li>
-            <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
-          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge bg-dark border border-secondary text-light p-2"><i class="bi bi-patch-check text-danger me-1"></i>Pre-Tested Tech</span>
+            <span class="badge bg-dark border border-secondary text-light p-2"><i class="bi bi-geo-alt text-danger me-1"></i>Lithia Springs, GA</span>
+          </div>
         </div>
 
         <div class="col-6 col-md-4 col-lg-3">
+          <h4 class="footer-widget-title">Shopping Categories</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=Cables%2C%20Chargers%20%26%20Power%20Adapters"><i class="bi bi-chevron-right"></i> Cables &amp; Chargers</a></li>
+            <li><a href="shop.html?category=Smartwatches"><i class="bi bi-chevron-right"></i> Smartwatches</a></li>
+            <li><a href="shop.html?category=Smartphones%20%26%20Flagship%20Handsets"><i class="bi bi-chevron-right"></i> Smartphones</a></li>
+            <li><a href="shop.html?category=Laptops%20%26%20MacBooks"><i class="bi bi-chevron-right"></i> Laptops &amp; MacBooks</a></li>
+            <li><a href="shop.html?category=Wireless%20Headphones%20%26%20Earbuds"><i class="bi bi-chevron-right"></i> Headphones &amp; Audio</a></li>
+            <li><a href="shop.html?category=Video%20Gaming%20Consoles%20%26%20Retro%20Systems"><i class="bi bi-chevron-right"></i> Gaming Consoles</a></li>
+            <li><a href="shop.html?category=Tablets%20%26%20iPads"><i class="bi bi-chevron-right"></i> Tablets &amp; iPads</a></li>
+            <li><a href="shop.html?category=Home%20Audio%20%26%20Soundbars"><i class="bi bi-chevron-right"></i> Smart TVs &amp; Soundbars</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
           <h4 class="footer-widget-title">Featured Brands</h4>
           <ul class="footer-links">
-            <li><a href="shop.html?brand=Samsung"><i class="bi bi-chevron-right"></i> Samsung Smart TVs</a></li>
-            <li><a href="shop.html?brand=LG"><i class="bi bi-chevron-right"></i> LG webOS Displays</a></li>
-            <li><a href="shop.html?brand=Sony"><i class="bi bi-chevron-right"></i> Sony Bravia 4K</a></li>
-            <li><a href="shop.html?brand=Vizio"><i class="bi bi-chevron-right"></i> Vizio SmartCast</a></li>
-            <li><a href="shop.html?brand=TCL"><i class="bi bi-chevron-right"></i> TCL Roku Televisions</a></li>
-            <li><a href="shop.html?brand=Hisense"><i class="bi bi-chevron-right"></i> Hisense Google TVs</a></li>
+            <li><a href="shop.html?brand=Apple"><i class="bi bi-chevron-right"></i> Apple</a></li>
+            <li><a href="shop.html?brand=Samsung"><i class="bi bi-chevron-right"></i> Samsung</a></li>
+            <li><a href="shop.html?brand=Sony"><i class="bi bi-chevron-right"></i> Sony</a></li>
+            <li><a href="shop.html?brand=Amazon"><i class="bi bi-chevron-right"></i> Amazon</a></li>
+            <li><a href="shop.html?brand=Roku"><i class="bi bi-chevron-right"></i> Roku</a></li>
+            <li><a href="shop.html?brand=Anker"><i class="bi bi-chevron-right"></i> Anker</a></li>
+            <li><a href="shop.html?brand=Onn"><i class="bi bi-chevron-right"></i> Onn.</a></li>
+            <li><a href="shop.html?brand=Logitech"><i class="bi bi-chevron-right"></i> Logitech</a></li>
           </ul>
         </div>
 
@@ -353,7 +388,7 @@
           <h4 class="footer-widget-title">Direct Contact</h4>
           <div class="footer-contact-list">
             <div class="footer-contact-item">
-              <i class="bi bi-telephone-fill"></i>
+              <i class="bi bi-telephone-fill text-danger"></i>
               <div>
                 <span class="footer-contact-label">Call Melvin Directly</span>
                 <a href="tel:+17708951392" class="footer-contact-val">+1 (770) 895-1392</a>
@@ -367,14 +402,14 @@
               </div>
             </div>
             <div class="footer-contact-item">
-              <i class="bi bi-envelope-fill"></i>
+              <i class="bi bi-envelope-fill text-danger"></i>
               <div>
                 <span class="footer-contact-label">Inquiry Email</span>
                 <a href="mailto:melvin@mjdelectronics.net" class="footer-contact-val">melvin@mjdelectronics.net</a>
               </div>
             </div>
             <div class="footer-contact-item">
-              <i class="bi bi-geo-alt-fill"></i>
+              <i class="bi bi-geo-alt-fill text-danger"></i>
               <div>
                 <span class="footer-contact-label">Mailing &amp; Pickup Area</span>
                 <span class="footer-contact-text">PO BOX 1805<br>Lithia Springs, GA 30122<br>United States</span>
@@ -386,7 +421,7 @@
 
       <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
         <div>
-          &copy; <span id="currentYear"></span> MJDELECTRONICS. All rights reserved.
+          &copy; <span id="currentYear"></span> MJDELECTRONICS. All rights reserved. &bull; Real Deals. Real Brands. Real Value.
         </div>
         <div class="mt-2 mt-md-0 text-center">
           <a href="privacy-policy.html">Privacy Policy</a>
@@ -408,8 +443,8 @@
       <i class="bi bi-grid-fill"></i>
       <span>Shop</span>
     </a>
-    <a href="tel:+17708951392" class="dock-call-btn" title="Call Melvin" aria-label="Call +17708951392">
-      <i class="bi bi-telephone-fill"></i>
+    <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20would%20like%20to%20inquire%20about%20your%20available%20electronics." class="dock-call-btn text-white" style="background: #25D366;" title="WhatsApp Melvin" aria-label="WhatsApp Melvin" target="_blank" rel="noopener noreferrer">
+      <i class="bi bi-whatsapp"></i>
     </a>
     <a href="#" class="dock-item" data-bs-toggle="modal" data-bs-target="#searchModal">
       <i class="bi bi-search"></i>
@@ -427,23 +462,29 @@
       <div class="modal-content search-modal-box">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h5 class="fw-bold text-dark mb-0" id="searchModalLabel">
-            <i class="bi bi-search text-warning me-2"></i>Search Electronics Catalog
+            <i class="bi bi-search text-danger me-2"></i>Search Electronics Catalog
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="search-input-group mb-3">
-          <input type="text" id="globalSearchInput" placeholder="Search by brand, screen size, or model..." autocomplete="off">
+          <input type="text" id="globalSearchInput" placeholder="Search AirPods, Anker, laptops, TVs, smartwatches, model..." autocomplete="off">
           <button class="search-submit-btn" aria-label="Search"><i class="bi bi-search"></i></button>
         </div>
-        <div id="globalSearchResults"></div>
+        <div id="globalSearchResults">
+          <div class="text-muted text-center py-4 small">
+            Start typing above to see matching electronics, audio, or accessories instantly...
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- Bootstrap 5.3.3 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS Modules -->
   <script src="assets/js/products.js"></script>
   <script src="assets/js/main.js"></script>
+
   <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>

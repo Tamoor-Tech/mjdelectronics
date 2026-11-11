@@ -1,6 +1,7 @@
 /**
  * MJDELECTRONICS - Shop Filtering & Catalog Logic
- * Responsive, Fast, Real Frontend Search, Filters, and Sorting
+ * Target-Inspired Clean American Electronics Retail Experience
+ * Real Frontend Search, Category Filtering, Brand Filtering, and Sorting
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('shopSearchInput');
   const brandFilters = document.querySelectorAll('.filter-brand-btn');
   const categoryFilters = document.querySelectorAll('.filter-category-item');
-  const sizeSelect = document.getElementById('sizeFilterSelect');
+  const categorySelect = document.getElementById('categoryFilterSelect');
+  const trendingToggleBtn = document.getElementById('trendingToggleBtn');
   const sortSelect = document.getElementById('sortSelect');
   const clearFiltersBtn = document.getElementById('clearFiltersBtn');
   const productCountDisplay = document.getElementById('productCountDisplay');
@@ -21,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     search: '',
     brand: 'all',
     category: 'all',
-    size: 'all',
+    trending: false,
     sort: 'featured'
   };
 
@@ -36,6 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (urlParams.has('search')) {
     state.search = urlParams.get('search');
     if (searchInput) searchInput.value = state.search;
+  }
+  if (urlParams.has('trending')) {
+    state.trending = urlParams.get('trending') === 'true';
   }
 
   // Update UI to reflect initial state
@@ -72,9 +77,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  if (sizeSelect) {
-    sizeSelect.addEventListener('change', (e) => {
-      state.size = e.target.value;
+  if (categorySelect) {
+    categorySelect.addEventListener('change', (e) => {
+      state.category = e.target.value;
+      syncFilterControls();
+      renderProducts();
+    });
+  }
+
+  if (trendingToggleBtn) {
+    trendingToggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      state.trending = !state.trending;
+      syncFilterControls();
       renderProducts();
     });
   }
@@ -95,21 +110,39 @@ document.addEventListener('DOMContentLoaded', () => {
   function syncFilterControls() {
     // Brand buttons
     brandFilters.forEach(btn => {
-      if (btn.getAttribute('data-brand').toLowerCase() === state.brand.toLowerCase()) {
+      const b = btn.getAttribute('data-brand') || '';
+      if (b.toLowerCase() === state.brand.toLowerCase()) {
         btn.classList.add('active');
       } else {
         btn.classList.remove('active');
       }
     });
 
-    // Category links
+    // Category links / items
     categoryFilters.forEach(link => {
-      if (link.getAttribute('data-category').toLowerCase() === state.category.toLowerCase()) {
-        link.classList.add('fw-bold', 'text-primary-orange');
+      const c = link.getAttribute('data-category') || '';
+      if (c.toLowerCase() === state.category.toLowerCase()) {
+        link.classList.add('active', 'fw-bold', 'text-danger');
       } else {
-        link.classList.remove('fw-bold', 'text-primary-orange');
+        link.classList.remove('active', 'fw-bold', 'text-danger');
       }
     });
+
+    // Category select dropdown
+    if (categorySelect) {
+      categorySelect.value = state.category;
+    }
+
+    // Trending Toggle button
+    if (trendingToggleBtn) {
+      if (state.trending) {
+        trendingToggleBtn.classList.add('btn-danger', 'text-white');
+        trendingToggleBtn.classList.remove('btn-outline-danger');
+      } else {
+        trendingToggleBtn.classList.remove('btn-danger', 'text-white');
+        trendingToggleBtn.classList.add('btn-outline-danger');
+      }
+    }
   }
 
   function resetFilters() {
@@ -117,11 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
       search: '',
       brand: 'all',
       category: 'all',
-      size: 'all',
+      trending: false,
       sort: 'featured'
     };
     if (searchInput) searchInput.value = '';
-    if (sizeSelect) sizeSelect.value = 'all';
     if (sortSelect) sortSelect.value = 'featured';
     syncFilterControls();
     renderProducts();
@@ -137,7 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const matchesSearch = !state.search || 
         product.name.toLowerCase().includes(state.search) ||
         product.brand.toLowerCase().includes(state.search) ||
-        product.category.toLowerCase().includes(state.search);
+        product.category.toLowerCase().includes(state.search) ||
+        (product.model && product.model.toLowerCase().includes(state.search));
 
       // Brand match
       const matchesBrand = state.brand === 'all' || 
@@ -147,15 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const matchesCategory = state.category === 'all' || 
         product.category.toLowerCase() === state.category.toLowerCase();
 
-      // Size match
-      let matchesSize = true;
-      const sizeNum = parseInt(product.size, 10);
-      if (state.size === 'under-50') matchesSize = sizeNum < 50;
-      else if (state.size === '50-59') matchesSize = sizeNum >= 50 && sizeNum <= 59;
-      else if (state.size === '60-69') matchesSize = sizeNum >= 60 && sizeNum <= 69;
-      else if (state.size === '70-plus') matchesSize = sizeNum >= 70;
+      // Trending filter
+      const matchesTrending = !state.trending || Boolean(product.trending);
 
-      return matchesSearch && matchesBrand && matchesCategory && matchesSize;
+      return matchesSearch && matchesBrand && matchesCategory && matchesTrending;
     });
 
     // Sorting
@@ -165,10 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
       filtered.sort((a, b) => b.name.localeCompare(a.name));
     } else if (state.sort === 'brand') {
       filtered.sort((a, b) => a.brand.localeCompare(b.brand));
-    } else if (state.sort === 'size-desc') {
-      filtered.sort((a, b) => parseInt(b.size) - parseInt(a.size));
+    } else if (state.sort === 'newest') {
+      filtered.sort((a, b) => (b.trending ? 1 : 0) - (a.trending ? 1 : 0));
     } else {
-      // featured first
+      // Featured / Client Choice first
       filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
     }
 
@@ -181,10 +209,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (activeFilterTags) {
       let tagsHtml = '';
       if (state.brand !== 'all') {
-        tagsHtml += `<span class="badge bg-light text-dark border p-2 me-2">Brand: ${state.brand} <i class="bi bi-x-circle ms-1 cursor-pointer" onclick="document.querySelector('[data-brand=all]').click()"></i></span>`;
+        tagsHtml += `<span class="badge bg-light text-dark border p-2 me-2">Brand: ${state.brand} <i class="bi bi-x-circle ms-1 cursor-pointer" onclick="document.querySelector('[data-brand=all]') ? document.querySelector('[data-brand=all]').click() : null"></i></span>`;
       }
       if (state.category !== 'all') {
-        tagsHtml += `<span class="badge bg-light text-dark border p-2 me-2">Category: ${state.category} <i class="bi bi-x-circle ms-1 cursor-pointer" onclick="document.querySelector('[data-category=all]').click()"></i></span>`;
+        tagsHtml += `<span class="badge bg-light text-dark border p-2 me-2">Category: ${state.category} <i class="bi bi-x-circle ms-1 cursor-pointer" onclick="document.querySelector('[data-category=all]') ? document.querySelector('[data-category=all]').click() : (document.getElementById('categoryFilterSelect') ? (document.getElementById('categoryFilterSelect').value='all', document.getElementById('categoryFilterSelect').dispatchEvent(new Event('change'))) : null)"></i></span>`;
+      }
+      if (state.trending) {
+        tagsHtml += `<span class="badge bg-danger text-white p-2 me-2">TikTok Viral Favorites <i class="bi bi-x-circle ms-1 cursor-pointer" id="clearTrendingTag"></i></span>`;
       }
       if (state.search) {
         tagsHtml += `<span class="badge bg-light text-dark border p-2 me-2">Search: "${state.search}" <i class="bi bi-x-circle ms-1 cursor-pointer" id="clearSearchTag"></i></span>`;
@@ -199,6 +230,15 @@ document.addEventListener('DOMContentLoaded', () => {
           renderProducts();
         });
       }
+
+      const clearTrendingTag = document.getElementById('clearTrendingTag');
+      if (clearTrendingTag) {
+        clearTrendingTag.addEventListener('click', () => {
+          state.trending = false;
+          syncFilterControls();
+          renderProducts();
+        });
+      }
     }
 
     // Render HTML cards
@@ -206,12 +246,12 @@ document.addEventListener('DOMContentLoaded', () => {
       productGrid.innerHTML = `
         <div class="col-12 py-5 text-center">
           <div class="p-5 bg-light rounded-4 border">
-            <i class="bi bi-tv text-muted" style="font-size: 3.5rem;"></i>
+            <i class="bi bi-search text-muted" style="font-size: 3.5rem;"></i>
             <h4 class="mt-3 fw-bold text-dark">No Electronics Match Your Filters</h4>
-            <p class="text-secondary max-w-md mx-auto">
-              We couldn't find any televisions matching your current search criteria. Try clearing some filters or searching for another brand.
+            <p class="text-secondary max-w-md mx-auto" style="max-width: 500px;">
+              We couldn't find any electronics products matching your selected filters. Try clearing filters or searching for another brand or category.
             </p>
-            <button class="btn btn-mjd-primary mt-2" onclick="document.getElementById('clearFiltersBtn').click()">
+            <button class="btn btn-mjd-primary mt-2" onclick="document.getElementById('clearFiltersBtn') ? document.getElementById('clearFiltersBtn').click() : window.location.href='shop.html'">
               <i class="bi bi-arrow-counterclockwise me-2"></i>Reset All Filters
             </button>
           </div>
@@ -222,4 +262,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
-

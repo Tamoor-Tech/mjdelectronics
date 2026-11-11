@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Pickup &amp; Delivery Terms | MJDELECTRONICS</title>
-  <meta name="description" content="Information regarding local customer pickup arrangements in Lithia Springs, GA and regional delivery guidelines for MJDELECTRONICS.">
+  <meta name="description" content="Pickup and fulfillment policy for MJDELECTRONICS. Understand how local pickup in Lithia Springs, GA is scheduled and coordinated.">
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,17 +22,21 @@
 </head>
 <body>
 
-  <!-- TOP NOTICE BAR -->
+  <!-- TOP NOTICE BAR (AMERICAN RETAIL RED) -->
   <div class="top-notice-bar">
     <div class="container d-flex flex-wrap align-items-center justify-content-between">
       <div class="d-none d-md-block">
-        <i class="bi bi-geo-alt-fill text-warning me-1"></i> Lithia Springs, GA 30122
+        <i class="bi bi-geo-alt-fill me-1"></i> Lithia Springs, GA 30122
         <span class="bullet-dot"></span>
-        <i class="bi bi-truck text-warning me-1"></i> Local Pickup Scheduled Direct
+        <i class="bi bi-shield-check me-1"></i> Local Pickup Hub
+        <span class="bullet-dot"></span>
+        <i class="bi bi-award me-1"></i> 16 Recognized Brands
       </div>
       <div class="w-100 w-md-auto text-center text-md-end">
+        <span class="me-2 d-none d-sm-inline">Inquiries:</span>
         <a href="tel:+17708951392" class="me-3"><i class="bi bi-telephone-fill me-1"></i>+1 (770) 895-1392</a>
-        <a href="mailto:melvin@mjdelectronics.net"><i class="bi bi-envelope-fill me-1"></i>melvin@mjdelectronics.net</a>
+        <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!" class="me-3 text-white fw-bold" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
+        <a href="mailto:melvin@mjdelectronics.net" class="d-none d-sm-inline"><i class="bi bi-envelope-fill me-1"></i>melvin@mjdelectronics.net</a>
       </div>
     </div>
   </div>
@@ -40,13 +44,18 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-mjd">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <div class="brand-icon-box"><i class="bi bi-tv"></i></div>
-        <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <div class="brand-icon-box"><i class="bi bi-lightning-charge-fill"></i></div>
+        <div>
+          <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+          <div class="brand-tagline-sub d-none d-sm-block">Real Deals. Real Brands. Real Value.</div>
+        </div>
       </a>
 
-      <!-- Mobile Action Buttons -->
       <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
+          <i class="bi bi-search"></i>
+        </button>
         <button class="navbar-toggler-mjd" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas" aria-label="Open Navigation Menu">
           <i class="bi bi-list fs-3"></i>
         </button>
@@ -54,13 +63,19 @@
 
       <div class="collapse navbar-collapse d-none d-lg-block" id="navbarMain">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="shop.html">Shop Catalog</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="shop.html"><i class="bi bi-grid me-1"></i>Shop All Electronics</a></li>
+          <li class="nav-item"><a class="nav-link" href="shop.html?trending=true"><i class="bi bi-fire text-danger me-1"></i>Trending Tech</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html"><i class="bi bi-question-circle me-1"></i>FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope me-1"></i>Contact</a></li>
         </ul>
-        <a href="contact.html" class="btn-mjd-outline btn-sm-mjd">Contact Direct</a>
+        <div class="d-flex align-items-center gap-3">
+          <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-pill">
+            <i class="bi bi-whatsapp"></i> Inquire Now
+          </a>
+          <a href="shop.html" class="btn-mjd-primary btn-sm-mjd">View Catalog</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -69,23 +84,27 @@
   <div class="offcanvas offcanvas-end offcanvas-mjd" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
     <div class="offcanvas-header">
       <div class="d-flex align-items-center gap-2">
-        <div class="brand-icon-box"><i class="bi bi-tv"></i></div>
-        <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+        <div class="brand-icon-box"><i class="bi bi-lightning-charge-fill"></i></div>
+        <div>
+          <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
+          <div class="small text-muted">Real Deals. Real Brands. Real Value.</div>
+        </div>
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <nav class="d-flex flex-column mb-4">
         <a href="index.html" class="mobile-nav-link"><span><i class="bi bi-house-door nav-icon"></i> Home</span><i class="bi bi-chevron-right chevron-icon"></i></a>
-        <a href="shop.html" class="mobile-nav-link"><span><i class="bi bi-grid nav-icon"></i> Shop Catalog</span><i class="bi bi-chevron-right chevron-icon"></i></a>
+        <a href="shop.html" class="mobile-nav-link"><span><i class="bi bi-grid nav-icon"></i> Shop All Electronics</span><i class="bi bi-chevron-right chevron-icon"></i></a>
+        <a href="shop.html?trending=true" class="mobile-nav-link text-danger fw-bold"><span><i class="bi bi-fire nav-icon text-danger"></i> Trending Tech &amp; TikTok Viral</span><i class="bi bi-chevron-right chevron-icon"></i></a>
         <a href="about.html" class="mobile-nav-link"><span><i class="bi bi-info-circle nav-icon"></i> About Us</span><i class="bi bi-chevron-right chevron-icon"></i></a>
         <a href="faq.html" class="mobile-nav-link"><span><i class="bi bi-question-circle nav-icon"></i> FAQ</span><i class="bi bi-chevron-right chevron-icon"></i></a>
         <a href="contact.html" class="mobile-nav-link"><span><i class="bi bi-envelope nav-icon"></i> Contact Us</span><i class="bi bi-chevron-right chevron-icon"></i></a>
       </nav>
       <div class="mobile-drawer-contact">
-        <div class="small text-muted fw-bold mb-1">Direct Contact</div>
+        <div class="small text-muted fw-bold mb-1">Direct Melvin Line</div>
         <a href="tel:+17708951392" class="d-flex align-items-center gap-2 fw-bold text-dark text-decoration-none mb-1">
-          <i class="bi bi-telephone-fill text-warning"></i> +1 (770) 895-1392
+          <i class="bi bi-telephone-fill text-danger"></i> +1 (770) 895-1392
         </a>
       </div>
     </div>
@@ -111,28 +130,28 @@
 
       <div class="alert alert-info py-3 px-4 rounded-3 mb-4">
         <i class="bi bi-info-circle-fill me-2"></i>
-        <strong>Policy Notice:</strong> MJDELECTRONICS specializes primarily in local scheduled customer pickups and direct inquiries. The details below clarify our genuine fulfillment process.
+        <strong>Policy Notice:</strong> MJDELECTRONICS specializes primarily in local scheduled customer pickups and direct inquiries in Lithia Springs, GA.
       </div>
 
       <div class="prose text-secondary leading-relaxed">
         <h4 class="h5 fw-bold text-dark mt-4 mb-2">1. Local Pickup (Primary Fulfillment Method)</h4>
         <p>
-          To ensure television displays remain in pristine physical condition and allow buyers the opportunity to inspect screen quality in person prior to purchase, <strong>local pickup in Lithia Springs, GA 30122</strong> is our primary fulfillment method.
+          To ensure television displays and electronics remain in pristine physical condition and allow buyers the opportunity to inspect items in person prior to purchase, <strong>local pickup in Lithia Springs, GA 30122</strong> is our primary fulfillment method.
         </p>
 
         <h4 class="h5 fw-bold text-dark mt-4 mb-2">2. Scheduling Pickup</h4>
         <p>
-          Once you inquire about a television and confirm availability with Melvin, a mutually agreed pickup time window will be scheduled. Exact meet-up and pickup directions will be provided directly via call, text, or email.
+          Once you inquire about an item and confirm availability with Melvin, a mutually agreed pickup time window will be scheduled. Exact meet-up and pickup directions will be provided directly via WhatsApp, call, or email.
         </p>
 
-        <h4 class="h5 fw-bold text-dark mt-4 mb-2">3. Vehicle &amp; Transport Recommendations</h4>
+        <h4 class="h5 fw-bold text-dark mt-4 mb-2">3. Vehicle &amp; Transport Recommendations for TVs</h4>
         <p>
-          Due to the delicate nature of large screen televisions:
+          Due to the delicate nature of large screen displays:
         </p>
         <ul>
-          <li><strong>Screens 50" – 58":</strong> Typically require a standard SUV, hatchback, or truck with rear seats folded down.</li>
-          <li><strong>Screens 65" – 75"+:</strong> Require a pickup truck bed, large SUV, or van capable of transporting the unit flat or securely upright.</li>
-          <li>We strongly advise bringing moving blankets or soft padding to protect the display during transit.</li>
+          <li><strong>Screens 50" &ndash; 58":</strong> Typically require a standard SUV, hatchback, or truck with rear seats folded down.</li>
+          <li><strong>Screens 65" &ndash; 75"+:</strong> Require a pickup truck bed, large SUV, or van capable of transporting the unit flat or securely upright.</li>
+          <li>We advise bringing blankets or soft padding to protect the display during transit.</li>
         </ul>
 
         <h4 class="h5 fw-bold text-dark mt-4 mb-2">4. Local Delivery Inquiries</h4>
@@ -149,9 +168,9 @@
         <div class="p-3 bg-light rounded-3 border">
           <strong>MJDELECTRONICS</strong><br>
           Phone: <a href="tel:+17708951392">+1 (770) 895-1392</a><br>
-          WhatsApp: <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20available%20electronics%20and%20current%20deals." target="_blank" rel="noopener noreferrer">+1 (770) 895-1392</a><br>
+          WhatsApp: <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!" target="_blank" rel="noopener noreferrer">+1 (770) 895-1392</a><br>
           Email: <a href="mailto:melvin@mjdelectronics.net">melvin@mjdelectronics.net</a><br>
-          PO BOX 1805, Lithia Springs, GA 30122
+          PO BOX 1805, Lithia Springs, GA 30122, United States
         </div>
       </div>
     </div>
@@ -159,8 +178,77 @@
 
   <!-- FOOTER -->
   <footer class="footer-mjd">
-    <div class="container text-center py-4">
-      <div class="small text-muted">&copy; <span id="currentYear"></span> MJDELECTRONICS. All rights reserved.</div>
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-4">
+          <div class="footer-brand-title">MJD<span>ELECTRONICS</span></div>
+          <div class="footer-tagline">Real Deals. Real Brands. Real Value.</div>
+          <p class="footer-desc">
+            MJDELECTRONICS is an electronics retail business focused on providing customers with quality televisions and electronics from recognized brands at competitive prices in Lithia Springs, GA.
+          </p>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <h4 class="footer-widget-title">Shopping Categories</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=Cables%2C%20Chargers%20%26%20Power%20Adapters"><i class="bi bi-chevron-right"></i> Cables &amp; Chargers</a></li>
+            <li><a href="shop.html?category=Smartwatches"><i class="bi bi-chevron-right"></i> Smartwatches</a></li>
+            <li><a href="shop.html?category=Smartphones%20%26%20Flagship%20Handsets"><i class="bi bi-chevron-right"></i> Smartphones</a></li>
+            <li><a href="shop.html?category=Wireless%20Headphones%20%26%20Earbuds"><i class="bi bi-chevron-right"></i> Headphones &amp; Audio</a></li>
+            <li><a href="shop.html?category=Home%20Audio%20%26%20Soundbars"><i class="bi bi-chevron-right"></i> Smart TVs &amp; Soundbars</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4 class="footer-widget-title">Featured Brands</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?brand=Apple"><i class="bi bi-chevron-right"></i> Apple</a></li>
+            <li><a href="shop.html?brand=Samsung"><i class="bi bi-chevron-right"></i> Samsung</a></li>
+            <li><a href="shop.html?brand=Sony"><i class="bi bi-chevron-right"></i> Sony</a></li>
+            <li><a href="shop.html?brand=Amazon"><i class="bi bi-chevron-right"></i> Amazon</a></li>
+            <li><a href="shop.html?brand=Anker"><i class="bi bi-chevron-right"></i> Anker</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3">
+          <h4 class="footer-widget-title">Direct Contact</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <i class="bi bi-telephone-fill text-danger"></i>
+              <div>
+                <span class="footer-contact-label">Call Melvin Directly</span>
+                <a href="tel:+17708951392" class="footer-contact-val">+1 (770) 895-1392</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <i class="bi bi-whatsapp icon-whatsapp"></i>
+              <div>
+                <span class="footer-contact-label">WhatsApp Business</span>
+                <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!" target="_blank" rel="noopener noreferrer" class="footer-contact-val link-whatsapp">+1 (770) 895-1392</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <i class="bi bi-envelope-fill text-danger"></i>
+              <div>
+                <span class="footer-contact-label">Inquiry Email</span>
+                <a href="mailto:melvin@mjdelectronics.net" class="footer-contact-val">melvin@mjdelectronics.net</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div>
+          &copy; <span id="currentYear"></span> MJDELECTRONICS. All rights reserved. &bull; Real Deals. Real Brands. Real Value.
+        </div>
+        <div class="mt-2 mt-md-0 text-center">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="shipping-policy.html">Pickup &amp; Delivery Terms</a>
+          <a href="return-policy.html">Inspection &amp; Return Terms</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
     </div>
   </footer>
 
@@ -168,7 +256,7 @@
   <div class="mobile-bottom-dock">
     <a href="index.html" class="dock-item"><i class="bi bi-house-door-fill"></i><span>Home</span></a>
     <a href="shop.html" class="dock-item"><i class="bi bi-grid-fill"></i><span>Shop</span></a>
-    <a href="tel:+17708951392" class="dock-call-btn" title="Call Melvin"><i class="bi bi-telephone-fill"></i></a>
+    <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!" class="dock-call-btn text-white" style="background: #25D366;" title="WhatsApp Melvin" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
     <a href="faq.html" class="dock-item"><i class="bi bi-question-circle-fill"></i><span>FAQ</span></a>
     <a href="contact.html" class="dock-item"><i class="bi bi-chat-dots-fill"></i><span>Contact</span></a>
   </div>

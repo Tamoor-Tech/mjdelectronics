@@ -208,7 +208,7 @@ function openInquiryModal(productId) {
           <img src="${product.image}" alt="${product.name}" style="width: 60px; height: 50px; object-fit: contain;" />
           <div class="flex-grow-1">
             <div class="fw-bold small text-dark">${product.name}</div>
-            <div class="text-muted" style="font-size: 0.75rem;">${product.brand} &bull; ${product.size} &bull; ${product.condition}</div>
+            <div class="text-muted" style="font-size: 0.75rem;">${product.brand} &bull; ${product.model || product.category} &bull; ${product.condition || 'Verified'}</div>
           </div>
         </div>
         <div class="mb-3">
@@ -252,50 +252,75 @@ function setupGlobalSearch() {
   const searchInput = document.getElementById('globalSearchInput');
   const searchResults = document.getElementById('globalSearchResults');
 
-  if (!searchInput || !searchResults) return;
+  if (searchInput && searchResults) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.trim().toLowerCase();
+      if (query.length < 2) {
+        searchResults.innerHTML = '<div class="text-muted text-center py-4 small">Type at least 2 characters to search electronics...</div>';
+        return;
+      }
 
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.trim().toLowerCase();
-    if (query.length < 2) {
-      searchResults.innerHTML = '<div class="text-muted text-center py-4 small">Type at least 2 characters to search televisions...</div>';
-      return;
-    }
+      if (typeof MJD_PRODUCTS === 'undefined') return;
 
-    if (typeof MJD_PRODUCTS === 'undefined') return;
+      const matches = MJD_PRODUCTS.filter(p => 
+        p.name.toLowerCase().includes(query) ||
+        p.brand.toLowerCase().includes(query) ||
+        p.category.toLowerCase().includes(query) ||
+        (p.model && p.model.toLowerCase().includes(query))
+      );
 
-    const matches = MJD_PRODUCTS.filter(p => 
-      p.name.toLowerCase().includes(query) ||
-      p.brand.toLowerCase().includes(query) ||
-      p.category.toLowerCase().includes(query) ||
-      p.size.toLowerCase().includes(query)
-    );
+      if (matches.length === 0) {
+        searchResults.innerHTML = `
+          <div class="text-center py-4">
+            <i class="bi bi-search text-muted fs-3 d-block mb-2"></i>
+            <p class="text-muted mb-0">No electronics found for "<strong>${query}</strong>".</p>
+            <a href="shop.html" class="btn btn-sm btn-mjd-primary mt-3">Browse Full Catalog</a>
+          </div>
+        `;
+        return;
+      }
 
-    if (matches.length === 0) {
       searchResults.innerHTML = `
-        <div class="text-center py-4">
-          <i class="bi bi-search text-muted fs-3 d-block mb-2"></i>
-          <p class="text-muted mb-0">No models found for "<strong>${query}</strong>".</p>
-          <a href="shop.html" class="btn btn-sm btn-mjd-outline mt-3">Browse Full Catalog</a>
+        <div class="list-group list-group-flush">
+          ${matches.slice(0, 8).map(m => `
+            <a href="product.html?id=${m.id}" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between p-3 border-0 border-bottom">
+              <div class="d-flex align-items-center gap-3">
+                <span class="badge bg-dark">${m.brand}</span>
+                <div>
+                  <div class="fw-bold text-dark">${m.name}</div>
+                  <small class="text-muted">${m.category} &bull; ${m.model || m.brand}</small>
+                </div>
+              </div>
+              <span class="badge bg-danger text-white"><i class="bi bi-arrow-right"></i></span>
+            </a>
+          `).join('')}
         </div>
       `;
-      return;
-    }
+    });
+  }
 
-    searchResults.innerHTML = `
-      <div class="list-group list-group-flush">
-        ${matches.map(m => `
-          <a href="product.html?id=${m.id}" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between p-3 border-0 border-bottom">
-            <div class="d-flex align-items-center gap-3">
-              <span class="badge bg-dark">${m.brand}</span>
-              <div>
-                <div class="fw-bold text-dark">${m.name}</div>
-                <small class="text-muted">${m.size} &bull; ${m.resolution}</small>
-              </div>
-            </div>
-            <span class="badge bg-warning text-dark"><i class="bi bi-arrow-right"></i></span>
-          </a>
-        `).join('')}
-      </div>
-    `;
-  });
+  // Handle Enter key or form submit on global search input
+  const searchForm = document.getElementById('globalSearchForm');
+  if (searchForm) {
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const q = searchInput ? searchInput.value.trim() : '';
+      if (q) {
+        window.location.href = `shop.html?search=${encodeURIComponent(q)}`;
+      }
+    });
+  }
+
+  // Handle direct header search bar if present
+  const headerSearchInput = document.getElementById('headerSearchInput');
+  const headerSearchForm = document.getElementById('headerSearchForm');
+  if (headerSearchForm && headerSearchInput) {
+    headerSearchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const q = headerSearchInput.value.trim();
+      if (q) {
+        window.location.href = `shop.html?search=${encodeURIComponent(q)}`;
+      }
+    });
+  }
 }
