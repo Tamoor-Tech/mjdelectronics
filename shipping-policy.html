@@ -41,40 +41,66 @@
     </div>
   </div>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR WITH OWN LOGO & CART BADGE -->
   <nav class="navbar navbar-expand-lg navbar-mjd">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <div class="brand-icon-box"><i class="bi bi-lightning-charge-fill"></i></div>
-        <div>
-          <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
-          <div class="brand-tagline-sub d-none d-sm-block">Real Deals. Real Brands. Real Value.</div>
-        </div>
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="/images/logo.png" 
+             alt="MJDELECTRONICS Logo" 
+             class="navbar-logo-img" 
+             onerror="this.onerror=null; this.src='images/logo.svg';" />
       </a>
 
+      <!-- Mobile Top Action Buttons -->
       <div class="d-flex align-items-center gap-2 d-lg-none">
-        <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
+        <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search Catalog">
           <i class="bi bi-search"></i>
         </button>
+        <a href="cart.html" class="nav-cart-btn position-relative" aria-label="Shopping Cart">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-count-badge">0</span>
+        </a>
         <button class="navbar-toggler-mjd" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas" aria-label="Open Navigation Menu">
           <i class="bi bi-list fs-3"></i>
         </button>
       </div>
 
+      <!-- Desktop Navbar -->
       <div class="collapse navbar-collapse d-none d-lg-block" id="navbarMain">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="shop.html"><i class="bi bi-grid me-1"></i>Shop All Electronics</a></li>
-          <li class="nav-item"><a class="nav-link" href="shop.html?trending=true"><i class="bi bi-fire text-danger me-1"></i>Trending Tech</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="faq.html"><i class="bi bi-question-circle me-1"></i>FAQ</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope me-1"></i>Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="shop.html">Shop All Electronics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shop.html?trending=true">Trending Tech</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="contact.html">Contact</a>
+          </li>
         </ul>
+
         <div class="d-flex align-items-center gap-3">
-          <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-pill">
-            <i class="bi bi-whatsapp"></i> Inquire Now
+          <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" title="Quick Search" aria-label="Search electronics catalog">
+            <i class="bi bi-search"></i>
+          </button>
+          
+          <a href="cart.html" class="nav-cart-btn position-relative " title="Shopping Cart" aria-label="Shopping Cart">
+            <i class="bi bi-cart3"></i>
+            <span class="cart-count-badge">0</span>
           </a>
-          <a href="shop.html" class="btn-mjd-primary btn-sm-mjd">View Catalog</a>
+
+          <a href="shop.html" class="btn-shop-now">
+            Shop Now <i class="bi bi-arrow-right"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -83,13 +109,9 @@
   <!-- MOBILE OFFCANVAS DRAWER -->
   <div class="offcanvas offcanvas-end offcanvas-mjd" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
     <div class="offcanvas-header">
-      <div class="d-flex align-items-center gap-2">
-        <div class="brand-icon-box"><i class="bi bi-lightning-charge-fill"></i></div>
-        <div>
-          <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
-          <div class="small text-muted">Real Deals. Real Brands. Real Value.</div>
-        </div>
-      </div>
+      <a href="index.html" class="d-inline-block">
+        <img src="/images/logo.png" alt="MJDELECTRONICS" style="height: 38px; width: auto;" onerror="this.onerror=null; this.src='images/logo.svg';" />
+      </a>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -262,6 +284,8 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();

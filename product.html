@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Product Details | MJDELECTRONICS</title>
-  <meta name="description" content="View specifications, condition, and WhatsApp availability inquiry for authentic brand electronics at MJDELECTRONICS.">
+  <meta name="description" content="View specifications, US retail pricing, and shopping cart checkout for authentic electronics at MJDELECTRONICS.">
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="assets/css/animations.css">
   <style>
     .product-gallery-main {
-      background: #F9FAFB;
+      background: #FFFFFF;
       border: 1px solid var(--border-grey);
       border-radius: var(--radius-xl);
       padding: clamp(16px, 4vw, 30px);
@@ -54,7 +54,7 @@
       min-width: 72px;
       border-radius: var(--radius-md);
       border: 2px solid var(--border-grey);
-      background: #F9FAFB;
+      background: #FFFFFF;
       padding: 6px;
       cursor: pointer;
       display: flex;
@@ -86,6 +86,66 @@
       border-color: var(--border-grey);
       padding: 10px 14px;
     }
+    .qty-picker {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border-grey);
+      border-radius: var(--radius-pill);
+      background: #FFFFFF;
+      overflow: hidden;
+    }
+    .qty-picker-btn {
+      width: 40px;
+      height: 44px;
+      border: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--charcoal);
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .qty-picker-btn:hover {
+      background: #F0F0F0;
+      color: var(--primary-red);
+    }
+    .qty-picker-input {
+      width: 50px;
+      height: 44px;
+      border: none;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1rem !important;
+      color: var(--charcoal);
+      background: transparent;
+    }
+    .qty-picker-input:focus {
+      outline: none;
+    }
+    .btn-add-cart-lg {
+      background: var(--primary-red);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all var(--transition-fast);
+      box-shadow: 0 4px 14px rgba(204, 0, 0, 0.25);
+    }
+    .btn-add-cart-lg:hover {
+      background: var(--red-hover);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(204, 0, 0, 0.35);
+    }
   </style>
 </head>
 <body>
@@ -101,25 +161,22 @@
         <i class="bi bi-tag-fill me-1"></i> Direct Retail Value
       </div>
       <div class="w-100 w-md-auto text-center text-md-end">
-        <span class="me-2 d-none d-sm-inline">Direct Inquiries:</span>
+        <span class="me-2 d-none d-sm-inline">Seller Support:</span>
         <a href="tel:+17708951392" class="me-3"><i class="bi bi-telephone-fill me-1"></i>+1 (770) 895-1392</a>
-        <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20available%20electronics%20and%20current%20deals." class="me-3 text-white fw-bold" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
+        <a href="https://wa.me/17708951392" class="me-3 text-white fw-bold" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
         <a href="mailto:melvin@mjdelectronics.net" class="d-none d-sm-inline"><i class="bi bi-envelope-fill me-1"></i>melvin@mjdelectronics.net</a>
       </div>
     </div>
   </div>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR WITH OWN LOGO & CART BADGE -->
   <nav class="navbar navbar-expand-lg navbar-mjd">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <div class="brand-icon-box">
-          <i class="bi bi-lightning-charge-fill"></i>
-        </div>
-        <div>
-          <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
-          <div class="brand-tagline-sub d-none d-sm-block">Real Deals. Real Brands. Real Value.</div>
-        </div>
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="/images/logo.png" 
+             alt="MJDELECTRONICS Logo" 
+             class="navbar-logo-img" 
+             onerror="this.onerror=null; this.src='images/logo.svg';" />
       </a>
 
       <!-- Mobile Top Action Buttons -->
@@ -127,8 +184,9 @@
         <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
           <i class="bi bi-search"></i>
         </button>
-        <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20would%20like%20to%20inquire%20about%20your%20available%20products." class="nav-action-btn text-success" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Inquiry">
-          <i class="bi bi-whatsapp"></i>
+        <a href="cart.html" class="nav-cart-btn position-relative" aria-label="Shopping Cart">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-count-badge">0</span>
         </a>
         <button class="navbar-toggler-mjd" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas" aria-label="Open Navigation Menu">
           <i class="bi bi-list fs-3"></i>
@@ -139,22 +197,22 @@
       <div class="collapse navbar-collapse d-none d-lg-block" id="navbarMain">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="shop.html"><i class="bi bi-grid me-1"></i>Shop All Electronics</a>
+            <a class="nav-link active" href="shop.html">Shop All Electronics</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="shop.html?trending=true"><i class="bi bi-fire text-danger me-1"></i>Trending Tech</a>
+            <a class="nav-link" href="shop.html?trending=true">Trending Tech</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>About Us</a>
+            <a class="nav-link" href="about.html">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="faq.html"><i class="bi bi-question-circle me-1"></i>FAQ</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html"><i class="bi bi-envelope me-1"></i>Contact</a>
+            <a class="nav-link" href="contact.html">Contact</a>
           </li>
         </ul>
 
@@ -162,8 +220,14 @@
           <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#searchModal" title="Quick Search" aria-label="Search electronics">
             <i class="bi bi-search"></i>
           </button>
-          <a href="shop.html" class="btn-mjd-primary btn-sm-mjd">
-            <i class="bi bi-arrow-left"></i> Back to Catalog
+          
+          <a href="cart.html" class="nav-cart-btn position-relative" title="Shopping Cart" aria-label="Shopping Cart">
+            <i class="bi bi-cart3"></i>
+            <span class="cart-count-badge">0</span>
+          </a>
+
+          <a href="shop.html" class="btn-shop-now">
+            Shop Now <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -173,76 +237,67 @@
   <!-- MOBILE OFFCANVAS DRAWER -->
   <div class="offcanvas offcanvas-end offcanvas-mjd" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
     <div class="offcanvas-header">
-      <div class="d-flex align-items-center gap-2">
-        <div class="brand-icon-box">
-          <i class="bi bi-lightning-charge-fill"></i>
-        </div>
-        <div>
-          <div class="brand-name-text">MJD<span>ELECTRONICS</span></div>
-          <div class="small text-muted">Real Deals. Real Brands. Real Value.</div>
-        </div>
-      </div>
+      <a href="index.html" class="d-inline-block">
+        <img src="/images/logo.png" alt="MJDELECTRONICS" style="height: 38px; width: auto;" onerror="this.onerror=null; this.src='images/logo.svg';" />
+      </a>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <div class="small text-muted text-uppercase fw-bold mb-3" style="letter-spacing: 0.1em;">Navigation</div>
+      <div class="small text-muted text-uppercase fw-bold mb-3" style="letter-spacing: 0.1em;">Store Navigation</div>
       <nav class="d-flex flex-column mb-4">
         <a href="index.html" class="mobile-nav-link">
-          <span><i class="bi bi-house-door nav-icon"></i> Home</span>
+          <span>Home</span>
           <i class="bi bi-chevron-right chevron-icon"></i>
         </a>
         <a href="shop.html" class="mobile-nav-link active">
-          <span><i class="bi bi-grid nav-icon"></i> Shop All Electronics</span>
+          <span>Shop All Electronics</span>
           <i class="bi bi-chevron-right chevron-icon"></i>
         </a>
         <a href="shop.html?trending=true" class="mobile-nav-link text-danger fw-bold">
-          <span><i class="bi bi-fire nav-icon text-danger"></i> Trending Tech &amp; TikTok Viral</span>
+          <span>Trending Tech &amp; TikTok Viral</span>
           <i class="bi bi-chevron-right chevron-icon"></i>
         </a>
+        <a href="cart.html" class="mobile-nav-link">
+          <span>My Shopping Cart</span>
+          <span class="badge bg-danger rounded-pill cart-count-badge">0</span>
+        </a>
         <a href="about.html" class="mobile-nav-link">
-          <span><i class="bi bi-info-circle nav-icon"></i> About Us</span>
+          <span>About Us</span>
           <i class="bi bi-chevron-right chevron-icon"></i>
         </a>
         <a href="faq.html" class="mobile-nav-link">
-          <span><i class="bi bi-question-circle nav-icon"></i> FAQ</span>
+          <span>FAQ</span>
           <i class="bi bi-chevron-right chevron-icon"></i>
         </a>
         <a href="contact.html" class="mobile-nav-link">
-          <span><i class="bi bi-envelope nav-icon"></i> Contact Us</span>
+          <span>Contact Us</span>
           <i class="bi bi-chevron-right chevron-icon"></i>
         </a>
       </nav>
 
-      <div class="mobile-drawer-contact">
-        <div class="small text-muted fw-bold mb-2">Direct Melvin Line</div>
-        <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20would%20like%20to%20inquire%20about%20your%20available%20electronics." class="btn btn-success w-100 mb-2 fw-bold text-white justify-content-center" target="_blank" rel="noopener noreferrer">
-          <i class="bi bi-whatsapp me-2"></i> Inquire on WhatsApp
-        </a>
-        <a href="tel:+17708951392" class="d-flex align-items-center gap-2 fw-bold text-dark text-decoration-none mb-2">
-          <i class="bi bi-telephone-fill text-danger"></i> +1 (770) 895-1392
-        </a>
-        <a href="mailto:melvin@mjdelectronics.net" class="d-flex align-items-center gap-2 text-secondary text-decoration-none small">
-          <i class="bi bi-envelope-fill text-danger"></i> melvin@mjdelectronics.net
+      <div class="pt-3 border-top">
+        <a href="shop.html" class="btn-shop-now w-100 justify-content-center mb-3">
+          Shop Now <i class="bi bi-arrow-right"></i>
         </a>
       </div>
     </div>
   </div>
 
   <!-- BREADCRUMB -->
-  <div class="breadcrumb-nav">
+  <div class="breadcrumb-strip">
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mb-0">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item"><a href="shop.html">Shop Catalog</a></li>
-          <li class="breadcrumb-item active text-truncate" id="breadcrumbProductTitle" aria-current="page" style="max-width: 260px;">Product Details</li>
+          <li class="breadcrumb-item"><a href="shop.html">Electronics</a></li>
+          <li class="breadcrumb-item active" aria-current="page" id="breadcrumbProductTitle">Product</li>
         </ol>
       </nav>
     </div>
   </div>
 
   <!-- PRODUCT DETAILS MAIN CONTENT -->
-  <section class="section-padding bg-white-section" id="productDetailSection">
+  <section class="section-padding bg-white" id="productDetailSection">
     <div class="container">
       <div class="row g-4 g-lg-5">
         <!-- Gallery Column -->
@@ -256,10 +311,10 @@
           <div class="p-3 p-md-4 bg-light rounded-4 border mt-4">
             <h6 class="fw-bold text-dark mb-3"><i class="bi bi-shield-check text-danger me-2"></i>MJDELECTRONICS Quality Checklist</h6>
             <div class="row g-2 small text-secondary">
-              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Pre-Tested Hardware &amp; Backlight</div>
-              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>All Ports &amp; Wireless Connectivity Verified</div>
-              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Authentic Brand &amp; Clean Serial</div>
-              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Ready for Local Pickup in Lithia Springs, GA</div>
+              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Pre-Tested Hardware &amp; Display</div>
+              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>All Ports &amp; Connectivity Inspected</div>
+              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Authentic Brand &amp; Verified Specs</div>
+              <div class="col-12 col-sm-6"><i class="bi bi-check2 text-success me-1"></i>Available for Local Pickup in Lithia Springs, GA</div>
             </div>
           </div>
         </div>
@@ -270,25 +325,49 @@
             <span class="badge bg-dark px-3 py-2" id="detailBrandBadge">Brand</span>
             <span class="badge bg-light text-danger border px-3 py-2 fw-bold" id="detailConditionBadge">Inspected</span>
             <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 fw-bold" id="detailStockBadge">
-              <i class="bi bi-check-circle-fill me-1"></i>Available for Pickup
+              <i class="bi bi-check-circle-fill me-1"></i>Verified in Stock
             </span>
           </div>
 
           <h1 class="h3 fw-bold text-dark mb-3" id="detailTitle">Loading Product Title...</h1>
           
-          <div class="p-3 bg-light rounded-3 border mb-4 d-flex align-items-center justify-content-between">
-            <div>
-              <span class="text-muted small text-uppercase fw-bold d-block">Pricing Status</span>
-              <span class="h4 fw-bold text-danger mb-0" id="detailPrice">Contact for Current Price</span>
+          <div class="p-3 bg-light rounded-3 border mb-4">
+            <div class="d-flex align-items-baseline gap-3 flex-wrap">
+              <span class="h2 fw-bold text-danger mb-0" id="detailPrice">$0.00</span>
+              <span class="text-muted text-decoration-line-through fs-5" id="detailOriginalPrice"></span>
+              <span class="badge bg-danger text-white ms-auto" id="detailSavingsBadge">Special Deal</span>
             </div>
-            <div class="text-end">
-              <span class="badge bg-danger text-white"><i class="bi bi-tag-fill me-1"></i>Deals Available</span>
+            <div class="small text-muted mt-1">
+              <i class="bi bi-info-circle me-1"></i>Estimated US Retail Benchmark. Final selling price confirmed upon order placement.
             </div>
           </div>
 
           <p class="text-secondary leading-relaxed mb-4" id="detailDescription">
             Loading verified product details...
           </p>
+
+          <!-- Quantity Selector & Add to Cart -->
+          <div class="card p-3 border mb-4 shadow-sm">
+            <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3">
+              <div class="d-flex align-items-center gap-2">
+                <span class="fw-bold text-dark small text-uppercase">Quantity:</span>
+                <div class="qty-picker">
+                  <button type="button" class="qty-picker-btn" id="btnQtyMinus" aria-label="Decrease">&minus;</button>
+                  <input type="text" class="qty-picker-input" id="inputProductQty" value="1" readonly aria-label="Product quantity" />
+                  <button type="button" class="qty-picker-btn" id="btnQtyPlus" aria-label="Increase">&plus;</button>
+                </div>
+              </div>
+
+              <button type="button" class="btn-add-cart-lg flex-grow-1" id="btnAddToCart">
+                <i class="bi bi-cart-plus fs-5"></i> Add to Cart
+              </button>
+            </div>
+            <div class="mt-2 text-center text-sm-start">
+              <a href="cart.html" class="small text-danger fw-bold text-decoration-none">
+                <i class="bi bi-bag-check me-1"></i>View Cart &amp; Checkout via WhatsApp &rarr;
+              </a>
+            </div>
+          </div>
 
           <!-- Specifications Table (Dynamically Populated) -->
           <h5 class="fw-bold text-dark mb-3"><i class="bi bi-sliders text-danger me-2"></i>Verified Specifications</h5>
@@ -300,25 +379,10 @@
             </table>
           </div>
 
-          <!-- Action Buttons (Responsive & Touch-Friendly) -->
-          <div class="d-flex flex-column gap-3 pt-2">
-            <a id="whatsappProductBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-lg w-100 justify-content-center" title="Inquire on WhatsApp">
-              <i class="bi bi-whatsapp me-2"></i> Inquire on WhatsApp
-            </a>
-            <div class="d-flex flex-column flex-sm-row gap-3">
-              <button id="inquireProductBtn" class="btn btn-mjd-primary btn-lg flex-grow-1 justify-content-center">
-                <i class="bi bi-chat-dots-fill me-2"></i> Inquire for Price &amp; Availability
-              </button>
-              <a href="tel:+17708951392" class="btn btn-mjd-outline btn-lg justify-content-center">
-                <i class="bi bi-telephone-fill me-2"></i> Call Melvin
-              </a>
-            </div>
-          </div>
-
           <!-- Pickup notes -->
           <div class="mt-4 pt-3 border-top small text-muted">
             <i class="bi bi-geo-alt-fill text-danger me-1"></i>
-            Pickup location: <strong>PO BOX 1805, Lithia Springs, GA 30122</strong>. Inquire on WhatsApp to confirm timing.
+            Pickup location: <strong>PO BOX 1805, Lithia Springs, GA 30122</strong>. Order via WhatsApp to arrange timing.
           </div>
         </div>
       </div>
@@ -330,7 +394,7 @@
             <span class="section-tag"><i class="bi bi-grid-3x3-gap-fill text-danger me-1"></i> More Selections</span>
             <h3 class="h4 fw-bold text-dark mb-0">Related Electronics Deals</h3>
           </div>
-          <a href="shop.html" class="btn-mjd-outline-orange btn-sm">
+          <a href="shop.html" class="btn btn-outline-danger btn-sm rounded-pill px-3">
             Explore All <i class="bi bi-arrow-right ms-1"></i>
           </a>
         </div>
@@ -397,7 +461,7 @@
               <i class="bi bi-whatsapp icon-whatsapp"></i>
               <div>
                 <span class="footer-contact-label">WhatsApp Business</span>
-                <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20available%20electronics%20and%20current%20deals." target="_blank" rel="noopener noreferrer" class="footer-contact-val link-whatsapp">+1 (770) 895-1392</a>
+                <a href="https://wa.me/17708951392" target="_blank" rel="noopener noreferrer" class="footer-contact-val link-whatsapp">+1 (770) 895-1392</a>
               </div>
             </div>
             <div class="footer-contact-item">
@@ -442,12 +506,10 @@
       <i class="bi bi-grid-fill"></i>
       <span>Shop</span>
     </a>
-    <a href="https://wa.me/17708951392?text=Hello%20MJDELECTRONICS!%20I%20would%20like%20to%20inquire%20about%20your%20available%20electronics." class="dock-call-btn text-white" style="background: #25D366;" title="WhatsApp Melvin" aria-label="WhatsApp Melvin" target="_blank" rel="noopener noreferrer">
-      <i class="bi bi-whatsapp"></i>
-    </a>
-    <a href="#" class="dock-item" data-bs-toggle="modal" data-bs-target="#searchModal">
-      <i class="bi bi-search"></i>
-      <span>Search</span>
+    <a href="cart.html" class="dock-item position-relative">
+      <i class="bi bi-cart3"></i>
+      <span class="cart-count-badge">0</span>
+      <span>Cart</span>
     </a>
     <a href="contact.html" class="dock-item">
       <i class="bi bi-chat-dots-fill"></i>
@@ -478,62 +540,26 @@
     </div>
   </div>
 
-  <!-- INQUIRY MODAL -->
-  <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content modal-content-mjd">
-        <div class="modal-header modal-header-mjd">
-          <h5 class="modal-title fw-bold text-dark" id="inquiryModalLabel">
-            <i class="bi bi-tag-fill text-danger me-2"></i>Price &amp; Availability Inquiry
-          </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body modal-body-mjd">
-          <div id="modalProductPreview"></div>
-          <form id="mjdModalInquiryForm">
-            <div class="mb-3">
-              <label class="form-label-mjd">Your Name *</label>
-              <input type="text" id="modalInquiryName" class="form-control-mjd" placeholder="e.g. John Smith" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label-mjd">Your Email Address *</label>
-              <input type="email" id="modalInquiryEmail" class="form-control-mjd" placeholder="name@example.com" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label-mjd">Subject</label>
-              <input type="text" id="modalInquirySubject" class="form-control-mjd" readonly>
-            </div>
-            <div class="mb-3">
-              <label class="form-label-mjd">Your Message / Inquiry</label>
-              <textarea id="modalInquiryMessage" class="form-control-mjd" rows="3" required></textarea>
-            </div>
-            <div class="d-grid">
-              <button type="submit" class="btn-mjd-primary justify-content-center">
-                <i class="bi bi-envelope-paper-fill"></i> Send Inquiry to Melvin
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/contact.js"></script>
 
   <!-- Dynamic Product Loading Script -->
   <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    let currentSelectedProduct = null;
+    let selectedQuantity = 1;
 
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof MJD_PRODUCTS === 'undefined') return;
 
       const urlParams = new URLSearchParams(window.location.search);
       const productId = urlParams.get('id') || MJD_PRODUCTS[0].id;
-      const product = MJD_PRODUCTS.find(p => p.id === productId) || MJD_PRODUCTS[0];
+      currentSelectedProduct = MJD_PRODUCTS.find(p => p.id === productId) || MJD_PRODUCTS[0];
+      const product = currentSelectedProduct;
 
       // Page Title & Meta
       document.title = `${product.name} | MJDELECTRONICS`;
@@ -544,15 +570,31 @@
       const mainImg = document.getElementById('mainProductImage');
       mainImg.src = product.image;
       mainImg.alt = product.name;
-      mainImg.onerror = () => { mainImg.src = getTvSvgPlaceholder(product.brand, product.name); };
+      mainImg.onerror = () => { mainImg.src = getProductSvgFallback(product.name, product.brand); };
 
       document.getElementById('detailBrandBadge').innerText = product.brand;
       document.getElementById('detailConditionBadge').innerText = product.condition || 'Pre-Tested';
       document.getElementById('detailTitle').innerText = product.name;
-      document.getElementById('detailPrice').innerText = product.priceText || 'Contact for Price';
+      
+      // Price
+      const priceVal = (typeof product.price === 'number') ? `$${product.price.toFixed(2)}` : product.priceText;
+      document.getElementById('detailPrice').innerText = priceVal;
+
+      const origPriceEl = document.getElementById('detailOriginalPrice');
+      const savingsBadge = document.getElementById('detailSavingsBadge');
+      if (product.originalPrice && product.originalPrice > product.price) {
+        origPriceEl.innerText = `$${product.originalPrice.toFixed(2)}`;
+        origPriceEl.classList.remove('d-none');
+        const savings = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+        savingsBadge.innerText = `Save ${savings}%`;
+      } else {
+        origPriceEl.classList.add('d-none');
+        savingsBadge.innerText = 'Quality Value';
+      }
+
       document.getElementById('detailDescription').innerText = product.description;
 
-      // Specifications Table (Render dynamically based on product attributes & specs)
+      // Specifications Table
       const specBody = document.getElementById('dynamicSpecBody');
       if (specBody) {
         let rows = `
@@ -562,13 +604,8 @@
           <tr><th>Device Condition</th><td>${product.condition || 'Quality Inspected'}</td></tr>
         `;
 
-        if (product.size) {
-          rows += `<tr><th>Screen / Display Size</th><td>${product.size}</td></tr>`;
-        }
-
         if (product.specs && typeof product.specs === 'object') {
           for (const [key, val] of Object.entries(product.specs)) {
-            // Convert camelCase key to Title Case
             const formattedKey = key
               .replace(/([A-Z])/g, ' $1')
               .replace(/^./, str => str.toUpperCase())
@@ -585,23 +622,36 @@
       if (thumbStrip) {
         thumbStrip.innerHTML = gallery.map((imgUrl, idx) => `
           <button class="thumb-btn ${idx === 0 ? 'active' : ''}" onclick="switchMainImage('${imgUrl}', this)" aria-label="Thumbnail ${idx + 1}">
-            <img src="${imgUrl}" alt="Thumbnail ${idx + 1}" onerror="this.src='${getTvSvgPlaceholder(product.brand, product.name)}'" />
+            <img src="${imgUrl}" alt="Thumbnail ${idx + 1}" onerror="this.src='images/logo.svg'" />
           </button>
         `).join('');
       }
 
-      // WhatsApp Product Inquiry Setup adhering strictly to the template
-      const waBtn = document.getElementById('whatsappProductBtn');
-      if (waBtn) {
-        waBtn.href = getWhatsAppProductUrl(product, window.location.href);
-        waBtn.setAttribute('aria-label', `Inquire on WhatsApp about ${product.name}`);
+      // Quantity buttons
+      const inputQty = document.getElementById('inputProductQty');
+      const btnMinus = document.getElementById('btnQtyMinus');
+      const btnPlus = document.getElementById('btnQtyPlus');
+      const btnAddCart = document.getElementById('btnAddToCart');
+
+      if (btnMinus && inputQty) {
+        btnMinus.addEventListener('click', () => {
+          if (selectedQuantity > 1) {
+            selectedQuantity--;
+            inputQty.value = selectedQuantity;
+          }
+        });
       }
 
-      // Inquiry Button (Modal / Contact form)
-      const inquireBtn = document.getElementById('inquireProductBtn');
-      if (inquireBtn) {
-        inquireBtn.addEventListener('click', () => {
-          openInquiryModal(product.id);
+      if (btnPlus && inputQty) {
+        btnPlus.addEventListener('click', () => {
+          selectedQuantity++;
+          inputQty.value = selectedQuantity;
+        });
+      }
+
+      if (btnAddCart) {
+        btnAddCart.addEventListener('click', () => {
+          MJD_CART.addItem(product.id, selectedQuantity);
         });
       }
 

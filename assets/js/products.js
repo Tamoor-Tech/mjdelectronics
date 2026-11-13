@@ -4,6 +4,7 @@
  * Official Brand: MJDELECTRONICS | "Real Deals. Real Brands. Real Value."
  * Website: https://mjdelectronics.net
  * Contact: melvin@mjdelectronics.net | Phone/WhatsApp: +1 (770) 895-1392
+ * Address: PO BOX 1805, Lithia Springs, GA 30122, United States
  */
 
 const MJDELECTRONICS_CONFIG = {
@@ -130,7 +131,7 @@ function getProductSvgFallback(name, brand) {
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
-// Master Products Catalog
+// Master Products Catalog (38 Verified Electronics Products with Realistic US Retail Pricing)
 const MJD_PRODUCTS = [
   // 1. Cables, Chargers & Power Adapters
   {
@@ -140,9 +141,13 @@ const MJD_PRODUCTS = [
     category: "Cables, Chargers & Power Adapters",
     model: "PowerCore 24K 140W",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 99.99,
+    originalPrice: 149.99,
+    priceText: "$99.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       capacity: "24,000mAh Ultra-High Capacity",
       output: "140W High-Speed Two-Way USB-C Charging",
@@ -159,9 +164,13 @@ const MJD_PRODUCTS = [
     category: "Cables, Chargers & Power Adapters",
     model: "Slim Pro 10,000mAh",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 19.99,
+    originalPrice: 29.99,
+    priceText: "$19.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       capacity: "10,000mAh Lithium-Polymer",
       ports: "Dual USB-A & High-Speed USB-C In/Out",
@@ -178,9 +187,13 @@ const MJD_PRODUCTS = [
     category: "Cables, Chargers & Power Adapters",
     model: "Nano 30W GaN + Bio-Braided Cable",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 24.99,
+    originalPrice: 34.99,
+    priceText: "$24.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       wattage: "30W PowerIQ 3.0 GaN Fast Charging",
       cable: "6ft Bio-Based Braided USB-C to USB-C / Lightning",
@@ -199,9 +212,13 @@ const MJD_PRODUCTS = [
     category: "Smartwatches",
     model: "Series 9 (45mm)",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 329.00,
+    originalPrice: 429.00,
+    priceText: "$329.00",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       display: "Always-On Retina OLED up to 2000 nits",
       chip: "S9 SiP with 4-Core Neural Engine",
@@ -218,9 +235,13 @@ const MJD_PRODUCTS = [
     category: "Smartwatches",
     model: "Classic 47mm Bluetooth",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 279.99,
+    originalPrice: 399.99,
+    priceText: "$279.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       bezel: "Physical Rotating Stainless Steel Bezel",
       display: "Super AMOLED Sapphire Crystal Glass",
@@ -239,9 +260,13 @@ const MJD_PRODUCTS = [
     category: "Smartphones & Flagship Handsets",
     model: "iPhone 15 Pro Max",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 949.00,
+    originalPrice: 1199.00,
+    priceText: "$949.00",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       processor: "A17 Pro Chip with 6-core GPU",
       display: "6.7\" Super Retina XDR ProMotion 120Hz",
@@ -258,9 +283,13 @@ const MJD_PRODUCTS = [
     category: "Smartphones & Flagship Handsets",
     model: "Galaxy S24 Ultra",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 989.00,
+    originalPrice: 1299.99,
+    priceText: "$989.00",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       processor: "Snapdragon 8 Gen 3 for Galaxy",
       display: "6.8\" QHD+ Dynamic AMOLED 2X 2600 nits",
@@ -279,9 +308,13 @@ const MJD_PRODUCTS = [
     category: "Laptops & MacBooks",
     model: "MacBook Air M2",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 799.00,
+    originalPrice: 999.00,
+    priceText: "$799.00",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       chip: "Apple M2 8-Core CPU & 8-Core GPU",
       screen: "13.6\" Liquid Retina Display with True Tone",
@@ -300,9 +333,13 @@ const MJD_PRODUCTS = [
     category: "Wireless Headphones & Earbuds",
     model: "AirPods Pro (2nd/3rd Gen Series)",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 189.99,
+    originalPrice: 249.00,
+    priceText: "$189.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       audio: "Pro-level Active Noise Cancellation & Transparency",
       spatial: "Personalized Spatial Audio with Dynamic Head Tracking",
@@ -319,9 +356,13 @@ const MJD_PRODUCTS = [
     category: "Wireless Headphones & Earbuds",
     model: "AirPods (3rd Gen)",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 129.99,
+    originalPrice: 169.00,
+    priceText: "$129.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       fit: "Contoured Ergonomic Fit with Force Sensor Control",
       spatial: "Spatial Audio with Dynamic Head Tracking",
@@ -338,9 +379,13 @@ const MJD_PRODUCTS = [
     category: "Wireless Headphones & Earbuds",
     model: "True Wireless ANC Earbuds",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 24.88,
+    originalPrice: 34.88,
+    priceText: "$24.88",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       connectivity: "Bluetooth 5.3 Quick Auto-Pairing",
       playback: "Up to 28 Hours Total Playtime with Case",
@@ -357,9 +402,13 @@ const MJD_PRODUCTS = [
     category: "Wireless Headphones & Earbuds",
     model: "WH-1000XM5 Noise Canceling",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 328.00,
+    originalPrice: 399.99,
+    priceText: "$328.00",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       cancellation: "Auto NC Optimizer with 8 Microphones",
       driver: "30mm Precision Engineered Carbon Fiber Driver",
@@ -378,9 +427,13 @@ const MJD_PRODUCTS = [
     category: "Video Gaming Consoles & Retro Systems",
     model: "DualSense PS5 Controller",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 64.99,
+    originalPrice: 74.99,
+    priceText: "$64.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       feedback: "Immersive Haptic Feedback & Dynamic Triggers",
       audio: "Built-in Microphone and 3.5mm Headset Jack",
@@ -399,9 +452,13 @@ const MJD_PRODUCTS = [
     category: "Digital Cameras & Lenses",
     model: "Blink Outdoor 3rd Gen Wireless",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 69.99,
+    originalPrice: 99.99,
+    priceText: "$69.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       video: "1080p HD Video Day and Infrared Night View",
       battery: "Up to 2-Year Battery Life on Included AA Lithium",
@@ -418,9 +475,13 @@ const MJD_PRODUCTS = [
     category: "Digital Cameras & Lenses",
     model: "Smart Wi-Fi 1080p Indoor Cam",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 19.97,
+    originalPrice: 29.99,
+    priceText: "$19.97",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       resolution: "1080p Full HD Resolution with Night Vision",
       connectivity: "2.4GHz Wi-Fi with Smartphone App Streaming",
@@ -439,9 +500,13 @@ const MJD_PRODUCTS = [
     category: "Computer Accessories (Keyboards, Mice & Docks)",
     model: "AirTag Bluetooth Tracker",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 24.00,
+    originalPrice: 29.00,
+    priceText: "$24.00",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       network: "Apple Find My Network with Hundreds of Millions of Devices",
       precision: "Precision Finding with Ultra Wideband Technology",
@@ -458,9 +523,13 @@ const MJD_PRODUCTS = [
     category: "Computer Accessories (Keyboards, Mice & Docks)",
     model: "Logitech M330 / M220 Silent",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 17.99,
+    originalPrice: 24.99,
+    priceText: "$17.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       acoustics: "SilentTouch 90% Noise Reduction Click",
       wireless: "2.4GHz USB Nano Receiver with 33ft Range",
@@ -477,9 +546,13 @@ const MJD_PRODUCTS = [
     category: "Computer Accessories (Keyboards, Mice & Docks)",
     model: "Logitech MK270 / MK540 Advanced",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 27.99,
+    originalPrice: 39.99,
+    priceText: "$27.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       keyboard: "Full-Size Keyboard with 8 Shortcut Hotkeys & NumPad",
       connectivity: "Single Plug-and-Forget USB Wireless Dongle",
@@ -498,9 +571,13 @@ const MJD_PRODUCTS = [
     category: "Tablets & iPads",
     model: "iPad 10th Generation (10.9\")",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 319.00,
+    originalPrice: 349.00,
+    priceText: "$319.00",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       screen: "10.9\" Liquid Retina Display with True Tone",
       processor: "A14 Bionic Chip with 4-Core Graphics",
@@ -517,9 +594,13 @@ const MJD_PRODUCTS = [
     category: "Tablets & iPads",
     model: "Kindle Paperwhite (11th Gen)",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 129.99,
+    originalPrice: 149.99,
+    priceText: "$129.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       display: "6.8\" Glare-Free 300 ppi E-Ink Paperwhite Screen",
       light: "Adjustable Warm Light from White to Amber",
@@ -538,9 +619,13 @@ const MJD_PRODUCTS = [
     category: "Home Audio & Soundbars",
     model: "Echo Dot (5th Generation)",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 39.99,
+    originalPrice: 49.99,
+    priceText: "$39.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       sound: "Vibrant Audio with Deeper Bass & Clearer Vocals",
       voice: "Hands-Free Alexa Voice Assistant Integration",
@@ -557,9 +642,13 @@ const MJD_PRODUCTS = [
     category: "Home Audio & Soundbars",
     model: "Fire TV Stick 4K Plus (Wi-Fi 6)",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 34.99,
+    originalPrice: 49.99,
+    priceText: "$34.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       video: "4K Ultra HD Streaming with Dolby Vision & HDR10+",
       wireless: "Wi-Fi 6 Support for Smooth 4K Streaming",
@@ -576,9 +665,13 @@ const MJD_PRODUCTS = [
     category: "Home Audio & Soundbars",
     model: "Streaming Stick 4K",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 38.00,
+    originalPrice: 49.99,
+    priceText: "$38.00",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       picture: "Brilliant 4K, Dolby Vision & HDR10+ Picture",
       receiver: "Long-Range Wi-Fi Receiver up to 2x Faster",
@@ -595,16 +688,20 @@ const MJD_PRODUCTS = [
     category: "Home Audio & Soundbars",
     model: "Roku Ultra 4K / HDR / Ethernet",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 89.00,
+    originalPrice: 99.99,
+    priceText: "$89.00",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       performance: "Lightning-Fast Quad-Core Processor Interface",
       ports: "Ethernet LAN Port, USB Media Port, HDMI 2.0b",
       remote: "Rechargeable Hands-Free Voice Remote Pro",
       audio: "Dolby Atmos & Bluetooth Private Listening"
     },
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=800&q=80",
     description: "Top-of-the-line streaming player with hardwired ethernet connectivity, lost remote finder, and lightning-fast channel launch."
   },
   {
@@ -614,9 +711,13 @@ const MJD_PRODUCTS = [
     category: "Home Audio & Soundbars",
     model: "2.0-Channel Bluetooth Soundbar",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 37.88,
+    originalPrice: 49.88,
+    priceText: "$37.88",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       audio: "Crystal Clear Stereo Sound with Enhanced Bass",
       inputs: "Bluetooth, Optical Digital Audio, AUX & USB",
@@ -633,16 +734,20 @@ const MJD_PRODUCTS = [
     category: "Home Audio & Soundbars",
     model: "Onn. 50\" Class 4K UHD Roku TV",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 198.00,
+    originalPrice: 248.00,
+    priceText: "$198.00",
+    isEstimatedPrice: true,
     inStock: true,
     featured: true,
+    trending: false,
     specs: {
       screen: "50\" 4K UHD (3840 x 2160) LED Display Panel",
       platform: "Built-In Roku TV Operating System",
       refresh: "60Hz Native Refresh Rate with Fast Motion",
       connectivity: "3x HDMI (including eARC), USB, Optical Audio"
     },
-    image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80",
     description: "Affordable big-screen 4K entertainment powered by the simple Roku TV smart platform with thousands of free streaming movies."
   },
 
@@ -654,7 +759,10 @@ const MJD_PRODUCTS = [
     category: "Computer Accessories (Keyboards, Mice & Docks)",
     model: "Wireless 3-in-1 Selfie Stick Tripod",
     condition: "Brand New / Sealed",
-    priceText: "Contact for Price",
+    price: 14.99,
+    originalPrice: 22.99,
+    priceText: "$14.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
     trending: true,
@@ -674,7 +782,10 @@ const MJD_PRODUCTS = [
     category: "Smartphones & Flagship Handsets",
     model: "Handmade Beaded Anti-Drop Wristlet",
     condition: "Brand New / Sealed",
-    priceText: "Contact for Price",
+    price: 7.99,
+    originalPrice: 12.99,
+    priceText: "$7.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
     trending: true,
@@ -694,7 +805,10 @@ const MJD_PRODUCTS = [
     category: "Computer Accessories (Keyboards, Mice & Docks)",
     model: "Flexible Octopus Grip Tripod",
     condition: "Brand New / Sealed",
-    priceText: "Contact for Price",
+    price: 15.99,
+    originalPrice: 24.99,
+    priceText: "$15.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
     trending: true,
@@ -714,7 +828,10 @@ const MJD_PRODUCTS = [
     category: "Tablets & iPads",
     model: "Slim Origami Stand Protective Folio",
     condition: "Brand New / Sealed",
-    priceText: "Contact for Price",
+    price: 16.99,
+    originalPrice: 23.99,
+    priceText: "$16.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
     trending: true,
@@ -734,7 +851,10 @@ const MJD_PRODUCTS = [
     category: "Smartphones & Flagship Handsets",
     model: "Edge-to-Edge HD Clear Multi-Pack",
     condition: "Brand New / Sealed",
-    priceText: "Contact for Price",
+    price: 9.99,
+    originalPrice: 14.99,
+    priceText: "$9.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
     trending: true,
@@ -754,7 +874,10 @@ const MJD_PRODUCTS = [
     category: "Wireless Headphones & Earbuds",
     model: "Noise-Isolating In-Ear Earphones",
     condition: "Brand New / Sealed",
-    priceText: "Contact for Price",
+    price: 11.99,
+    originalPrice: 16.99,
+    priceText: "$11.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
     trending: true,
@@ -774,7 +897,10 @@ const MJD_PRODUCTS = [
     category: "Cables, Chargers & Power Adapters",
     model: "Mag-Snap 5000mAh Slim Battery",
     condition: "Brand New / Sealed",
-    priceText: "Contact for Price",
+    price: 26.99,
+    originalPrice: 39.99,
+    priceText: "$26.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
     trending: true,
@@ -794,7 +920,10 @@ const MJD_PRODUCTS = [
     category: "Computer Accessories (Keyboards, Mice & Docks)",
     model: "Dual-Axis Foldable Desktop Stand",
     condition: "Brand New / Sealed",
-    priceText: "Contact for Price",
+    price: 12.99,
+    originalPrice: 18.99,
+    priceText: "$12.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
     trending: true,
@@ -814,7 +943,10 @@ const MJD_PRODUCTS = [
     category: "Smartphones & Flagship Handsets",
     model: "Air-Cushion Armor Case with Magnetic Ring",
     condition: "Brand New / Sealed",
-    priceText: "Contact for Price",
+    price: 13.99,
+    originalPrice: 19.99,
+    priceText: "$13.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
     trending: true,
@@ -834,7 +966,10 @@ const MJD_PRODUCTS = [
     category: "Digital Cameras & Lenses",
     model: "Studio Creator Ring Light Kit",
     condition: "Brand New / Sealed",
-    priceText: "Contact for Price",
+    price: 22.99,
+    originalPrice: 34.99,
+    priceText: "$22.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
     trending: true,
@@ -856,9 +991,13 @@ const MJD_PRODUCTS = [
     category: "Home Audio & Soundbars",
     model: "Crystal UHD 4K (65\")",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 447.99,
+    originalPrice: 529.99,
+    priceText: "$447.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       display: "Crystal UHD LED (3840 x 2160)",
       refresh: "60Hz Motion Xcelerator",
@@ -875,9 +1014,13 @@ const MJD_PRODUCTS = [
     category: "Home Audio & Soundbars",
     model: "webOS Real 4K (55\")",
     condition: "Quality Inspected",
-    priceText: "Contact for Price",
+    price: 356.99,
+    originalPrice: 429.99,
+    priceText: "$356.99",
+    isEstimatedPrice: true,
     inStock: true,
     featured: false,
+    trending: false,
     specs: {
       display: "Real 4K LED Display Panel",
       processor: "Quad-Core Processor 4K with AI Sound",
@@ -892,99 +1035,34 @@ const MJD_PRODUCTS = [
 // WhatsApp Business Official Contact Config
 const MJD_WHATSAPP_NUMBER = "17708951392";
 
-// Generate Dynamic Pre-filled WhatsApp Product Inquiry URL
-function getWhatsAppProductUrl(product, customUrl) {
-  if (!product) return getWhatsAppGeneralUrl();
-
-  // Determine Product Page URL
-  let productUrl = customUrl;
-  if (!productUrl) {
-    if (typeof window !== 'undefined' && window.location) {
-      if (window.location.pathname.endsWith('product.html') && window.location.search.includes(product.id)) {
-        productUrl = window.location.href;
-      } else {
-        productUrl = `https://mjdelectronics.net/product.html?id=${encodeURIComponent(product.id)}`;
-      }
-    } else {
-      productUrl = `https://mjdelectronics.net/product.html?id=${encodeURIComponent(product.id)}`;
-    }
-  }
-
-  // Build inquiry message strictly following client's required template:
-  const lines = [
-    "Hello MJDELECTRONICS!",
-    "I am interested in the following product:",
-    `Product Name: ${product.name}`,
-    `Brand: ${product.brand}`
-  ];
-
-  // Model (if available)
-  const model = product.model || (product.specs && product.specs.model);
-  if (model && String(model).trim() !== '') {
-    lines.push(`Model: ${model}`);
-  }
-
-  // Displayed Price (if available)
-  const price = product.priceText || product.price;
-  if (price && String(price).trim() !== '') {
-    lines.push(`Price: ${price}`);
-  }
-
-  // Product Link
-  if (productUrl) {
-    lines.push(`Product Link: ${productUrl}`);
-  }
-
-  lines.push(
-    "I would like to know about its availability, condition, latest price and purchasing options.",
-    "Please share further details.",
-    "Thank you!"
-  );
-
-  const fullMessage = lines.join("\n");
-  return `https://wa.me/${MJD_WHATSAPP_NUMBER}?text=${encodeURIComponent(fullMessage)}`;
-}
-
-// Generate Pre-filled General WhatsApp Inquiry URL
-function getWhatsAppGeneralUrl() {
-  const generalMessage = "Hello MJDELECTRONICS! I visited your website and would like to know more about your available electronics and current deals.";
-  return `https://wa.me/${MJD_WHATSAPP_NUMBER}?text=${encodeURIComponent(generalMessage)}`;
-}
-
-// Global action to open WhatsApp Product Inquiry
-function openWhatsAppProductInquiry(productId, customUrl) {
-  let product = null;
-  if (typeof MJD_PRODUCTS !== 'undefined' && Array.isArray(MJD_PRODUCTS)) {
-    product = MJD_PRODUCTS.find(p => p.id === productId);
-  }
-  const url = getWhatsAppProductUrl(product, customUrl);
-  window.open(url, '_blank', 'noopener,noreferrer');
-}
-
-// Global action to open WhatsApp General Inquiry
-function openWhatsAppGeneralInquiry() {
-  const url = getWhatsAppGeneralUrl();
-  window.open(url, '_blank', 'noopener,noreferrer');
-}
-
 // Helper to generate Target-inspired Retail Product Card HTML
+// Meets Requirements 4 & 5: Add to Cart button + More Details button, USD Price, Sale label only when applicable
 function createProductCardHtml(product) {
   const fallbackSrc = getProductSvgFallback(product.name, product.brand);
-  const waUrl = getWhatsAppProductUrl(product);
   
   // Badge logic (Target-style deal/viral badges)
   let badgeHtml = '';
   if (product.trending) {
     badgeHtml = `<span class="product-card-badge badge-trending"><i class="bi bi-fire me-1"></i>TikTok Viral</span>`;
+  } else if (product.originalPrice && product.price && product.price < product.originalPrice) {
+    const savings = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+    badgeHtml = `<span class="product-card-badge badge-sale">Save ${savings}%</span>`;
   } else if (product.featured) {
-    badgeHtml = `<span class="product-card-badge badge-sale">Featured Deal</span>`;
-  } else {
-    badgeHtml = `<span class="product-card-badge badge-brand">${product.brand}</span>`;
+    badgeHtml = `<span class="product-card-badge badge-sale">Featured</span>`;
   }
+
+  // Price formatting
+  const priceDisplay = (typeof product.price === 'number') 
+    ? `$${product.price.toFixed(2)}` 
+    : (product.priceText || 'Contact for Price');
+
+  const originalPriceHtml = (product.originalPrice && product.originalPrice > product.price)
+    ? `<span class="product-original-price">$${product.originalPrice.toFixed(2)}</span>`
+    : '';
 
   return `
     <div class="col-6 col-md-4 col-lg-3 mb-3 mb-md-4">
-      <div class="retail-product-card h-100" data-brand="${product.brand}" data-category="${product.category}">
+      <div class="retail-product-card h-100 d-flex flex-column" data-brand="${product.brand}" data-category="${product.category}">
         ${badgeHtml}
         
         <a href="product.html?id=${product.id}" class="product-image-container" title="View details for ${product.name}">
@@ -994,25 +1072,34 @@ function createProductCardHtml(product) {
                onerror="this.onerror=null; this.src='${fallbackSrc}';" />
         </a>
         
-        <div class="product-card-body">
-          <div class="product-brand-tag">${product.brand}</div>
+        <div class="product-card-body d-flex flex-column flex-grow-1">
+          <div class="product-brand-tag">${product.brand}${product.model ? ' &bull; ' + product.model : ''}</div>
           <h3 class="product-card-title">
-            <a href="product.html?id=${product.id}">${product.name}</a>
+            <a href="product.html?id=${product.id}" title="${product.name}">${product.name}</a>
           </h3>
           
-          <div class="product-price-row">
-            <span class="price-inquire">${product.priceText}</span>
-            <span class="badge-condition-pill">${product.condition || 'Verified'}</span>
+          <div class="product-price-row mt-auto pt-2">
+            <div class="d-flex align-items-baseline gap-2 flex-wrap">
+              <span class="product-price-current">${priceDisplay}</span>
+              ${originalPriceHtml}
+            </div>
+            <div class="product-price-note">Est. US Retail Price</div>
           </div>
           
-          <div class="product-card-footer mt-auto pt-2">
-            <a href="${waUrl}" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="btn-whatsapp-card" 
-               title="Inquire on WhatsApp about ${product.name}" 
-               aria-label="Inquire on WhatsApp about ${product.name}">
-              <i class="bi bi-whatsapp"></i> Inquire on WhatsApp
+          <div class="product-card-actions pt-2">
+            <button type="button" 
+                    class="btn-cart-primary" 
+                    onclick="MJD_CART.addItem('${product.id}')"
+                    aria-label="Add ${product.name} to Cart">
+              <i class="bi bi-cart-plus-fill"></i>
+              <span class="btn-text">Add to Cart</span>
+            </button>
+            <a href="product.html?id=${product.id}" 
+               class="btn-details-secondary" 
+               title="View more details for ${product.name}"
+               aria-label="View more details for ${product.name}">
+              <span class="btn-text">Details</span>
+              <i class="bi bi-arrow-right"></i>
             </a>
           </div>
         </div>
